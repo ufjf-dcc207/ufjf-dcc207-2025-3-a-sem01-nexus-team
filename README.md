@@ -1,7 +1,8 @@
 # Lista de procurados fictícios
 
-Participantes do projeto: Gabriel Linecker - número da matrícula: 202476025
-                          Gianlucca Paiva - número da matrícula: 202476026
+Participantes do projeto: 
+    Gabriel Lineker - número da matrícula: 202476025,
+    Gianlucca Paiva - número da matrícula: 202476026
 
 ## Procurados fictícios
 Proposta de Tema: Interface de "Procurados" de um Sistema Policial ultilizando Vite - React + typescript.
@@ -12,3 +13,6 @@ Observações:
 Para evitar problemas, não usaremos dados reais. A lista será composta por personagens fictícios (de filmes, jogos, etc.).
 A tela principal mostraria a lista de procurados e talvez permitiria uma filtragem visual simples (por exemplo, botões para ver "Status: Foragido" ou "Status: Capturado"), mas tudo baseado nos dados estáticos.
 Acreditamos que esse tema se encaixa bem no escopo de desenhar interfaces e renderizar componentes com dados estáticos.
+
+A home será dividida inicialmente pensado com o grid em uma matriz de escala 5x3 totalizando 15 personagens iniciais.
+Segue em anexo dados dos procurados que serão implementados:
