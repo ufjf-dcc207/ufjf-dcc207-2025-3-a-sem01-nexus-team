@@ -1,20 +1,73 @@
-# Lista de procurados fictícios
+# React + TypeScript + Vite
 
-Participantes do projeto:
-Gabriel Lineker - número da matrícula: 202476025,
-Gianlucca Paiva - número da matrícula: 202476026
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Procurados fictícios
+Currently, two official plugins are available:
 
-Proposta de Tema: Interface de "Procurados" de um Sistema Policial ultilizando Vite - React + typescript.
-Nossa ideia é desenhar e desenvolver a interface de uma tela que exibe uma lista de "procurados" fictícios, contendo seus dados, crimes e status atual.(Todos totalmente adaptado perante as mídias originais com leve toque humorístico referenciando situações dos próprios personagens nos seus jogos, filmes, etc).
-Pretendemos criar uma árvore de componentes que será preenchida com dados estáticos de cada elemento contido nela.
-Não haverá manipulação de estado ou comunicação com back-end. A ideia é apenas renderizar esses dados na tela.
-Observações:
-Para evitar problemas, não usaremos dados reais. A lista será composta por personagens fictícios (de filmes, jogos, etc.).
-A tela principal mostraria a lista de procurados e talvez permitiria uma filtragem visual simples (por exemplo, botões para ver "Status: Foragido" ou "Status: Capturado"), mas tudo baseado nos dados estáticos.
-Acreditamos que esse tema se encaixa bem no escopo de desenhar interfaces e renderizar componentes com dados estáticos.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-A home será dividida inicialmente pensado com o grid em uma matriz de escala 5x3 totalizando 15 personagens iniciais.
-Segue em anexo dados dos procurados que serão implementados:
-[Baixar planilha de dados](./Dados%20Estruturados%20iniciais.xlsx)
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
