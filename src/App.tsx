@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <h1>Nexus Team - Personagens</h1>
+        <h1>Procurados</h1>
         <InterfaceExibicao>
           {ListaProcurados.map((personagem) => (
             <Personagem

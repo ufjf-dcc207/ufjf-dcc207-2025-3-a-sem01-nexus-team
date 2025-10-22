@@ -3,7 +3,7 @@ import type{ Classificacao, Status } from "./Personagem";
 const statusValido = (status: string): Status =>
   ["Foragido", "Morto", "Capturado", "Desconhecido"].includes(status as Status)
     ? (status as Status)
-    : "Undefined";
+    : "Desconhecido";
 
 type Procurado = {
     id: number;
@@ -22,7 +22,7 @@ export const ListaProcurados: Procurado[] = [
     Idade: 56,
     DataDeNascimento: "1981-09-26",
     Imagem: "public/joelPB.png",
-    Status: statusValido("Foragido"),
+    Status: statusValido("Capturado"),
     NivelPerigo: 5,
   },
   {

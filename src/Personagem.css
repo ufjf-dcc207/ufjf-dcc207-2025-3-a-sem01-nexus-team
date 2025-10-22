@@ -5,8 +5,8 @@
     box-shadow: 0.1em 0.1em 0.5em;
     display: grid;
     grid-template-areas:
-        "imagem imagem" 
         "nome nome"
+        "imagem imagem" 
         "idade data-nascimento"
         "nivel-perigo status";
 }
@@ -14,8 +14,9 @@
 .personagem .nome {
     grid-area: nome;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-bottom: 0.5em;
+    
 }
 .personagem .imagem {
     grid-area: imagem;
@@ -24,12 +25,13 @@
 }
 
 .personagem .imagem img {
-    max-width: 23%;
+    max-width: 50%;
 }
 
 .personagem .nivel-perigo {
     grid-area: nivel-perigo;
 }
+
 .personagem .status {
     grid-area: status;
 }
@@ -38,4 +40,21 @@
 }
 .personagem .data-nascimento {
     grid-area: data-nascimento;
+}
+
+.foragido {
+    color: rgb(255, 195, 43);
+    font-weight: bold;
+}
+.morto {
+    color: red;
+    font-weight: bold;
+}
+.capturado {
+    color: rgb(6, 207, 6);
+    font-weight: bold;
+}
+.desconhecido {
+    color: gray;
+    font-weight: bold;
 }
