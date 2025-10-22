@@ -1,0 +1,13 @@
+.exibicao {
+    color: green;
+    display: grid;
+    grid-template-areas:
+        "personagem personagem";
+    gap: 0.1em;
+
+    .personagem {
+        display: grid;
+        grid-area: personagem;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+}

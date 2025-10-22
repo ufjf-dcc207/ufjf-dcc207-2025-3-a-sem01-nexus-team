@@ -1,14 +1,31 @@
 import './App.css'
 import Personagem from './Personagem'
+import InterfaceExibicao from './InterfaceExibicao'
 
 function App() {
 
   return (
     <>
       <div className="App">
-        <h1>Welcome to the App</h1>
-        <Personagem  nome="John Doe" imagem="public/joelPB.png" nivelPerigo={5} status={true} idade={30} dataNascimento="1993-01-01" />
-        <Personagem  nome="Jane Doe" imagem="public/jane_doe.png" nivelPerigo={1} status={false} idade={28} dataNascimento="1995-05-15" />
+        <h1>Nexus Team - Personagens</h1>
+        <InterfaceExibicao>
+          <Personagem
+            nome="John Doe"
+            imagem="https://via.placeholder.com/150"
+            nivelPerigo={4}
+            status={false}
+            idade={30}
+            dataNascimento="1993-01-01"
+          />
+          <Personagem
+            nome="Jane Smith"
+            imagem="https://via.placeholder.com/150"
+            nivelPerigo={2}
+            status={true}
+            idade={25}
+            dataNascimento="1998-05-15"
+          />
+        </InterfaceExibicao>
       </div>
     </>
   )
