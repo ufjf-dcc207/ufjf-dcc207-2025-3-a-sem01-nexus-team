@@ -1,0 +1,41 @@
+.personagem {
+    border: 1px solid blue;
+    border-radius: 1em;
+    padding: 1em;
+    box-shadow: 0.1em 0.1em 0.5em;
+    display: grid;
+    grid-template-areas:
+        "imagem imagem" 
+        "nome nome"
+        "idade data-nascimento"
+        "nivel-perigo status";
+}
+
+.personagem .nome {
+    grid-area: nome;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+.personagem .imagem {
+    grid-area: imagem;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.personagem .imagem img {
+    max-width: 23%;
+}
+
+.personagem .nivel-perigo {
+    grid-area: nivel-perigo;
+}
+.personagem .status {
+    grid-area: status;
+}
+.personagem .idade {
+    grid-area: idade;
+}
+.personagem .data-nascimento {
+    grid-area: data-nascimento;
+}
