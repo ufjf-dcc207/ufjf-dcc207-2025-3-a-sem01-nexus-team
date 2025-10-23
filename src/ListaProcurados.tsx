@@ -35,17 +35,17 @@ export const ListaProcurados: Procurado[] = [
     DataDeNascimento: "1990-07-20",
     Imagem: "Alerquina.jpg",
     Status: statusValido("Capturado"),
-    NivelPerigo: 4,
+    NivelPerigo: 2,
   },
   {
     id: 3, 
     Nome: "Carl Johnson",
     Idade: 24,
     Subnome: "CJ",
-    DataDeNascimento: "1968-00-00",
+    DataDeNascimento: "Desconhecido",
     Imagem: "/CJ.png",
-    Status: statusValido("Foragido"),
-    NivelPerigo: 4,
+    Status: statusValido("Desconhecido"),
+    NivelPerigo: 5,
   },
   {
     id: 4, 
@@ -55,7 +55,7 @@ export const ListaProcurados: Procurado[] = [
     DataDeNascimento: "Desconhecido",
     Imagem: "/Deadpool.jpg",
     Status: statusValido("Foragido"),
-    NivelPerigo: 5,
+    NivelPerigo: 3,
   },
   {
     id: 5, 
@@ -65,7 +65,7 @@ export const ListaProcurados: Procurado[] = [
     DataDeNascimento: "1976-08-29",
     Imagem: "/Toretto.png",
     Status: statusValido("Foragido"),
-    NivelPerigo: 4,
+    NivelPerigo: 2,
   },
   {
     id: 6, 
@@ -74,8 +74,8 @@ export const ListaProcurados: Procurado[] = [
     Subnome: "O Plano",
     DataDeNascimento: "1855-05-01",
     Imagem: "/Dutch.png",
-    Status: statusValido("Foragido"),
-    NivelPerigo: 5,
+    Status: statusValido("Morto"),
+    NivelPerigo: 3,
   },
   {
     id: 7, 
@@ -84,7 +84,7 @@ export const ListaProcurados: Procurado[] = [
     Subnome: "A Imunizada", 
     DataDeNascimento: "2019-04-28", 
     Imagem: "/Ellie.jpg",
-    Status: statusValido("Foragido"), 
+    Status: statusValido("Desconhecido"), 
     NivelPerigo: 4,
   },
   {
@@ -92,10 +92,10 @@ export const ListaProcurados: Procurado[] = [
     Nome: "Geralt de Rivia",
     Idade: 100,
     Subnome: "O Bruxo",
-    DataDeNascimento: "c. 1173",
+    DataDeNascimento: "Desconhecido",
     Imagem: "/Geraldao.jpg",
     Status: statusValido("Desconhecido"),
-    NivelPerigo: 4,
+    NivelPerigo: 5,
   },
   {
     id: 9, 
@@ -114,7 +114,7 @@ export const ListaProcurados: Procurado[] = [
     Subnome: "Baba Yaga",
     DataDeNascimento: "1964-09-02",
     Imagem: "/JohnWick.jpg",
-    Status: statusValido("Foragido"),
+    Status: statusValido("Desconhecido"),
     NivelPerigo: 5,
   },
   {
@@ -134,7 +134,7 @@ export const ListaProcurados: Procurado[] = [
     Subnome: "O Pai do Chris",
     DataDeNascimento: "1928-01-01",
     Imagem: "/Julius.jpg",
-    Status: statusValido("Desconhecido"),
+    Status: statusValido("Foragido"),
     NivelPerigo: 1,
   },
   {
@@ -154,8 +154,8 @@ export const ListaProcurados: Procurado[] = [
     Subnome: "O Aposentado",
     DataDeNascimento: "1965-01-01",
     Imagem: "/Michael.png",
-    Status: statusValido("Desconhecido"),
-    NivelPerigo: 4,
+    Status: statusValido("Foragido"),
+    NivelPerigo: 3,
   },
   {
     id: 15, 
@@ -164,7 +164,7 @@ export const ListaProcurados: Procurado[] = [
     Subnome: "V",
     DataDeNascimento: "2049-10-12",
     Imagem: "/V.png",
-    Status: statusValido("Foragido"),
+    Status: statusValido("Desconhecido"),
     NivelPerigo: 5,
   },
   {
@@ -175,6 +175,6 @@ export const ListaProcurados: Procurado[] = [
     DataDeNascimento: "1958-09-07",
     Imagem: "/WalterWhite.png",
     Status: statusValido("Morto"),
-    NivelPerigo: 5,
+    NivelPerigo: 4,
   },
 ];

@@ -36,13 +36,21 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             default:
                 situacao = <span className='desconhecido'>{status}</span>;
         }
+    let desconhecidoData: string = "";
+    let desconhecidoIdade: string = "";
     if (dataNascimento === "Desconhecido") {
         dataFormatada = "Desconhecido";
+        desconhecidoData = "desconhecido";
     } else {
         dataValida(dataNascimento) ? dataFormatada = new Date(dataNascimento).toLocaleDateString('pt-BR') : (dataFormatada = " (data inválida)");
     }
     if (typeof idade === 'number') {
-        validacaoData(idade) ? idade = idade : idade = "Desconhecida";
+        if(validacaoData(idade)){
+            idade = idade 
+        }else{
+                idade = "Desconhecida";
+                desconhecidoIdade = "desconhecido";
+            }
     }
     return(
         <div className="personagem">
@@ -51,8 +59,8 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             <div className="imagem"><img src={imagem} alt={nome} /></div>
             <div className="nivel-perigo"><p>Nível de Perigo: </p> <div className='estrela'><Stars classificacao={nivelPerigo} /></div></div>
             <div className="status"><p>Status: {situacao}</p></div>
-            <div className="idade"><p>Idade: {idade}</p></div>
-            <div className="data-nascimento"><p>Data de Nascimento: {dataFormatada}</p></div>
+            <div className="idade"><p>Idade: <span className={desconhecidoIdade}>{idade}</span></p></div>
+            <div className="data-nascimento"><p>Data de Nascimento: <span className={desconhecidoData}>{dataFormatada}</span></p></div>
         </div>
     );
 }
