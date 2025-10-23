@@ -5,25 +5,33 @@ import { ListaProcurados } from "./ListaProcurados";
 
 function App() {
   return (
-    <>
-      <div className="App">
-        <h1>Procurados</h1>
-        <InterfaceExibicao>
-          {ListaProcurados.map((personagem) => (
-            <Personagem
-              key={personagem.id}
-              nome={personagem.Nome}
-              subnome={personagem.Subnome}
-              imagem={personagem.Imagem}
-              nivelPerigo={personagem.NivelPerigo}
-              status={personagem.Status}
-              idade={personagem.Idade}
-              dataNascimento={personagem.DataDeNascimento}
-            />
-          ))}
-        </InterfaceExibicao>
-      </div>
-    </>
+    <div className="App">
+      <header className="cabecalho-departamento">
+        <img
+          src="/departamentoPolicia.png"
+          alt="Logo do Departamento"
+          className="logo-departamento"
+        />
+        <h2 className="nome-departamento">
+          Departamento  de Policia Nexus City
+        </h2>
+      </header>
+      <h1 className="titulo-principal">Procurados</h1>
+      <InterfaceExibicao>
+        {ListaProcurados.map((personagem) => (
+          <Personagem
+            key={personagem.id}
+            nome={personagem.Nome}
+            subnome={personagem.Subnome}
+            imagem={personagem.Imagem}
+            nivelPerigo={personagem.NivelPerigo}
+            status={personagem.Status}
+            idade={personagem.Idade}
+            dataNascimento={personagem.DataDeNascimento}
+          />
+        ))}
+      </InterfaceExibicao>
+    </div>
   );
 }
 

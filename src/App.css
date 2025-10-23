@@ -40,3 +40,42 @@
 .read-the-docs {
   color: #888;
 }
+
+.cabecalho-departamento {
+  width: 100%;
+  color: white;
+  padding: 20px 40px;
+  border-bottom: 4px solid gold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+}
+
+
+.logo-departamento {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px gold);
+}
+
+
+.nome-departamento {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 6px gold;
+  margin: 0;
+}
+
+.titulo-principal {
+  text-align: center;
+  color: white;
+  margin-top: 35px;
+  font-size: 2.4rem;
+  font-weight: 800;
+  text-shadow: 0 0 6px gold;
+}
