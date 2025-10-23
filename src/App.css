@@ -59,7 +59,7 @@
   object-fit: contain;
   filter: drop-shadow(0 0 5px #D9BE6C);
   margin-right: 50px;
-  margin-left: 150px;
+  margin-left: 100px;
 }
 
 
@@ -70,13 +70,14 @@
   letter-spacing: 2px;
   text-shadow: 0 0 6px #D9BE6C;
   margin: 0;
+  margin-right: 50px;
 }
 
 .titulo-principal {
   text-align: center;
   color: white;
-  margin-top: 35px;
-  font-size: 2.4rem;
+  margin-top: 55px;
+  font-size: 2.5rem;
   font-weight: 800;
   text-shadow: 0 0 6px #D9BE6C;
 }

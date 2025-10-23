@@ -16,7 +16,7 @@ function App() {
           Departamento  de Policia Nexus City
         </h2>
       </header>
-      <h1 className="titulo-principal">Procurados</h1>
+      <h1 className="titulo-principal">PROCURADOS</h1>
       <InterfaceExibicao>
         {ListaProcurados.map((personagem) => (
           <Personagem

@@ -39,6 +39,7 @@
 
 .personagem .imagem img {
     max-width: 40%;
+    max-height: 85%;
 }
 
 .personagem .nivel-perigo {
