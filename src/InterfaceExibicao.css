@@ -1,5 +1,4 @@
 .exibicao {
-    color: green;
     display: grid;
     grid-template-areas:
         "personagem personagem";

@@ -15,8 +15,12 @@ function dataValida(data: string): boolean {
     return true;
 }
 
+function validacaoData(data:number): boolean {
+    return data >= 0;
+}
+
 export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento}: 
-    {nome: string, subnome: string, imagem: string, nivelPerigo: Classificacao, status: Status, idade: number, dataNascimento: string}) {
+    {nome: string, subnome: string, imagem: string, nivelPerigo: Classificacao, status: Status, idade: number | string, dataNascimento: string}) {
         let situacao;
         let dataFormatada: Date | string;
         switch(status) {
@@ -37,7 +41,9 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
     } else {
         dataValida(dataNascimento) ? dataFormatada = new Date(dataNascimento).toLocaleDateString('pt-BR') : (dataFormatada = " (data inválida)");
     }
-    
+    if (typeof idade === 'number') {
+        validacaoData(idade) ? idade = idade : idade = "Desconhecida";
+    }
     return(
         <div className="personagem">
             <div className="nome"><h2>{nome}</h2></div>
