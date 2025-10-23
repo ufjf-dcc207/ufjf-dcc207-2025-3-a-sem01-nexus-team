@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="cabecalho-departamento">
         <img
-          src="/departamentoPolicia.png"
+          src="public/DPNClogo.png"
           alt="Logo do Departamento"
           className="logo-departamento"
         />

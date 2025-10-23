@@ -12,10 +12,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #283040);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #283040);
 }
 
 @keyframes logo-spin {
@@ -45,12 +45,12 @@
   width: 100%;
   color: white;
   padding: 20px 40px;
-  border-bottom: 4px solid gold;
+  border-bottom: 4px solid #D9BE6C;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 25px;
-  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 4px 10px #D9BE6C;
 }
 
 
@@ -58,7 +58,7 @@
   width: 200px;
   height: 200px;
   object-fit: contain;
-  filter: drop-shadow(0 0 5px gold);
+  filter: drop-shadow(0 0 5px #D9BE6C);
 }
 
 
@@ -67,7 +67,7 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 0 0 6px gold;
+  text-shadow: 0 0 6px #D9BE6C;
   margin: 0;
 }
 
@@ -77,5 +77,5 @@
   margin-top: 35px;
   font-size: 2.4rem;
   font-weight: 800;
-  text-shadow: 0 0 6px gold;
+  text-shadow: 0 0 6px #D9BE6C;
 }
