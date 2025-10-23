@@ -5,7 +5,8 @@ import './Personagem.css';
 
 function dataValida(data: string): boolean {
     const estruturaData = /^\d{4}-\d{2}-\d{2}$/;
-    if (!estruturaData.test(data)) return false;
+    const estruturaCirca = /^c\.?\s?\d{4}$/i;
+    if (!estruturaData.test(data) && !estruturaCirca.test(data)) return false;
     const partes = data.split('-');
     const ano = parseInt(partes[0]);
     const mes = parseInt(partes[1]);
@@ -31,7 +32,12 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             default:
                 situacao = <span className='desconhecido'>{status}</span>;
         }
-    dataValida(dataNascimento) ? dataFormatada = new Date(dataNascimento).toLocaleDateString('pt-BR') : (dataFormatada = " (data inválida)");
+    if (dataNascimento === "Desconhecido") {
+        dataFormatada = "Desconhecido";
+    } else {
+        dataValida(dataNascimento) ? dataFormatada = new Date(dataNascimento).toLocaleDateString('pt-BR') : (dataFormatada = " (data inválida)");
+    }
+    
     return(
         <div className="personagem">
             <div className="nome"><h2>{nome}</h2></div>

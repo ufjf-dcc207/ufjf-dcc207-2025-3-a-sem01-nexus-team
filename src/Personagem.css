@@ -1,7 +1,7 @@
 .personagem {
-    border: 1px solid blue;
-    border-radius: 1em;
-    padding: 1em;
+    border: 0.5px solid blue;
+    border-radius: 0.5em;
+    padding: 0.5em;
     box-shadow: 0.1em 0.1em 0.5em;
     display: grid;
     grid-template-areas:
@@ -35,7 +35,7 @@
 }
 
 .personagem .imagem img {
-    max-width: 50%;
+    max-width: 45%;
 }
 
 .personagem .nivel-perigo {
