@@ -3,30 +3,44 @@ export type Status = "Foragido" | "Morto" | "Capturado" | "Desconhecido";
 import Stars from './Stars';
 import './Personagem.css';
 
-export default function Personagem({nome, imagem, nivelPerigo, status, idade, dataNascimento}: 
-    {nome: string, imagem: string, nivelPerigo: Classificacao, status: Status, idade: number, dataNascimento: string}) {
+function dataValida(data: string): boolean {
+    const estruturaData = /^\d{4}-\d{2}-\d{2}$/;
+    if (!estruturaData.test(data)) return false;
+    const partes = data.split('-');
+    const ano = parseInt(partes[0]);
+    const mes = parseInt(partes[1]);
+    const dia = parseInt(partes[2]);
+    if (ano < 0 || mes < 1 || mes > 12 || dia < 1 || dia > 31) return false;
+    return true;
+}
+
+export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento}: 
+    {nome: string, subnome: string, imagem: string, nivelPerigo: Classificacao, status: Status, idade: number, dataNascimento: string}) {
         let situacao;
+        let dataFormatada: Date | string;
         switch(status) {
             case "Foragido":
-                situacao = <div className="status"><p>Status: <span className='foragido'>{status}</span></p></div>;
+                situacao = <span className='foragido'>{status}</span>;
                 break;
             case "Morto":
-                situacao = <div className="status"><p>Status: <span className='morto'>{status}</span></p></div>;
+                situacao = <span className='morto'>{status}</span>;
                 break;
             case "Capturado":
-                situacao = <div className="status"><p>Status: <span className='capturado'>{status}</span></p></div>;
+                situacao = <span className='capturado'>{status}</span>;
                 break;
             default:
-                situacao = <div className="status"><p>Status: <span className='desconhecido'>{status}</span></p></div>;
+                situacao = <span className='desconhecido'>{status}</span>;
         }
+    dataValida(dataNascimento) ? dataFormatada = new Date(dataNascimento).toLocaleDateString('pt-BR') : (dataFormatada = " (data inválida)");
     return(
         <div className="personagem">
             <div className="nome"><h2>{nome}</h2></div>
+            <div className='subnome'><h3>{subnome}</h3></div>
             <div className="imagem"><img src={imagem} alt={nome} /></div>
             <div className="nivel-perigo"><p>Nível de Perigo: </p> <div className='estrela'><Stars classificacao={nivelPerigo} /></div></div>
-            {situacao}
+            <div className="status"><p>Status: {situacao}</p></div>
             <div className="idade"><p>Idade: {idade}</p></div>
-            <div className="data-nascimento"><p>Data de Nascimento: {dataNascimento}</p></div>
+            <div className="data-nascimento"><p>Data de Nascimento: {dataFormatada}</p></div>
         </div>
     );
 }

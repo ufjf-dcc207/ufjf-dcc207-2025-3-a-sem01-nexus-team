@@ -13,6 +13,7 @@ function App() {
             <Personagem
               key={personagem.id}
               nome={personagem.Nome}
+              subnome={personagem.Subnome}
               imagem={personagem.Imagem}
               nivelPerigo={personagem.NivelPerigo}
               status={personagem.Status}

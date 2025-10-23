@@ -6,6 +6,7 @@
     display: grid;
     grid-template-areas:
         "nome nome"
+        'subnome subnome'
         "imagem imagem" 
         "idade data-nascimento"
         "nivel-perigo status";
@@ -15,9 +16,18 @@
     grid-area: nome;
     text-align: center;
     font-size: 1.3em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0em;
     
 }
+
+.personagem .subnome {
+    grid-area: subnome;
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+    font-style: italic;
+}
+
 .personagem .imagem {
     grid-area: imagem;
     text-align: center;

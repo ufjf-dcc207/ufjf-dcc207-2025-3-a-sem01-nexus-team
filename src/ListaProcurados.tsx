@@ -8,6 +8,7 @@ const statusValido = (status: string): Status =>
 type Procurado = {
     id: number;
     Nome: string;
+    Subnome: string;
     Idade: number;
     DataDeNascimento: string;
     Imagem: string;
@@ -20,6 +21,7 @@ export const ListaProcurados: Procurado[] = [
     id: 1,
     Nome: "Joel Miller",
     Idade: 56,
+    Subnome: "O Sobrevivente",
     DataDeNascimento: "1981-09-26",
     Imagem: "public/joelPB.png",
     Status: statusValido("Capturado"),
@@ -29,6 +31,7 @@ export const ListaProcurados: Procurado[] = [
     id: 2,
     Nome: "Ellie Williams",
     Idade: 14,
+    Subnome: "A Imunizada",
     DataDeNascimento: "2009-02-21",
     Imagem: "public/joelPB.png",
     Status: statusValido("transou"),
