@@ -103,7 +103,7 @@ export const ListaProcurados: Procurado[] = [
     Idade: 52, 
     Subnome: "O Sobrevivente", 
     DataDeNascimento: "1981-09-26",
-    Imagem: "/JoelMiller.png",
+    Imagem: "/Joel.png",
     Status: statusValido("Morto"),
     NivelPerigo: 5,
   },
