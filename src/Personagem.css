@@ -1,15 +1,7 @@
-.card{
-    border: 0.5px solid #D9BE6C;
-    border-radius: 0.5em;
-    padding: 1em;
-    box-shadow: 0.1em 0.1em 0.5em;
-    display: grid;
-}
-
 .personagem {
     border: 0.5px solid #D9BE6C;
     border-radius: 0.5em;
-    padding: 1em;
+    padding: 0.8em;
     box-shadow: 0.1em 0.1em 0.5em;
     display: grid;
     grid-template-areas:
@@ -26,21 +18,16 @@
     color: white;
     text-align: center;
     font-size: 1.3em;
-    margin: 0em;
-}
-
-.personagem .stars {
-    grid-area: stars;
-    color: white;
+    margin-bottom: 0; 
 }
 
 .personagem .subnome {
     grid-area: subnome;
     color: white;
     text-align: center;
-    font-size: 1em;
-    margin-bottom: 0.1em;
+    font-size: 1.1em;
     font-style: italic;
+    margin-top: 0; 
 }
 
 .personagem .imagem {
@@ -77,6 +64,11 @@
 .personagem .data-nascimento {
     color: white;
     grid-area: data-nascimento;
+}
+
+.personagem .stars {
+    grid-area: stars;
+    color: white;
 }
 
 .personagem .recompensa {
