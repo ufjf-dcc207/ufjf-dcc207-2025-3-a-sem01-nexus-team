@@ -18,6 +18,12 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
         let desconhecidoIdade: string = "";
         let situacao;
         let dataFormatada: Date | string;
+
+        
+        const statusValido = (status: string): Status =>
+            ["Foragido", "Morto", "Capturado", "Desconhecido"].includes(status as Status)? (status as Status): "Desconhecido";
+        status = statusValido(status);
+        
         switch(status) {
             case "Foragido":
                 situacao = <span className='foragido'>{status}</span>;
@@ -31,6 +37,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             default:
                 situacao = <span className='desconhecido'>{status}</span>;
         }
+   
     if (dataNascimento === "Desconhecido") {
         dataFormatada = "Desconhecido";
         desconhecidoData = "desconhecido";
