@@ -16,3 +16,9 @@ A tela principal mostraria a lista de procurados e talvez permitiria uma filtrag
 Acreditamos que esse tema se encaixa bem no escopo de desenhar interfaces e renderizar componentes com dados estáticos.
 
 A home será dividida inicialmente pensado com o grid em uma matriz de escala 10x2 totalizando 20 personagens iniciais.
+
+## Página atual
+
+Aqui apresentamos o resultado final da nossa interface de procurados fictícios, com uma lista de procurados fictícios adaptados aos personagens de filmes, jogos de videogame, etc.
+
+[Página](https://ufjf-dcc207.github.io/ufjf-dcc207-2025-3-a-sem01-nexus-team/)
