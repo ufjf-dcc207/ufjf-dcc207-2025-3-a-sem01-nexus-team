@@ -61,7 +61,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             <div className='estrela'><p>{'⭐'.repeat(nivelPerigo) + '☆'.repeat(5 - nivelPerigo)}</p></div>
             <div className="status"><p>Status: {situacao}</p></div>
             <div className="idade"><p>Idade: <span className={desconhecidoIdade}>{idade}</span></p></div>
-            <div className="data-nascimento"><p>Data de Nascimento: <span className={desconhecidoData}>{dataFormatada}</span></p></div>
+            <div className="data-nascimento"><p>Nascimento: <span className={desconhecidoData}>{dataFormatada}</span></p></div>
             <div className="recompensa"><p>Recompensa: {status === "Foragido" || status === "Desconhecido" ? `R$${recompensa.toFixed(2).replace('.', ',')}` : "Indisponível"}</p></div>
         </div>
     );

@@ -5,12 +5,8 @@
   text-align: center;
 }
 
-div.imagem {
-  margin: 0;
-}
-
 p {
-  margin: 0;
+  margin: 1ch;
   padding: auto;
 }
 
@@ -25,21 +21,6 @@ p {
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #283040);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
 }
 
 .card {
