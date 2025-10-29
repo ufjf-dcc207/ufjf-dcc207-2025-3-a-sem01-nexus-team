@@ -15,6 +15,4 @@ Para evitar problemas, não usaremos dados reais. A lista será composta por per
 A tela principal mostraria a lista de procurados e talvez permitiria uma filtragem visual simples (por exemplo, botões para ver "Status: Foragido" ou "Status: Capturado"), mas tudo baseado nos dados estáticos.
 Acreditamos que esse tema se encaixa bem no escopo de desenhar interfaces e renderizar componentes com dados estáticos.
 
-A home será dividida inicialmente pensado com o grid em uma matriz de escala 5x3 totalizando 15 personagens iniciais.
-Segue em anexo dados dos procurados que serão implementados:
-[Baixar planilha de dados](./Dados%20Estruturados%20iniciais.xlsx)
+A home será dividida inicialmente pensado com o grid em uma matriz de escala 10x2 totalizando 20 personagens iniciais.
