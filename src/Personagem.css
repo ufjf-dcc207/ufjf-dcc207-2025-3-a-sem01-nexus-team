@@ -9,7 +9,8 @@
         'subnome subnome'
         "imagem imagem" 
         "idade data-nascimento"
-        "nivel-perigo status";
+        "nivel-perigo status"
+        "recompensa recompensa";
 }
 
 .personagem .nome {
@@ -58,6 +59,11 @@
 .personagem .data-nascimento {
     color: white;
     grid-area: data-nascimento;
+}
+
+.personagem .recompensa {
+    color: white;
+    grid-area: recompensa;
 }
 
 .foragido {

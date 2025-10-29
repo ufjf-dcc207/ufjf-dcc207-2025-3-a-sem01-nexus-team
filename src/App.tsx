@@ -50,6 +50,7 @@ function App() {
             status={personagem.Status}
             idade={personagem.Idade}
             dataNascimento={personagem.DataDeNascimento}
+            recompensa={personagem.Recompensa}
           />
         ))}
       </InterfaceExibicao>
