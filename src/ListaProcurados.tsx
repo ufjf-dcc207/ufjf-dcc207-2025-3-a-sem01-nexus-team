@@ -1,6 +1,6 @@
 import type{ Classificacao, Status } from "./Personagem";
 import procurados from "./dados/procurados.json";
-type Procurado = {
+export type Procurado = {
     id: number;
     Nome: string;
     Subnome: string;
