@@ -24,6 +24,7 @@ function App() {
   const nome = "";
   const status = "";
   const estrela = 0;
+
   const ListaProcuradosFiltrado = filtrarPersonagem(ListaProcurados, nome, status, estrela);
 
   return (
