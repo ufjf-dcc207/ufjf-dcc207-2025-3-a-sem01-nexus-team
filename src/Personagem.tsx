@@ -42,7 +42,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
         dataFormatada = "Desconhecido";
         desconhecidoData = "desconhecido";
     } else {
-        dataValida(dataNascimento) ? dataFormatada = new Date(dataNascimento).toLocaleDateString('pt-BR') : (dataFormatada = " (data inválida)");
+        dataValida(dataNascimento) ? dataFormatada = new Date(dataNascimento + "T00:00:00").toLocaleDateString('pt-BR') : (dataFormatada = " (data inválida)");
     }
     if (typeof idade === 'number') {
         if(validacaoData(idade)){
