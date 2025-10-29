@@ -5,6 +5,15 @@
   text-align: center;
 }
 
+div.imagem {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: auto;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
