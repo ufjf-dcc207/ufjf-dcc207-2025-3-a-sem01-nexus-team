@@ -57,7 +57,8 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             <div className="nome"><h2>{nome}</h2></div>
             <div className='subnome'><h3>{subnome}</h3></div>
             <div className="imagem"><img src={imagem} alt={nome} /></div>
-            <div className="nivel-perigo"><p>Nível de Perigo: </p> <div className='estrela'><span>{'⭐'.repeat(nivelPerigo) + '☆'.repeat(5 - nivelPerigo)}</span></div></div>
+            <div className="nivel-perigo"><p>Nível de Perigo: </p></div>
+            <div className='estrela'><span>{'⭐'.repeat(nivelPerigo) + '☆'.repeat(5 - nivelPerigo)}</span></div>
             <div className="status"><p>Status: {situacao}</p></div>
             <div className="idade"><p>Idade: <span className={desconhecidoIdade}>{idade}</span></p></div>
             <div className="data-nascimento"><p>Data de Nascimento: <span className={desconhecidoData}>{dataFormatada}</span></p></div>

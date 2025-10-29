@@ -10,7 +10,7 @@
         "imagem imagem" 
         "idade data-nascimento"
         "nivel-perigo status"
-        ". recompensa";
+        "stars recompensa";
 }
 
 .personagem .nome {
@@ -20,6 +20,17 @@
     font-size: 1.3em;
     margin-bottom: 0em;
     
+}
+
+.personagem .recompensa {
+    color: gold;
+    grid-area: recompensa;
+    text-align: uppercase;
+}
+
+.personagem .stars {
+    grid-area: stars;
+    color: white;
 }
 
 .personagem .subnome {
@@ -59,11 +70,6 @@
 .personagem .data-nascimento {
     color: white;
     grid-area: data-nascimento;
-}
-
-.personagem .recompensa {
-    color: white;
-    grid-area: recompensa;
 }
 
 .foragido {
