@@ -9,6 +9,7 @@ export type Procurado = {
     Imagem: string;
     Status: Status;
     NivelPerigo: Classificacao;
+    Recompensa: number;
 };
 
 export const ListaProcurados = procurados as Procurado[];

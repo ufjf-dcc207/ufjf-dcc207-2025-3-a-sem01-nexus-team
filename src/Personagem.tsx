@@ -12,8 +12,8 @@ function validacaoData(data:number): boolean {
     return data >= 0;
 }
 
-export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento}: 
-    {nome: string, subnome: string, imagem: string, nivelPerigo: Classificacao, status: Status, idade: number | string, dataNascimento: string}) {
+export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa}: 
+    {nome: string, subnome: string, imagem: string, nivelPerigo: Classificacao, status: Status, idade: number | string, dataNascimento: string, recompensa: number}) {
         let desconhecidoData: string = "";
         let desconhecidoIdade: string = "";
         let situacao;
@@ -61,7 +61,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             <div className="status"><p>Status: {situacao}</p></div>
             <div className="idade"><p>Idade: <span className={desconhecidoIdade}>{idade}</span></p></div>
             <div className="data-nascimento"><p>Data de Nascimento: <span className={desconhecidoData}>{dataFormatada}</span></p></div>
-            <div className="recompensa"><p>Recompensa: R${recompensa}</p></div>
+            <div className="recompensa"><p>Recompensa: R${recompensa.toFixed(2).replace('.', ',')}</p></div>
         </div>
     );
 }

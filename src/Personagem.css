@@ -10,7 +10,7 @@
         "imagem imagem" 
         "idade data-nascimento"
         "nivel-perigo status"
-        "recompensa recompensa";
+        ". recompensa";
 }
 
 .personagem .nome {
