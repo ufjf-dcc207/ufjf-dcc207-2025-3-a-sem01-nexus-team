@@ -1,18 +1,11 @@
 export type Classificacao = 1|2|3|4|5;
 export type Status = "Foragido" | "Morto" | "Capturado" | "Desconhecido";
-import Stars from './Stars';
+
 import './Personagem.css';
 
 function dataValida(data: string): boolean {
-    const estruturaData = /^\d{4}-\d{2}-\d{2}$/;
-    const estruturaCirca = /^c\.?\s?\d{4}$/i;
-    if (!estruturaData.test(data) && !estruturaCirca.test(data)) return false;
-    const partes = data.split('-');
-    const ano = parseInt(partes[0]);
-    const mes = parseInt(partes[1]);
-    const dia = parseInt(partes[2]);
-    if (ano < 0 || mes < 1 || mes > 12 || dia < 1 || dia > 31) return false;
-    return true;
+    const date = new Date(data);
+    return !isNaN(date.getTime());
 }
 
 function validacaoData(data:number): boolean {
@@ -21,6 +14,8 @@ function validacaoData(data:number): boolean {
 
 export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento}: 
     {nome: string, subnome: string, imagem: string, nivelPerigo: Classificacao, status: Status, idade: number | string, dataNascimento: string}) {
+        let desconhecidoData: string = "";
+        let desconhecidoIdade: string = "";
         let situacao;
         let dataFormatada: Date | string;
         switch(status) {
@@ -36,8 +31,6 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             default:
                 situacao = <span className='desconhecido'>{status}</span>;
         }
-    let desconhecidoData: string = "";
-    let desconhecidoIdade: string = "";
     if (dataNascimento === "Desconhecido") {
         dataFormatada = "Desconhecido";
         desconhecidoData = "desconhecido";
@@ -46,7 +39,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
     }
     if (typeof idade === 'number') {
         if(validacaoData(idade)){
-            idade = idade 
+            idade = idade; 
         }else{
                 idade = "Desconhecida";
                 desconhecidoIdade = "desconhecido";
@@ -57,7 +50,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             <div className="nome"><h2>{nome}</h2></div>
             <div className='subnome'><h3>{subnome}</h3></div>
             <div className="imagem"><img src={imagem} alt={nome} /></div>
-            <div className="nivel-perigo"><p>Nível de Perigo: </p> <div className='estrela'><Stars classificacao={nivelPerigo} /></div></div>
+            <div className="nivel-perigo"><p>Nível de Perigo: </p> <div className='estrela'><span>{'⭐'.repeat(nivelPerigo) + '☆'.repeat(5 - nivelPerigo)}</span></div></div>
             <div className="status"><p>Status: {situacao}</p></div>
             <div className="idade"><p>Idade: <span className={desconhecidoIdade}>{idade}</span></p></div>
             <div className="data-nascimento"><p>Data de Nascimento: <span className={desconhecidoData}>{dataFormatada}</span></p></div>
