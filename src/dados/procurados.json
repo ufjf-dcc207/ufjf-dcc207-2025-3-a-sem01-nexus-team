@@ -23,17 +23,6 @@
   },
   {
     "id": 3, 
-    "Nome": "Arlequina (Harleen Quinzel)",
-    "Idade": 35,
-    "Subnome": "Arlequina", 
-    "DataDeNascimento": "1990-07-20",
-    "Imagem": "Alerquina.jpg", 
-    "Status": "Capturado", 
-    "NivelPerigo": 2,
-    "Recompensa": 250000 
-  },
-  {
-    "id": 4, 
     "Nome": "Carl Johnson",
     "Idade": 24,
     "Subnome": "CJ", 
@@ -44,9 +33,9 @@
     "Recompensa": 1100000 
   },
   {
-    "id": 5, 
+    "id": 4, 
     "Nome": "Coringa",
-    "Idade": -1, 
+    "Idade": 37, 
     "Subnome": "O Palhaço do Crime", 
     "DataDeNascimento": "Desconhecido", 
     "Imagem": "Coringa.jpg", 
@@ -55,7 +44,7 @@
     "Recompensa": 1500000 
   },
   {
-    "id": 6, 
+    "id": 5, 
     "Nome": "Deadpool",
     "Idade": -1, 
     "Subnome": "O Mercenário Tagarela", 
@@ -66,7 +55,7 @@
     "Recompensa": 400000 
   },
   {
-    "id": 7, 
+    "id": 6, 
     "Nome": "Dominic Toretto",
     "Idade": 49,
     "Subnome": "Dom", 
@@ -77,7 +66,7 @@
     "Recompensa": 200000 
   },
   {
-    "id": 8, 
+    "id": 7, 
     "Nome": "Dutch Van Der Linde",
     "Idade": 44,
     "Subnome": "O Plano", 
@@ -88,29 +77,29 @@
     "Recompensa": 500000 
   },
   {
-    "id": 9, 
+    "id": 8, 
     "Nome": "Ellie Williams",
     "Idade": 19,
     "Subnome": "A Imunizada", 
     "DataDeNascimento": "2019-04-28",
     "Imagem": "Ellie.jpg", 
-    "Status": "Desconhecido", 
+    "Status": "Foragido", 
     "NivelPerigo": 4,
     "Recompensa": 750000 
   },
   {
-    "id": 10, 
+    "id": 9, 
     "Nome": "Geralt de Rivia",
     "Idade": 100,
     "Subnome": "O Bruxo", 
     "DataDeNascimento": "Desconhecido", 
     "Imagem": "Geraldao.jpg", 
-    "Status": "Desconhecido", 
+    "Status": "Foragido", 
     "NivelPerigo": 5,
     "Recompensa": 1000000 
   },
   {
-    "id": 11, 
+    "id": 10, 
     "Nome": "Harleen Quinzel",
     "Idade": 35,
     "Subnome": "Arlequina", 
@@ -121,18 +110,18 @@
     "Recompensa": 250000 
   },
   {
-    "id": 12, 
+    "id": 11, 
     "Nome": "Jill Valentine", 
     "Idade": 23, 
     "Subnome": "Mestra do Destrancamento",
-    "DataDeNascimento": "1974-00-00", 
+    "DataDeNascimento": "1974-02-20", 
     "Imagem": "JillValentine.png",
     "Status": "Foragido", 
     "NivelPerigo": 3,
     "Recompensa": 300000 
   },
   {
-    "id": 13, 
+    "id": 12, 
     "Nome": "Joel Miller",
     "Idade": 52,
     "Subnome": "O Sobrevivente", 
@@ -143,29 +132,29 @@
     "Recompensa": 1300000 
   },
   {
-    "id": 14, 
+    "id": 13, 
     "Nome": "John Wick",
     "Idade": 61,
     "Subnome": "Baba Yaga", 
     "DataDeNascimento": "1964-09-02",
     "Imagem": "JohnWick.jpg",
-    "Status": "Desconhecido", 
+    "Status": "Morto",
     "NivelPerigo": 5,
     "Recompensa": 1400000 
   },
   {
-    "id": 15, 
+    "id": 14, 
     "Nome": "John Marston",
     "Idade": 38, 
     "Subnome": "O Ex-Fora-da-Lei",
-    "DataDeNascimento": "1873-00-00", 
+    "DataDeNascimento": "1873-09-29", 
     "Imagem": "JohnMarston.png",
     "Status": "Morto", 
     "NivelPerigo": 4,
     "Recompensa": 850000 
   },
   {
-    "id": 16, 
+    "id": 15, 
     "Nome": "Julius",
     "Idade": 54,
     "Subnome": "O Pai do Chris", 
@@ -176,7 +165,7 @@
     "Recompensa": 0.39 
   },
   {
-    "id": 17, 
+    "id": 16, 
     "Nome": "Kratos",
     "Idade": 1000,
     "Subnome": "Fantasma de Esparta", 
@@ -187,7 +176,7 @@
     "Recompensa": 1500000 
   },
   {
-    "id": 18, 
+    "id": 17, 
     "Nome": "Michael De Santa",
     "Idade": 48,
     "Subnome": "O Aposentado", 
@@ -198,18 +187,18 @@
     "Recompensa": 450000 
   },
   {
-    "id": 19, 
+    "id": 18, 
     "Nome": "Norman Osborn",
     "Idade": 47, 
     "Subnome": "Duende Verde",
-    "DataDeNascimento": "1955-00-00", 
+    "DataDeNascimento": "1955-09-11", 
     "Imagem": "Duende.png",
     "Status": "Morto",
     "NivelPerigo": 4,
     "Recompensa": 700000 
   },
   {
-    "id": 20, 
+    "id": 19, 
     "Nome": "Valerie",
     "Idade": 28,
     "Subnome": "V", 
@@ -220,7 +209,7 @@
     "Recompensa": 1100000 
   },
   {
-    "id": 21, 
+    "id": 20, 
     "Nome": "Walter White",
     "Idade": 52,
     "Subnome": "Heisenberg", 
