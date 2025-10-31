@@ -3,6 +3,7 @@ import Personagem from "./Personagem";
 import InterfaceExibicao from "./InterfaceExibicao";
 import { ListaProcurados } from "./ListaProcurados";
 import  type { Procurado } from "./ListaProcurados";
+import { Cabecalho } from "./Cabecalho";
 
 function filtrarPersonagem(lista: Procurado[], filtroNome: string = "", filtroStatus:string = "", filtroEstrela: number = 0) {
   return lista.filter((personagem) => {
@@ -29,17 +30,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="cabecalho-departamento">
-        <img
-          src="DPNClogo.png"
-          alt="Logo do Departamento"
-          className="logo-departamento"
-        />
-        <h2 className="nome-departamento">
-          Departamento  de Policia Nexus City
-        </h2>
-      </header>
-      <h1 className="titulo-principal">PROCURADOS</h1>
+      <Cabecalho/>
       <InterfaceExibicao>
         {ListaProcuradosFiltrado.map((personagem) => (
           <Personagem
