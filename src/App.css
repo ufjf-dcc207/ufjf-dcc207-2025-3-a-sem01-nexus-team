@@ -23,10 +23,6 @@ p {
   filter: drop-shadow(0 0 2em #283040);
 }
 
-.card {
-  padding: 2em;
-}
-
 .cabecalho-departamento {
   width: 100%;
   color: white;
@@ -66,4 +62,9 @@ p {
   font-size: 2.5rem;
   font-weight: 800;
   text-shadow: 0 0 6px #D9BE6C;
+}
+
+.card{
+  padding: 8px;
+
 }

@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-
+import "./InterfaceExibicao.css"
 type InterfaceExibicaoProps = {
     children?: ReactNode;
 }
@@ -7,7 +7,7 @@ type InterfaceExibicaoProps = {
 export default function InterfaceExibicao({ children }: InterfaceExibicaoProps){
     return(
         <div className="exibicao">
-            <div className="personagem">{children}</div>
+            {children}
         </div>
     );
 }

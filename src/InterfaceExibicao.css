@@ -1,12 +1,9 @@
-.exibicao {
+.exibicao{
+    border: 0.5px solid #D9BE6C;
+    border-radius: 0.5em;
+    box-shadow: 0.1em 0.1em 0.5em;
     display: grid;
-    grid-template-areas:
-        "personagem personagem";
-    gap: 0.1em;
-
-    .personagem {
-        display: grid;
-        grid-area: personagem;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    }
+    grid-template-areas: 
+        "card card";
 }
+

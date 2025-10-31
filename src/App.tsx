@@ -33,17 +33,19 @@ function App() {
       <Cabecalho/>
       <InterfaceExibicao>
         {ListaProcuradosFiltrado.map((personagem) => (
-          <Personagem
-            key={personagem.id}
-            nome={personagem.Nome}
-            subnome={personagem.Subnome}
-            imagem={personagem.Imagem}
-            nivelPerigo={personagem.NivelPerigo}
-            status={personagem.Status}
-            idade={personagem.Idade}
-            dataNascimento={personagem.DataDeNascimento}
-            recompensa={personagem.Recompensa}
-          />
+          <div className="card">
+            <Personagem
+              key={personagem.id}
+              nome={personagem.Nome}
+              subnome={personagem.Subnome}
+              imagem={personagem.Imagem}
+              nivelPerigo={personagem.NivelPerigo}
+              status={personagem.Status}
+              idade={personagem.Idade}
+              dataNascimento={personagem.DataDeNascimento}
+              recompensa={personagem.Recompensa}
+            />
+          </div>
         ))}
       </InterfaceExibicao>
     </div>
