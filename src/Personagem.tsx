@@ -8,8 +8,28 @@ function dataValida(data: string): boolean {
     return !isNaN(date.getTime());
 }
 
-function validacaoData(data:number): boolean {
-    return data >= 0;
+function situacaoStatus(status: Status): string {
+    switch(status) {
+        case "Foragido":
+            return 'foragido';
+        case "Morto":
+            return 'morto';
+        case "Capturado":
+            return 'capturado';
+        default:
+            return 'desconhecido';
+    }
+}
+
+const statusValido = (status: string): Status =>
+            ["Foragido", "Morto", "Capturado", "Desconhecido"].includes(status as Status)? (status as Status): "Desconhecido";
+
+const idadeValida = (idade: number | string): number | string => {
+    if (typeof idade === 'number') {
+        return idade >= 0 ? idade : "Desconhecida";
+    } else {
+        return "Desconhecida";
+    }
 }
 
 export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa}: 
@@ -19,24 +39,8 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
         let situacao;
         let dataFormatada: Date | string;
 
-        
-        const statusValido = (status: string): Status =>
-            ["Foragido", "Morto", "Capturado", "Desconhecido"].includes(status as Status)? (status as Status): "Desconhecido";
         status = statusValido(status);
-        
-        switch(status) {
-            case "Foragido":
-                situacao = <span className='foragido'>{status}</span>;
-                break;
-            case "Morto":
-                situacao = <span className='morto'>{status}</span>;
-                break;
-            case "Capturado":
-                situacao = <span className='capturado'>{status}</span>;
-                break;
-            default:
-                situacao = <span className='desconhecido'>{status}</span>;
-        }
+        situacao = situacaoStatus(status);
    
     if (dataNascimento === "Desconhecido") {
         dataFormatada = "Desconhecido";
@@ -44,14 +48,14 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
     } else {
         dataValida(dataNascimento) ? dataFormatada = new Date(dataNascimento + "T00:00:00").toLocaleDateString('pt-BR') : (dataFormatada = " (data inválida)");
     }
-    if (typeof idade === 'number') {
-        if(validacaoData(idade)){
-            idade = idade; 
-        }else{
-                idade = "Desconhecida";
-                desconhecidoIdade = "desconhecido";
-            }
+    
+    idade = idadeValida(idade);
+    if (idade === "Desconhecida") {
+        desconhecidoIdade = "desconhecida";
     }
+    
+    const recompensaValida = status === "Foragido" || status === "Desconhecido" ? `R$${recompensa.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}` : "Indisponível";
+    
     return(
         <div className="personagem">
             <div className="nome"><h2>{nome}</h2></div>
@@ -59,11 +63,10 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             <div className="imagem"><img src={imagem} alt={nome} /></div>
             <div className="nivel-perigo"><p>Nível de Perigo: </p></div>
             <div className='estrela'><p>{'⭐'.repeat(nivelPerigo) + '☆'.repeat(5 - nivelPerigo)}</p></div>
-            <div className="status"><p>Status: {situacao}</p></div>
+            <div className="status"><p>Status: <span className={situacao}>{status}</span></p></div>
             <div className="idade"><p>Idade: <span className={desconhecidoIdade}>{idade}</span></p></div>
             <div className="data-nascimento"><p>Nascimento: <span className={desconhecidoData}>{dataFormatada}</span></p></div>
-            <div className="recompensa"><p>Recompensa: {status === "Foragido" || status === "Desconhecido" ? `R$${recompensa.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`
-        : "Indisponível"}</p></div>
+            <div className="recompensa"><p>Recompensa: {recompensaValida}</p></div>
         </div>
     );
 }
