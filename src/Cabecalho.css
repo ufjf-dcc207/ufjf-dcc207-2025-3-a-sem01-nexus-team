@@ -1,4 +1,3 @@
-
 .cabecalho-departamento {
   width: 100%;
   color: white;
@@ -10,7 +9,6 @@
   box-shadow: 0 4px 10px #D9BE6C;
 }
 
-
 .logo-departamento {
   width: 200px;
   height: 200px;
@@ -19,7 +17,6 @@
   margin-right: 50px;
   margin-left: 50px;
 }
-
 
 .nome-departamento {
   font-size: 2rem;
