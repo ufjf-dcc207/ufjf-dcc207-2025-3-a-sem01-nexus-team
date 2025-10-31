@@ -66,5 +66,8 @@ p {
 
 .card{
   padding: 8px;
-
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

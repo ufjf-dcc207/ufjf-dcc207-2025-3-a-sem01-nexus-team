@@ -33,7 +33,7 @@ function App() {
       <Cabecalho/>
       <InterfaceExibicao>
         {ListaProcuradosFiltrado.map((personagem) => (
-          <div className="card">
+          <div className="card" key ={personagem.id}>
             <Personagem
               key={personagem.id}
               nome={personagem.Nome}
