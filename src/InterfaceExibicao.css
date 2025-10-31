@@ -11,7 +11,7 @@
 
 .card {
   width: 450px;
-  height: 550px; 
+  height: auto; 
   display: flex;
   flex-direction: column;
 }
@@ -20,5 +20,4 @@
   width: 100%;
   height: 180px;
   object-fit: cover; 
-
 }
