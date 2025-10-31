@@ -1,4 +1,4 @@
-
+import "./Cabecalho.css"
 export function Cabecalho(){
     return(
         <>

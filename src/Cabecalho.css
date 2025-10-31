@@ -1,0 +1,41 @@
+
+.cabecalho-departamento {
+  width: 100%;
+  color: white;
+  padding: 20px 2px;
+  border-bottom: 4px solid #D9BE6C;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 4px 10px #D9BE6C;
+}
+
+
+.logo-departamento {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px #D9BE6C);
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+
+.nome-departamento {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 6px #D9BE6C;
+  margin: 0;
+  margin-right: 50px;
+}
+
+.titulo-principal {
+  text-align: center;
+  color: white;
+  margin-top: 55px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-shadow: 0 0 6px #D9BE6C;
+}
