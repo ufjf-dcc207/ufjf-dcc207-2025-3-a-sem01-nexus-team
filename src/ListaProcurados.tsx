@@ -1,4 +1,4 @@
-import type{ Classificacao, Status } from "./Personagem";
+import type{ Status } from "./Personagem";
 import procurados from "./dados/procurados.json";
 export type Procurado = {
     id: number;
@@ -8,7 +8,7 @@ export type Procurado = {
     DataDeNascimento: string;
     Imagem: string;
     Status: Status;
-    NivelPerigo: Classificacao;
+    NivelPerigo: number;
     Recompensa: number;
 };
 

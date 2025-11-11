@@ -14,5 +14,4 @@ export function Cabecalho(){
                 </header>
                 <h1 className="titulo-principal">PROCURADOS</h1>
             </>
-
 )}

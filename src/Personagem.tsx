@@ -1,4 +1,3 @@
-export type Classificacao = 1|2|3|4|5;
 export type Status = "Foragido" | "Morto" | "Capturado" | "Desconhecido";
 
 import './Personagem.css';
@@ -26,21 +25,40 @@ const statusValido = (status: string): Status =>
 
 const idadeValida = (idade: number | string): number | string => {
     if (typeof idade === 'number') {
-        return idade >= 0 ? idade : "Desconhecida";
-    } else {
+        if (idade === -1) {
+            return "Desconhecida";
+        }
+        if (idade > 0) {
+            return idade;
+        }
+        return "Idade inválida";
+    } 
+    else {
         return "Desconhecida";
     }
 }
 
-export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa}: 
-    {nome: string, subnome: string, imagem: string, nivelPerigo: Classificacao, status: Status, idade: number | string, dataNascimento: string, recompensa: number}) {
-        let desconhecidoData: string = "";
-        let desconhecidoIdade: string = "";
-        let situacao;
-        let dataFormatada: Date | string;
+const nivelPerigoValido = (nivelPerigo: number): number =>{
+    if (nivelPerigo < 1) {
+        return 1;
+    } else if (nivelPerigo > 5) {
+        return 5;
+    } else {
+        return nivelPerigo;
+    }
+}
 
-        status = statusValido(status);
-        situacao = situacaoStatus(status);
+export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa}: 
+    {nome: string, subnome: string, imagem: string, nivelPerigo: number, status: Status, idade: number | string, dataNascimento: string, recompensa: number}) {
+    let desconhecidoData: string = "";
+    let desconhecidoIdade: string = "";
+    let situacao;
+    let dataFormatada: Date | string;
+    let recompensaValida;
+
+    status = statusValido(status);
+    situacao = situacaoStatus(status);
+    nivelPerigo = nivelPerigoValido(nivelPerigo);
    
     if (dataNascimento === "Desconhecido") {
         dataFormatada = "Desconhecido";
@@ -54,7 +72,14 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
         desconhecidoIdade = "desconhecida";
     }
     
-    const recompensaValida = status === "Foragido" || status === "Desconhecido" ? `R$${recompensa.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}` : "Indisponível";
+    if (recompensa <= 0) {
+        recompensaValida = "Recompensa inválida";
+    } else if(status === "Desconhecido" || status === "Foragido") {
+        recompensaValida = `R$${recompensa.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    }
+    else {
+        recompensaValida = "Indisponível";
+    }
     
     return(
         <div className="personagem">
