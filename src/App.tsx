@@ -2,24 +2,8 @@ import "./App.css";
 import Personagem from "./Personagem";
 import InterfaceExibicao from "./InterfaceExibicao";
 import { ListaProcurados } from "./ListaProcurados";
-import  type { Procurado } from "./ListaProcurados";
 import { Cabecalho } from "./Cabecalho";
-
-function filtrarPersonagem(lista: Procurado[], filtroNome: string = "", filtroStatus:string = "", filtroEstrela: number = 0) {
-  return lista.filter((personagem) => {
-    const nomeValido =
-      !filtroNome || personagem.Nome.toLowerCase().includes(filtroNome.toLowerCase()) ||
-      personagem.Subnome.toLowerCase().includes(filtroNome.toLowerCase());
-
-    const statusValido =
-      !filtroStatus || personagem.Status.toLowerCase() === filtroStatus.toLowerCase();
-
-    const estrelaValido =
-      !filtroEstrela || personagem.NivelPerigo === filtroEstrela;
-
-    return nomeValido && statusValido && estrelaValido;
-  })
-}
+import { filtrarPersonagem } from "./utilitarios/utils";
 
 function App() {
   const nome = "";
