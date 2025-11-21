@@ -4,7 +4,7 @@ export function Cabecalho(){
         <>
             <header className="cabecalho-departamento">
                     <img
-                    src="DPNClogo.png"
+                    src="Logos/DPNClogo.png"
                     alt="Logo do Departamento"
                     className="logo-departamento"
                     />

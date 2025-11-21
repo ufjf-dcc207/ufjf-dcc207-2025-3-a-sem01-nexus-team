@@ -5,7 +5,7 @@
     "Idade": 40,
     "Subnome": "O Vigilante", 
     "DataDeNascimento": "1974-05-02",
-    "Imagem": "AidenPearce.png",
+    "Imagem": "Procurados/AidenPearce.png",
     "Status": "Desconhecido", 
     "NivelPerigo": 4,
     "Recompensa": 800000 
@@ -16,7 +16,7 @@
     "Idade": 49, 
     "Subnome": "É o Werker?!", 
     "DataDeNascimento": "1960-01-01", 
-    "Imagem": "Krauser.png", 
+    "Imagem": "Procurados/Krauser.png", 
     "Status": "Morto", 
     "NivelPerigo": 5,
     "Recompensa": 1400000 
@@ -27,7 +27,7 @@
     "Idade": 24,
     "Subnome": "CJ", 
     "DataDeNascimento": "Desconhecido", 
-    "Imagem": "CJ.png", 
+    "Imagem": "Procurados/CJ.png", 
     "Status": "Desconhecido", 
     "NivelPerigo": 5, 
     "Recompensa": 1100000 
@@ -38,7 +38,7 @@
     "Idade": 37, 
     "Subnome": "O Palhaço do Crime", 
     "DataDeNascimento": "Desconhecido", 
-    "Imagem": "Coringa.jpg", 
+    "Imagem": "Procurados/Coringa.jpg", 
     "Status": "Capturado", 
     "NivelPerigo": 5,
     "Recompensa": 1500000 
@@ -49,7 +49,7 @@
     "Idade": -1, 
     "Subnome": "O Mercenário Tagarela", 
     "DataDeNascimento": "Desconhecido", 
-    "Imagem": "Deadpool.jpg", 
+    "Imagem": "Procurados/Deadpool.jpg", 
     "Status": "Foragido", 
     "NivelPerigo": 3,
     "Recompensa": 400000 
@@ -60,7 +60,7 @@
     "Idade": 49,
     "Subnome": "Dom", 
     "DataDeNascimento": "1976-08-29",
-    "Imagem": "Toretto.png", 
+    "Imagem": "Procurados/Toretto.png", 
     "Status": "Foragido", 
     "NivelPerigo": 2,
     "Recompensa": 200000 
@@ -71,7 +71,7 @@
     "Idade": 44,
     "Subnome": "O Plano", 
     "DataDeNascimento": "1855-05-01", 
-    "Imagem": "Dutch.png", 
+    "Imagem": "Procurados/Dutch.png", 
     "Status": "Morto", 
     "NivelPerigo": 3,
     "Recompensa": 500000 
@@ -82,7 +82,7 @@
     "Idade": 19,
     "Subnome": "A Imunizada", 
     "DataDeNascimento": "2019-04-28",
-    "Imagem": "Ellie.jpg", 
+    "Imagem": "Procurados/Ellie.jpg", 
     "Status": "Foragido", 
     "NivelPerigo": 4,
     "Recompensa": 750000 
@@ -93,7 +93,7 @@
     "Idade": 100,
     "Subnome": "O Bruxo", 
     "DataDeNascimento": "Desconhecido", 
-    "Imagem": "Geraldao.jpg", 
+    "Imagem": "Procurados/Geraldao.jpg", 
     "Status": "Foragido", 
     "NivelPerigo": 5,
     "Recompensa": 1000000 
@@ -104,7 +104,7 @@
     "Idade": 35,
     "Subnome": "Arlequina", 
     "DataDeNascimento": "1990-07-20",
-    "Imagem": "Alerquina.jpg",
+    "Imagem": "Procurados/Alerquina.jpg",
     "Status": "Capturado",
     "NivelPerigo": 2,
     "Recompensa": 250000 
@@ -115,7 +115,7 @@
     "Idade": 23, 
     "Subnome": "Mestra do Destrancamento",
     "DataDeNascimento": "1974-02-20", 
-    "Imagem": "JillValentine.png",
+    "Imagem": "Procurados/JillValentine.png",
     "Status": "Foragido", 
     "NivelPerigo": 3,
     "Recompensa": 300000 
@@ -126,7 +126,7 @@
     "Idade": 52,
     "Subnome": "O Sobrevivente", 
     "DataDeNascimento": "1981-09-26",
-    "Imagem": "Joel.png",
+    "Imagem": "Procurados/Joel.png",
     "Status": "Morto",
     "NivelPerigo": 5,
     "Recompensa": 1300000 
@@ -137,7 +137,7 @@
     "Idade": 61,
     "Subnome": "Baba Yaga", 
     "DataDeNascimento": "1964-09-02",
-    "Imagem": "JohnWick.jpg",
+    "Imagem": "Procurados/JohnWick.jpg",
     "Status": "Morto",
     "NivelPerigo": 5,
     "Recompensa": 1400000 
@@ -148,7 +148,7 @@
     "Idade": 38, 
     "Subnome": "O Ex-Fora-da-Lei",
     "DataDeNascimento": "1873-09-29", 
-    "Imagem": "JohnMarston.png",
+    "Imagem": "Procurados/JohnMarston.png",
     "Status": "Morto", 
     "NivelPerigo": 4,
     "Recompensa": 850000 
@@ -159,7 +159,7 @@
     "Idade": 54,
     "Subnome": "O Pai do Chris", 
     "DataDeNascimento": "1928-01-01", 
-    "Imagem": "Julius.jpg",
+    "Imagem": "Procurados/Julius.jpg",
     "Status": "Foragido", 
     "NivelPerigo": 1,
     "Recompensa": 0.39 
@@ -170,7 +170,7 @@
     "Idade": 1000,
     "Subnome": "Fantasma de Esparta", 
     "DataDeNascimento": "Desconhecido", 
-    "Imagem": "Kratos.png",
+    "Imagem": "Procurados/Kratos.png",
     "Status": "Foragido", 
     "NivelPerigo": 5,
     "Recompensa": 1500000 
@@ -181,7 +181,7 @@
     "Idade": 48,
     "Subnome": "O Aposentado", 
     "DataDeNascimento": "1965-01-01", 
-    "Imagem": "Michael.png",
+    "Imagem": "Procurados/Michael.png",
     "Status": "Foragido", 
     "NivelPerigo": 3,
     "Recompensa": 450000 
@@ -192,7 +192,7 @@
     "Idade": 47, 
     "Subnome": "Duende Verde",
     "DataDeNascimento": "1955-09-11", 
-    "Imagem": "Duende.png",
+    "Imagem": "Procurados/Duende.png",
     "Status": "Morto",
     "NivelPerigo": 4,
     "Recompensa": 700000 
@@ -203,7 +203,7 @@
     "Idade": 28,
     "Subnome": "V", 
     "DataDeNascimento": "2049-10-12",
-    "Imagem": "V.png",
+    "Imagem": "Procurados/V.png",
     "Status": "Desconhecido", 
     "NivelPerigo": 5,
     "Recompensa": 1100000 
@@ -214,7 +214,7 @@
     "Idade": 52,
     "Subnome": "Heisenberg", 
     "DataDeNascimento": "1958-09-07",
-    "Imagem": "WalterWhite.png",
+    "Imagem": "Procurados/WalterWhite.png",
     "Status": "Morto", 
     "NivelPerigo": 4,
     "Recompensa": 900000 
