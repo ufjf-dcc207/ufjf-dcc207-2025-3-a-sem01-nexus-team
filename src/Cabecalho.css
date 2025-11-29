@@ -1,38 +1,123 @@
 .cabecalho-departamento {
+  height: 150px; 
   width: auto;
   color: white;
-  padding: 20px 2px;
+  padding: 0 20px; 
   border-bottom: 4px solid #D9BE6C;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  box-shadow: 0 4px 10px #D9BE6C;
+  box-shadow: 0 4px 10px #D9BE6C; 
 }
 
 .logo-departamento {
-  width: 200px;
-  height: 200px;
+  width: 100px; 
+  height: 100px; 
   object-fit: contain;
   filter: drop-shadow(0 0 5px #D9BE6C);
-  margin-right: 50px;
-  margin-left: 50px;
+  margin-right: 40px; 
+  margin-left: 20px;
+}
+
+.conteiner-navegacao {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; 
+  gap: 25px;
 }
 
 .nome-departamento {
-  font-size: 2rem;
+  font-size: 1.8rem; 
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: 0 0 6px #D9BE6C;
   margin: 0;
-  margin-right: 50px;
 }
 
-.titulo-principal {
-  text-align: center;
-  color: white;
-  margin-top: 55px;
-  font-size: 2.5rem;
-  font-weight: 800;
-  text-shadow: 0 0 6px #D9BE6C;
+.botoes-navegacao {
+  display: flex;
+  gap: 25px;
+}
+
+.botao-inicio, .botao-procurados, .botao-desaparecidos, .botao-denuncia, .botao-saibaMais {
+  background-color: transparent;
+  border: 2px solid transparent;
+  color: #D9BE6C;
+  padding: 8px 16px;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.botao-inicio:hover, .botao-procurados:hover, .botao-desaparecidos:hover, .botao-denuncia:hover, .botao-saibaMais:hover {
+  background-color: #D9BE6C;
+  color: black;
+}
+
+.botao-recompensa {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid #D9BE6C;
+    background-color: #D9BE6C; /* ou #1f1f1f */
+    color: #1a1a1a;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+/* Efeito Hover (Opcional) */
+.botao-recompensa:hover {
+    background-color: #D9BE6C;
+    color: #1a1a1a;
+    box-shadow: 0 0 10px #D9BE6C;
+}
+
+.svg-icone {
+    width: 20px;
+    height: 20px;
+}
+
+.botao-recompensa:hover {
+  transform: scale(1.1);
+}
+
+.botao-login {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaço entre o ícone e o texto LOGIN */
+  
+  background-color: #D9BE6C; /* Fundo transparente */
+  border: 2px solid #D9BE6C;     /* Borda Dourada */
+  color: black;                /* Texto Dourado */
+  
+  padding: 8px 20px;
+  border-radius: 5px; /* Bordas levemente arredondadas */
+  
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse no botão */
+.botao-login:hover {
+  background-color: #D9BE6C; /* Fundo fica dourado */
+  color: #1a1a1a;            /* Texto fica preto (contraste) */
+  box-shadow: 0 0 15px #D9BE6C; /* Brilho */
+}
+
+.botao-login svg {
+  stroke: currentColor; 
 }

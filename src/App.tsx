@@ -2,7 +2,6 @@ import "./App.css";
 import Personagem from "./Personagem";
 import InterfaceExibicao from "./InterfaceExibicao";
 import { ListaProcurados } from "./ListaProcurados";
-import { Cabecalho } from "./Cabecalho";
 import { filtrarPersonagem } from "./utilitarios/utils";
 
 function App() {
@@ -14,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <Cabecalho/>
+      <h1 className="titulo-principal">PROCURADOS</h1>
       <InterfaceExibicao>
         {ListaProcuradosFiltrado.map((personagem) => (
           <div className="card" key ={personagem.id}>

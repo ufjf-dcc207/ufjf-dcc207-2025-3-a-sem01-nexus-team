@@ -1,4 +1,6 @@
 .exibicao {
+  width: auto;
+  height: auto;
   border: 0.5px solid #D9BE6C;
   border-radius: 0.5em;
   box-shadow: 0.1em 0.1em 0.5em;
@@ -6,7 +8,7 @@
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 1em;
   padding: 1.5em;
-  justify-items: center; 
+  justify-items: center;
 }
 
 .card {
