@@ -1,13 +1,15 @@
 .cabecalho-departamento {
-  height: 150px; 
-  width: auto;
+  min-height: 150px; 
+  height: auto; 
+  padding: 20px;
   color: white;
-  padding: 0 20px; 
   border-bottom: 4px solid #D9BE6C;
+  box-shadow: 0 4px 10px #D9BE6C;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  box-shadow: 0 4px 10px #D9BE6C; 
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  gap: 20px;  
 }
 
 .logo-departamento {
@@ -17,14 +19,16 @@
   filter: drop-shadow(0 0 5px #D9BE6C);
   margin-right: 40px; 
   margin-left: 20px;
+  flex-shrink: 0;
 }
 
 .conteiner-navegacao {
   display: flex;
   flex-direction: column; 
-  justify-content: center;
-  align-items: center; 
+  justify-content: center; 
   gap: 25px;
+  flex: 1; 
+  min-width: 300px;
 }
 
 .nome-departamento {
@@ -39,6 +43,7 @@
 .botoes-navegacao {
   display: flex;
   gap: 25px;
+  flex-wrap: wrap; 
 }
 
 .botao-inicio, .botao-procurados, .botao-desaparecidos, .botao-denuncia, .botao-saibaMais {
@@ -70,17 +75,16 @@
     align-items: center;
 
     border: 2px solid #D9BE6C;
-    background-color: #D9BE6C; /* ou #1f1f1f */
-    color: #1a1a1a;
+    background-color: #D9BE6C;
+    color: black;
     cursor: pointer;
     padding: 0;
     transition: all 0.3s ease;
 }
 
-/* Efeito Hover (Opcional) */
 .botao-recompensa:hover {
     background-color: #D9BE6C;
-    color: #1a1a1a;
+    color: black;
     box-shadow: 0 0 10px #D9BE6C;
 }
 
@@ -96,14 +100,14 @@
 .botao-login {
   display: flex;
   align-items: center;
-  gap: 10px; /* Espaço entre o ícone e o texto LOGIN */
+  gap: 10px;
   
-  background-color: #D9BE6C; /* Fundo transparente */
-  border: 2px solid #D9BE6C;     /* Borda Dourada */
-  color: black;                /* Texto Dourado */
+  background-color: #D9BE6C; 
+  border: 2px solid #D9BE6C; 
+  color: black;
   
   padding: 8px 20px;
-  border-radius: 5px; /* Bordas levemente arredondadas */
+  border-radius: 5px;
   
   font-size: 1rem;
   font-weight: bold;
@@ -111,13 +115,60 @@
   transition: all 0.3s ease;
 }
 
-/* Efeito ao passar o mouse no botão */
 .botao-login:hover {
-  background-color: #D9BE6C; /* Fundo fica dourado */
-  color: #1a1a1a;            /* Texto fica preto (contraste) */
-  box-shadow: 0 0 15px #D9BE6C; /* Brilho */
+  background-color: #D9BE6C;
+  color: black;            
+  box-shadow: 0 0 15px #D9BE6C;
 }
 
 .botao-login svg {
   stroke: currentColor; 
+}
+
+@media (max-width: 900px) {
+  .cabecalho-departamento {
+    flex-direction: column; 
+    text-align: center;
+    padding: 20px 10px; 
+    height: auto;
+  }
+
+  .logo-departamento {
+    margin: 0 0 15px 0; 
+    width: 80px; 
+    height: 80px;
+  }
+
+  .conteiner-navegacao {
+    align-items: center; 
+    width: 100%;
+    gap: 15px;
+  }
+
+  .nome-departamento {
+    font-size: 1.2rem; 
+    line-height: 1.4;
+  }
+
+  .botoes-navegacao {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; 
+    width: 100%;
+  }
+
+  .botao-inicio, .botao-procurados, .botao-desaparecidos, 
+  .botao-denuncia, .botao-saibaMais, .botao-login {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+    width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+    .personagem {
+        width: 100%;       
+        max-width: 350px; 
+        font-size: 0.9rem;   
+    }
 }

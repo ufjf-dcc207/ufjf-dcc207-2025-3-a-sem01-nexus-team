@@ -23,3 +23,20 @@
   height: 180px;
   object-fit: cover; 
 }
+
+@media (max-width: 600px) {
+    .interface-exibicao {
+        width: 90%; 
+        padding: 10px; 
+        gap: 10px; 
+        justify-content: center;
+    }
+
+    .interface-exibicao img {
+        height: 200px;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
