@@ -1,0 +1,85 @@
+.rodape-container {
+    background-color: #111111;
+    color: #a0a0a0;
+    border-top: 4px solid #D9BE6C;
+    
+    padding: 40px 20px;
+    margin-top: auto;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.rodape-secao {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rodape-titulo {
+    color: #D9BE6C;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rodape-texto {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.rodape-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rodape-links li {
+    margin-bottom: 8px;
+}
+
+.rodape-links a {
+    color: #f1f1f1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.rodape-links a:hover {
+    color: #D9BE6C;
+    text-decoration: underline;
+}
+
+.botao-licenca {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.botao-licenca:hover {
+    border-color: #D9BE6C;
+    color: #D9BE6C;
+    background-color: rgba(217, 190, 108, 0.1);
+}
+
+@media (max-width: 768px) {
+    .rodape-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
