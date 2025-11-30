@@ -1,0 +1,2 @@
+import "./estilos/Ficha.css";
+

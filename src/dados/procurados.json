@@ -1,222 +1,378 @@
 [
   {
-    "id": 1, 
+    "id": 1,
     "Nome": "Aiden Pearce",
     "Idade": 40,
-    "Subnome": "O Vigilante", 
+    "Subnome": "O Vigilante",
     "DataDeNascimento": "1974-05-02",
     "Imagem": "Procurados/AidenPearce.png",
-    "Status": "Desconhecido", 
+    "Status": "Desconhecido",
     "NivelPerigo": 4,
-    "Recompensa": 800000 
+    "Recompensa": 800000,
+    "UltimaLocalizacao": "Chicago, Illinois",
+    "Crimes": [
+      "Invasão de Sistema (ctOS)",
+      "Vigilantismo",
+      "Posse ilegal de armas",
+      "Roubo de Dados"
+    ],
+    "Descricao": "Nascido na Irlanda do Norte e criado em Chicago, Aiden Pearce é um hacker 'grey hat' com um passado criminoso. Após uma tragédia familiar causada por seus antigos parceiros, ele iniciou uma cruzada de vingança utilizando o ctOS (Sistema Operacional Central) da cidade como sua arma principal. É conhecido por manipular semáforos, pontes e redes elétricas para deter criminosos ou escapar da polícia."
   },
   {
-    "id": 2, 
+    "id": 2,
     "Nome": "Albert Wesker",
-    "Idade": 49, 
-    "Subnome": "É o Werker?!", 
-    "DataDeNascimento": "1960-01-01", 
-    "Imagem": "Procurados/Krauser.png", 
-    "Status": "Morto", 
+    "Idade": 49,
+    "Subnome": "É o Werker?!",
+    "DataDeNascimento": "1960-01-01",
+    "Imagem": "Procurados/Krauser.png",
+    "Status": "Morto",
     "NivelPerigo": 5,
-    "Recompensa": 1400000 
+    "Recompensa": 1400000,
+    "UltimaLocalizacao": "Kijuju, África",
+    "Crimes": [
+      "Bioterrorismo Global",
+      "Crimes contra a Humanidade",
+      "Traição Corporativa",
+      "Homicídio em Massa"
+    ],
+    "Descricao": "Ex-capitão dos S.T.A.R.S. e pesquisador da Umbrella Corporation. Wesker foi criado como parte de um projeto de eugenia para criar uma raça humana superior. Após se injetar com um vírus experimental, ganhou habilidades sobre-humanas. Frio, calculista e megalomaníaco, seu objetivo final era forçar a evolução da humanidade através da infecção global pelo vírus Uroboros."
   },
   {
-    "id": 3, 
+    "id": 3,
     "Nome": "Carl Johnson",
     "Idade": 24,
-    "Subnome": "CJ", 
-    "DataDeNascimento": "Desconhecido", 
-    "Imagem": "Procurados/CJ.png", 
-    "Status": "Desconhecido", 
-    "NivelPerigo": 5, 
-    "Recompensa": 1100000 
-  },
-  {
-    "id": 4, 
-    "Nome": "Coringa",
-    "Idade": 37, 
-    "Subnome": "O Palhaço do Crime", 
-    "DataDeNascimento": "Desconhecido", 
-    "Imagem": "Procurados/Coringa.jpg", 
-    "Status": "Capturado", 
+    "Subnome": "CJ",
+    "DataDeNascimento": "Desconhecido",
+    "Imagem": "Procurados/CJ.png",
+    "Status": "Desconhecido",
     "NivelPerigo": 5,
-    "Recompensa": 1500000 
+    "Recompensa": 1100000,
+    "UltimaLocalizacao": "Grove Street, Los Santos",
+    "Crimes": [
+      "Guerra de Gangues",
+      "Roubo de Veículos",
+      "Homicídio",
+      "Invasão da Área 69"
+    ],
+    "Descricao": "Nascido em Los Santos, Carl 'CJ' Johnson fugiu para Liberty City para escapar das pressões da vida de gangue. Retornou após a morte de sua mãe e encontrou sua antiga gangue, a Grove Street Families, em ruínas. CJ foi forçado a retomar o controle das ruas, lidando com policiais corruptos da C.R.A.S.H. e gangues rivais para proteger o que restou de sua família."
   },
   {
-    "id": 5, 
+    "id": 4,
+    "Nome": "Coringa",
+    "Idade": 37,
+    "Subnome": "O Palhaço do Crime",
+    "DataDeNascimento": "Desconhecido",
+    "Imagem": "Procurados/Coringa.jpg",
+    "Status": "Capturado",
+    "NivelPerigo": 5,
+    "Recompensa": 1500000,
+    "UltimaLocalizacao": "Asilo Arkham",
+    "Crimes": [
+      "Terrorismo em Massa",
+      "Homicídio Múltiplo",
+      "Sequestro",
+      "Tortura Psicológica"
+    ],
+    "Descricao": "A origem do Coringa é desconhecida, até mesmo para ele. Ele não busca dinheiro ou poder político, mas sim provar que a moralidade é uma piada de mau gosto e que 'basta um dia ruim' para levar qualquer um à loucura. Sua obsessão pelo Batman e sua total falta de empatia o tornam a ameaça mais perigosa e imprevisível de Gotham City."
+  },
+  {
+    "id": 5,
     "Nome": "Deadpool",
-    "Idade": -1, 
-    "Subnome": "O Mercenário Tagarela", 
-    "DataDeNascimento": "Desconhecido", 
-    "Imagem": "Procurados/Deadpool.jpg", 
-    "Status": "Foragido", 
+    "Idade": -1,
+    "Subnome": "O Mercenário Tagarela",
+    "DataDeNascimento": "Desconhecido",
+    "Imagem": "Procurados/Deadpool.jpg",
+    "Status": "Foragido",
     "NivelPerigo": 3,
-    "Recompensa": 400000 
+    "Recompensa": 400000,
+    "UltimaLocalizacao": "Nova York, NY",
+    "Crimes": [
+      "Mercenarismo",
+      "Homicídio",
+      "Destruição de Propriedade",
+      "Perturbação da Paz"
+    ],
+    "Descricao": "Wade Wilson, um ex-soldado das Forças Especiais diagnosticado com câncer terminal, submeteu-se a um experimento desonesto que lhe conferiu um fator de cura acelerado, mas desfigurou seu corpo e fraturou sua mente. Operando como mercenário, ele é famoso por seu humor ácido, violência extrema e pela capacidade única de quebrar a quarta parede, sabendo que é um personagem fictício."
   },
   {
-    "id": 6, 
+    "id": 6,
     "Nome": "Dominic Toretto",
     "Idade": 49,
-    "Subnome": "Dom", 
+    "Subnome": "Dom",
     "DataDeNascimento": "1976-08-29",
-    "Imagem": "Procurados/Toretto.png", 
-    "Status": "Foragido", 
+    "Imagem": "Procurados/Toretto.png",
+    "Status": "Foragido",
     "NivelPerigo": 2,
-    "Recompensa": 200000 
+    "Recompensa": 200000,
+    "UltimaLocalizacao": "Los Angeles, California",
+    "Crimes": [
+      "Corridas Ilegais",
+      "Roubo de Carga",
+      "Assalto a Banco",
+      "Direção Perigosa"
+    ],
+    "Descricao": "Nascido em Los Angeles, Dom Toretto é um corredor de rua de elite e mecânico com um código moral inabalável centrado na lealdade e na família. Começou roubando caminhões de eletrônicos, mas suas habilidades ao volante o levaram a ser recrutado para missões internacionais de espionagem e assaltos de alto nível. Vive a vida 'um quarto de milha por vez'."
   },
   {
-    "id": 7, 
+    "id": 7,
     "Nome": "Dutch Van Der Linde",
     "Idade": 44,
-    "Subnome": "O Plano", 
-    "DataDeNascimento": "1855-05-01", 
-    "Imagem": "Procurados/Dutch.png", 
-    "Status": "Morto", 
+    "Subnome": "O Plano",
+    "DataDeNascimento": "1855-05-01",
+    "Imagem": "Procurados/Dutch.png",
+    "Status": "Morto",
     "NivelPerigo": 3,
-    "Recompensa": 500000 
+    "Recompensa": 500000,
+    "UltimaLocalizacao": "Cochinay, West Elizabeth",
+    "Crimes": [
+      "Liderança de Gangue",
+      "Roubo a Banco",
+      "Homicídio",
+      "Conspiração"
+    ],
+    "Descricao": "Líder carismático da gangue Van der Linde, Dutch via a si mesmo como uma figura romântica de liberdade contra a invasão da civilização moderna no Velho Oeste. Mentor de Arthur Morgan e John Marston, sua sanidade deteriorou sob pressão, levando-o a cometer atos cada vez mais violentos e erráticos enquanto prometia incessantemente que tinha 'um plano' para salvar a gangue."
   },
   {
-    "id": 8, 
+    "id": 8,
     "Nome": "Ellie Williams",
     "Idade": 19,
-    "Subnome": "A Imunizada", 
+    "Subnome": "A Imunizada",
     "DataDeNascimento": "2019-04-28",
-    "Imagem": "Procurados/Ellie.jpg", 
-    "Status": "Foragido", 
+    "Imagem": "Procurados/Ellie.jpg",
+    "Status": "Foragido",
     "NivelPerigo": 4,
-    "Recompensa": 750000 
+    "Recompensa": 750000,
+    "UltimaLocalizacao": "Jackson, Wyoming",
+    "Crimes": [
+      "Homicídio",
+      "Violação de Quarentena",
+      "Vandalismo",
+      "Associação com Contrabandista"
+    ],
+    "Descricao": "Nascida na zona de quarentena de Boston, Ellie descobriu ser a única humana conhecida imune à infecção cerebral Cordyceps. Após cruzar os Estados Unidos com Joel Miller na esperança de criar uma cura, ela foi salva de uma cirurgia letal. Anos depois, endurecida pelo trauma e pela perda, ela embarcou em uma jornada brutal de vingança contra aqueles que feriram sua família adotiva."
   },
   {
-    "id": 9, 
+    "id": 9,
     "Nome": "Geralt de Rivia",
     "Idade": 100,
-    "Subnome": "O Bruxo", 
-    "DataDeNascimento": "Desconhecido", 
-    "Imagem": "Procurados/Geraldao.jpg", 
-    "Status": "Foragido", 
+    "Subnome": "O Bruxo",
+    "DataDeNascimento": "Desconhecido",
+    "Imagem": "Procurados/Geraldao.jpg",
+    "Status": "Desconhecido",
     "NivelPerigo": 5,
-    "Recompensa": 1000000 
+    "Recompensa": 1000000,
+    "UltimaLocalizacao": "O Continente",
+    "Crimes": [
+      "Caça sem Licença",
+      "Uso de Magia em Público",
+      "Envolvimento em Regicídio",
+      "Brigas de Taverna"
+    ],
+    "Descricao": "Geralt é um Bruxo, um caçador de monstros mutante treinado na Escola do Lobo em Kaer Morhen. Submetido a mutações genéticas severas na infância, ganhou força, reflexos e longevidade sobre-humanos. Ele vaga pelo continente vendendo seus serviços, tentando manter a neutralidade política, mas frequentemente é arrastado para conflitos do destino envolvendo reis, feiticeiras e sua filha adotiva, Ciri."
   },
   {
-    "id": 10, 
+    "id": 10,
     "Nome": "Harleen Quinzel",
     "Idade": 35,
-    "Subnome": "Arlequina", 
+    "Subnome": "Arlequina",
     "DataDeNascimento": "1990-07-20",
     "Imagem": "Procurados/Alerquina.jpg",
     "Status": "Capturado",
     "NivelPerigo": 2,
-    "Recompensa": 250000 
+    "Recompensa": 250000,
+    "UltimaLocalizacao": "Penitenciária Belle Reve",
+    "Crimes": [
+      "Cúmplice de Terrorismo",
+      "Agressão Agravada",
+      "Vandalismo",
+      "Fuga de Prisão"
+    ],
+    "Descricao": "Dra. Harleen Quinzel era uma psiquiatra promissora no Asilo Arkham até ser manipulada pelo Coringa, por quem desenvolveu uma obsessão doentia. Adotando a identidade de Arlequina, tornou-se cúmplice de seus crimes. Apesar de sua aparência caótica e comportamento imprevisível, possui intelecto de nível genial e habilidades ginásticas excepcionais. Recentemente atua de forma independente ou com o Esquadrão Suicida."
   },
   {
-    "id": 11, 
-    "Nome": "Jill Valentine", 
-    "Idade": 23, 
+    "id": 11,
+    "Nome": "Jill Valentine",
+    "Idade": 23,
     "Subnome": "Mestra do Destrancamento",
-    "DataDeNascimento": "1974-02-20", 
+    "DataDeNascimento": "1974-02-20",
     "Imagem": "Procurados/JillValentine.png",
-    "Status": "Foragido", 
+    "Status": "Foragido",
     "NivelPerigo": 3,
-    "Recompensa": 300000 
+    "Recompensa": 300000,
+    "UltimaLocalizacao": "Raccoon City",
+    "Crimes": [
+      "Destruição de Propriedade Corporativa",
+      "Posse de Arsenal Militar",
+      "Obstrução de Justiça"
+    ],
+    "Descricao": "Membro da equipe Alpha dos S.T.A.R.S. e especialista em desarmamento de bombas. Jill foi uma das poucas sobreviventes do incidente na Mansão Spencer. Durante o surto viral em Raccoon City, ela foi perseguida implacavelmente pela arma biológica Nemesis enquanto tentava expor os crimes da Umbrella Corporation e escapar da cidade antes de sua destruição nuclear."
   },
   {
-    "id": 12, 
+    "id": 12,
     "Nome": "Joel Miller",
     "Idade": 52,
-    "Subnome": "O Sobrevivente", 
+    "Subnome": "O Sobrevivente",
     "DataDeNascimento": "1981-09-26",
     "Imagem": "Procurados/Joel.png",
     "Status": "Morto",
     "NivelPerigo": 5,
-    "Recompensa": 1300000 
+    "Recompensa": 1300000,
+    "UltimaLocalizacao": "Jackson, Wyoming",
+    "Crimes": [
+      "Contrabando",
+      "Homicídio Múltiplo",
+      "Massacre no Hospital St. Mary",
+      "Tortura"
+    ],
+    "Descricao": "Nascido no Texas, Joel vivia como carpinteiro até o surto do Cordyceps destruir a civilização e tirar a vida de sua filha. Transformado em um contrabandista implacável e cínico em Boston, ele recuperou sua humanidade ao proteger Ellie Williams. Sua decisão de salvar Ellie em vez de permitir a criação de uma vacina mudou o destino da humanidade e selou seu próprio destino."
   },
   {
-    "id": 13, 
+    "id": 13,
     "Nome": "John Wick",
     "Idade": 61,
-    "Subnome": "Baba Yaga", 
+    "Subnome": "Baba Yaga",
     "DataDeNascimento": "1964-09-02",
     "Imagem": "Procurados/JohnWick.jpg",
     "Status": "Morto",
     "NivelPerigo": 5,
-    "Recompensa": 1400000 
+    "Recompensa": 1400000,
+    "UltimaLocalizacao": "Nova York, NY",
+    "Crimes": [
+      "Homicídio em Massa",
+      "Violação de Regras do Continental",
+      "Associação Criminosa"
+    ],
+    "Descricao": "Conhecido no submundo como 'Baba Yaga', John Wick era um assassino de aluguel lendário que se aposentou por amor. Após a morte de sua esposa e o assassinato de seu cachorro por mafiosos, ele retornou à ativa com uma fúria incontrolável. Excomungado pela Alta Cúpula por matar dentro do Hotel Continental, ele agora é alvo de todos os assassinos do mundo."
   },
   {
-    "id": 14, 
+    "id": 14,
     "Nome": "John Marston",
-    "Idade": 38, 
+    "Idade": 38,
     "Subnome": "O Ex-Fora-da-Lei",
-    "DataDeNascimento": "1873-09-29", 
+    "DataDeNascimento": "1873-09-29",
     "Imagem": "Procurados/JohnMarston.png",
-    "Status": "Morto", 
+    "Status": "Morto",
     "NivelPerigo": 4,
-    "Recompensa": 850000 
+    "Recompensa": 850000,
+    "UltimaLocalizacao": "Beecher's Hope, West Elizabeth",
+    "Crimes": [
+      "Assalto a Trem",
+      "Roubo de Gado",
+      "Homicídio",
+      "Caça a Recompensas Ilegal"
+    ],
+    "Descricao": "Órfão acolhido pela gangue Van der Linde, John Marston tentou deixar sua vida de fora-da-lei para se tornar um rancheiro e homem de família. No entanto, foi coagido pelo Bureau de Investigação a caçar seus antigos irmãos de armas em troca da liberdade de sua esposa e filho. Marston é um símbolo trágico do fim do Velho Oeste."
   },
   {
-    "id": 15, 
+    "id": 15,
     "Nome": "Julius",
     "Idade": 54,
-    "Subnome": "O Pai do Chris", 
-    "DataDeNascimento": "1928-01-01", 
+    "Subnome": "O Pai do Chris",
+    "DataDeNascimento": "1928-01-01",
     "Imagem": "Procurados/Julius.jpg",
-    "Status": "Foragido", 
+    "Status": "Foragido",
     "NivelPerigo": 1,
-    "Recompensa": 0.39 
+    "Recompensa": 0.39,
+    "UltimaLocalizacao": "Bed-Stuy, Brooklyn",
+    "Crimes": [
+      "Excesso de Empregos",
+      "Sonegação Fiscal",
+      "Ameaça de Chute"
+    ],
+    "Descricao": "Julius Rock é um homem trabalhador de Bed-Stuy que mantém dois empregos (motorista de caminhão e entregador de jornal) para sustentar sua família. Sua característica mais marcante é o conhecimento enciclopédico do preço de cada produto existente e sua aversão absoluta ao desperdício. Ele representa o perigo financeiro apenas para aqueles que tentam gastar seu dinheiro."
   },
   {
-    "id": 16, 
+    "id": 16,
     "Nome": "Kratos",
     "Idade": 1000,
-    "Subnome": "Fantasma de Esparta", 
-    "DataDeNascimento": "Desconhecido", 
+    "Subnome": "Fantasma de Esparta",
+    "DataDeNascimento": "Desconhecido",
     "Imagem": "Procurados/Kratos.png",
-    "Status": "Foragido", 
+    "Status": "Foragido",
     "NivelPerigo": 5,
-    "Recompensa": 1500000 
+    "Recompensa": 1500000,
+    "UltimaLocalizacao": "Midgard",
+    "Crimes": [
+      "Deicídio (Assassinato de Deuses)",
+      "Destruição do Olimpo",
+      "Genocídio Mitológico"
+    ],
+    "Descricao": "Nascido em Esparta, Kratos foi um general que vendeu sua alma a Ares e, enganado, matou sua própria família. Consumido pela vingança, ele dizimou todo o panteão de deuses gregos. Séculos depois, exilou-se nas terras nórdicas de Midgard, onde tenta viver como um homem, ocultando sua natureza divina e seu passado sangrento de seu filho, Atreus."
   },
   {
-    "id": 17, 
+    "id": 17,
     "Nome": "Michael De Santa",
     "Idade": 48,
-    "Subnome": "O Aposentado", 
-    "DataDeNascimento": "1965-01-01", 
+    "Subnome": "O Aposentado",
+    "DataDeNascimento": "1965-01-01",
     "Imagem": "Procurados/Michael.png",
-    "Status": "Foragido", 
+    "Status": "Foragido",
     "NivelPerigo": 3,
-    "Recompensa": 450000 
+    "Recompensa": 450000,
+    "UltimaLocalizacao": "Rockford Hills, Los Santos",
+    "Crimes": [
+      "Assalto a Banco",
+      "Fraude de Seguros",
+      "Destruição de Propriedade",
+      "Conspiração com o FIB"
+    ],
+    "Descricao": "Nascido Michael Townley, foi um dos assaltantes de banco mais procurados da América até forjar sua própria morte em 2004 e entrar para um programa de proteção a testemunhas não oficial. Vivendo uma vida de luxo e tédio em Los Santos, ele foi arrastado de volta ao mundo do crime para pagar dívidas e lidar com fantasmas do passado."
   },
   {
-    "id": 18, 
+    "id": 18,
     "Nome": "Norman Osborn",
-    "Idade": 47, 
+    "Idade": 47,
     "Subnome": "Duende Verde",
-    "DataDeNascimento": "1955-09-11", 
+    "DataDeNascimento": "1955-09-11",
     "Imagem": "Procurados/Duende.png",
     "Status": "Morto",
     "NivelPerigo": 4,
-    "Recompensa": 700000 
+    "Recompensa": 700000,
+    "UltimaLocalizacao": "Nova York, NY",
+    "Crimes": [
+      "Terrorismo Corporativo",
+      "Homicídio",
+      "Sequestro",
+      "Uso Ilegal de Tecnologia Militar"
+    ],
+    "Descricao": "Fundador e CEO da Oscorp Industries, Norman Osborn era um cientista brilhante e ambicioso. Desesperado para manter contratos militares, testou em si mesmo um soro experimental de aprimoramento físico. O soro lhe concedeu força sobre-humana, mas fragmentou sua mente, criando a personalidade sádica do Duende Verde, que aterrorizou Nova York com armamento de alta tecnologia."
   },
   {
-    "id": 19, 
+    "id": 19,
     "Nome": "Valerie Silverhand",
     "Idade": 28,
-    "Subnome": "V", 
+    "Subnome": "V",
     "DataDeNascimento": "2049-10-12",
     "Imagem": "Procurados/V.png",
-    "Status": "Desconhecido", 
+    "Status": "Desconhecido",
     "NivelPerigo": 5,
-    "Recompensa": 1100000 
+    "Recompensa": 1100000,
+    "UltimaLocalizacao": "Night City",
+    "Crimes": [
+      "Invasão da Torre Arasaka",
+      "Roubo de Tecnologia Experimental",
+      "Cyberpsicose Potencial",
+      "Mercenarismo"
+    ],
+    "Descricao": "V é uma mercenária urbana operando em Night City. Após um assalto desastroso à corporação Arasaka, ela acabou com um biochip experimental alojado em seu cérebro, contendo a consciência do terrorista Johnny Silverhand. Lutando contra o tempo enquanto sua mente é sobrescrita, V tornou-se uma lenda no submundo, enfrentando megacorporações e gangues cibernéticas."
   },
   {
-    "id": 20, 
+    "id": 20,
     "Nome": "Walter White",
     "Idade": 52,
-    "Subnome": "Heisenberg", 
+    "Subnome": "Heisenberg",
     "DataDeNascimento": "1958-09-07",
     "Imagem": "Procurados/WalterWhite.png",
-    "Status": "Morto", 
+    "Status": "Morto",
     "NivelPerigo": 4,
-    "Recompensa": 900000 
+    "Recompensa": 900000,
+    "UltimaLocalizacao": "Albuquerque, Novo México",
+    "Crimes": [
+      "Produção de Metanfetamina",
+      "Tráfico de Drogas",
+      "Homicídio",
+      "Lavagem de Dinheiro"
+    ],
+    "Descricao": "Walter White era um professor de química subestimado diagnosticado com câncer pulmonar inoperável. Para garantir o futuro financeiro de sua família, ele usou seu conhecimento científico para cozinhar metanfetamina de pureza inigualável. Sob o pseudônimo 'Heisenberg', sua transformação de homem de família pacato para um barão da droga implacável deixou um rastro de destruição no sudoeste americano."
   }
 ]
