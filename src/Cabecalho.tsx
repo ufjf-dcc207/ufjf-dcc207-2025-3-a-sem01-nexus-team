@@ -1,15 +1,10 @@
 import "./estilos/Cabecalho.css"
-import FiltroLista from "./FiltroLista";
 
 interface CabecalhoProps{
     TemLogin: boolean;
     onClickLogin: () => void;
-    filtroNome: string;
-    filtroStatus: string;
-    filtroEstrela: number;
-    onFiltroChange: (novo: { nome: string; status: string; estrela: number }) => void;
 }
-export function Cabecalho({ TemLogin, onClickLogin, filtroNome, filtroStatus, filtroEstrela, onFiltroChange }: CabecalhoProps){
+export function Cabecalho({ TemLogin, onClickLogin}: CabecalhoProps){
     return(
         <>
             <div className="cabecalho-departamento">
@@ -45,14 +40,6 @@ export function Cabecalho({ TemLogin, onClickLogin, filtroNome, filtroStatus, fi
                                 className="svg-icone" 
                             />
                         </button>
-                    </div>
-                    <div style={{ marginTop: '12px' }}>
-                        <FiltroLista
-                          nome={filtroNome}
-                          status={filtroStatus}
-                          estrela={filtroEstrela}
-                          onChange={onFiltroChange}
-                        />
                     </div>
                 </div>
             </div>
