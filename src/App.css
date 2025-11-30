@@ -2,7 +2,8 @@
   min-height: 100vh;
   max-width: 1600px; 
   
-  margin: 0 auto; 
+  margin: 0 auto;
+  margin-bottom: 40px; 
   min-width: 375px;
 
   display: flex;
