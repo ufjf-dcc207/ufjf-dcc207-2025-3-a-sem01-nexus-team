@@ -98,7 +98,7 @@
     height: 25px;
 }
 
-.botao-recompensa:hover {
+.botao-recompensa:hover, .botao-adiciona-criminoso:hover {
   transform: scale(1.1);
 }
 
