@@ -1,5 +1,15 @@
-import "./Cabecalho.css"
-export function Cabecalho(){
+import "./estilos/Cabecalho.css"
+import FiltroLista from "./FiltroLista";
+
+interface CabecalhoProps{
+    TemLogin: boolean;
+    onClickLogin: () => void;
+    filtroNome: string;
+    filtroStatus: string;
+    filtroEstrela: number;
+    onFiltroChange: (novo: { nome: string; status: string; estrela: number }) => void;
+}
+export function Cabecalho({ TemLogin, onClickLogin, filtroNome, filtroStatus, filtroEstrela, onFiltroChange }: CabecalhoProps){
     return(
         <>
             <div className="cabecalho-departamento">
@@ -20,13 +30,13 @@ export function Cabecalho(){
                         <button className="botao-desaparecidos">Desaparecidos</button>
                         <button className="botao-denuncia">Denúncia</button>
                         <button className="botao-saibaMais">Saiba Mais</button>
-                        <button className="botao-login">
+                        <button className="botao-login" onClick={onClickLogin}>
                             <img 
                                 src={"Icones/profile.svg"} 
                                 alt="Perfil de Usuário" 
                                 className="svg-icone" 
                             />
-                            <span>LOGIN</span>
+                            <span>{TemLogin ? "LOGOUT" : "LOGIN"}</span>
                         </button>
                         <button className="botao-recompensa" title="Minhas Recompensas">
                             <img 
@@ -35,6 +45,14 @@ export function Cabecalho(){
                                 className="svg-icone" 
                             />
                         </button>
+                    </div>
+                    <div style={{ marginTop: '12px' }}>
+                        <FiltroLista
+                          nome={filtroNome}
+                          status={filtroStatus}
+                          estrela={filtroEstrela}
+                          onChange={onFiltroChange}
+                        />
                     </div>
                 </div>
             </div>

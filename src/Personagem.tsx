@@ -1,6 +1,6 @@
 export type Status = "Foragido" | "Morto" | "Capturado" | "Desconhecido";
 
-import './Personagem.css';
+import './estilos/Personagem.css';
 import {situacaoStatus, statusValido, idadeValida, nivelPerigoValido, trataRecompensa, 
     formataIdade, checaDataNascimento, trataData} from './utilitarios/utils';
 

@@ -1,5 +1,5 @@
 import type { Status } from "../Personagem";
-import type { Procurado } from "../ListaProcurados";
+import type { Procurado } from "../ProcessadorListas";
 
 export function filtrarPersonagem(lista: Procurado[], filtroNome: string = "", filtroStatus:string = "", filtroEstrela: number = 0) {
   return lista.filter((personagem) => {

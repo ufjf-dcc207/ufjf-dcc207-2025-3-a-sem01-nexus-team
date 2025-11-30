@@ -1,0 +1,18 @@
+[
+    {
+        "nome": "admin",
+        "nivelAcesso": "administrador",
+        "email": "admin@example.com",
+        "senha": "admin123",
+        "imagemPerfil": "UsuariosPerfil/capitaoNascimento.png"
+    },
+
+    {
+        "nome": "admin",
+        "nivelAcesso": "administrador",
+        "email": "a@s",
+        "senha": "a",
+        "imagemPerfil": "UsuariosPerfil/capitaoNascimento.png"
+    }
+
+]

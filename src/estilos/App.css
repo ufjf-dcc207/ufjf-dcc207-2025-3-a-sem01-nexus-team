@@ -25,3 +25,15 @@ p {
   margin: 1ch;
   padding: auto;
 }
+
+.caixa-perfil{
+  text-align: center; 
+  padding: 15px; 
+  border: 1px solid #D9BE6C;
+}
+
+.container-acesso {
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 10px;
+}

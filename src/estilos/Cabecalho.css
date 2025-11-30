@@ -130,6 +130,17 @@
   stroke: currentColor; 
 }
 
+.cabecalho-filtro-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 4px 0 8px;
+}
+
+.cabecalho-filtro-wrapper .filtro-bar {
+  box-shadow: 0 0 6px rgba(217,190,108,0.35);
+}
+
 @media (max-width: 900px) {
   .cabecalho-departamento {
     flex-direction: column; 
@@ -173,6 +184,9 @@
     font-size: 0.9rem;
     padding: 8px 10px;
     width: auto;
+  }
+  .cabecalho-filtro-wrapper {
+    padding-top: 4px;
   }
 }
 

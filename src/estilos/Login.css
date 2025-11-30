@@ -1,0 +1,66 @@
+
+.container-acesso {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px - 40px); 
+    background-color: #283040;
+}
+
+.caixa-acesso {
+    width: 100%;
+    max-width: 380px; 
+    padding: 30px;
+    background-color: #1a1f26; 
+    border-radius: 8px; 
+    box-shadow: 0 0 15px rgba(217, 190, 108, 0.4); 
+    text-align: center;
+    color: #D9BE6C;
+}
+
+.caixa-acesso h2 {
+    margin-bottom: 20px;
+    color: #D9BE6C;
+}
+
+.caixa-acesso input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #D9BE6C;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    background-color: #283040;
+    color: white;
+}
+
+.caixa-acesso button {
+    width: 100%;
+    padding: 12px;
+    background-color: #D9BE6C; 
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.caixa-acesso button:hover {
+    opacity: 0.9;
+}
+
+
+.mensagem-erro {
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.mensagem-aviso {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #a0a0a0;
+}
