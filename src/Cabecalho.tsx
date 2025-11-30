@@ -40,6 +40,8 @@ export function Cabecalho({ TemLogin, onClickLogin}: CabecalhoProps){
                                 className="svg-icone" 
                             />
                         </button>
+                        {TemLogin?(
+                            <button className="botao-adiciona-criminoso" title="Adicionar Criminoso">+</button>):(null)}
                     </div>
                 </div>
             </div>
