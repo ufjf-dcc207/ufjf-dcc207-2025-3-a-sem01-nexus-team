@@ -75,7 +75,7 @@ function App() {
                 onChange={(estrela) => setEstrela(Number(estrela.target.value))}
                 title="Filtrar por Nível"
             >
-                <option value={0}>⭐</option>
+                <option value={0}>🌟</option>
                 <option value={1}>⭐</option>
                 <option value={2}>⭐⭐</option>
                 <option value={3}>⭐⭐⭐</option>
@@ -89,7 +89,7 @@ function App() {
                 onChange={(status) => setStatus(status.target.value)}
                 title="Filtrar por Status"
             >
-                <option value="">🚨</option>
+                <option value="">Todos</option>
                 <option value="Foragido">Foragido</option>
                 <option value="Capturado">Capturado</option>
                 <option value="Morto">Morto</option>
