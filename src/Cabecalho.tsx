@@ -3,8 +3,9 @@ import "./estilos/Cabecalho.css"
 interface CabecalhoProps{
     TemLogin: boolean;
     onClickLogin: () => void;
+    clickOn?: () => void;
 }
-export function Cabecalho({ TemLogin, onClickLogin}: CabecalhoProps){
+export function Cabecalho({ TemLogin, onClickLogin, clickOn}: CabecalhoProps){
     return(
         <>
             <div className="cabecalho-departamento">
@@ -41,7 +42,7 @@ export function Cabecalho({ TemLogin, onClickLogin}: CabecalhoProps){
                             />
                         </button>
                         {TemLogin?(
-                            <button className="botao-adiciona-criminoso" title="Adicionar Criminoso">+</button>):(null)}
+                            <button className="botao-adiciona-criminoso" title="Adicionar Criminoso" onClick={clickOn}>+</button>):(null)}
                     </div>
                 </div>
             </div>
