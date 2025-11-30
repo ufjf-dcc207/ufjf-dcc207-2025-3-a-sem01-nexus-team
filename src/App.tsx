@@ -77,7 +77,6 @@ function App() {
         ))}
       </InterfaceExibicao>
     </div>
-    </div>
   );
 }
 
