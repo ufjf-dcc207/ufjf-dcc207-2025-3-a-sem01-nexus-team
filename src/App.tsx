@@ -28,7 +28,7 @@ function App() {
     if (login.teveLogin) {
         processarLogout(); 
     } else {
-        setLogin(prev => ({ ...prev, mostraLogin: !prev.mostraLogin }));
+        setLogin(prevLogin => ({ ...prevLogin, mostraLogin: !prevLogin.mostraLogin }));
     }
   };
   return (
