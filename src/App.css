@@ -73,7 +73,7 @@ p {
 .campo-texto {
   flex: 1;
   height: 100%;
-  min-width: 150px;
+  min-width: 250px;
   
   background: transparent;
   border: none;
