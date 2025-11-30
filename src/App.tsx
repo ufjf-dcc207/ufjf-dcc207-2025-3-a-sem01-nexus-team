@@ -14,14 +14,14 @@ function App() {
   const [estrela, setEstrela] = useState(0);
   const [login, setLogin] = useState({teveLogin: false, userInfo: null as InfoUsuario | null, mostraLogin: false});
   const ListaProcuradosFiltrado = filtrarPersonagem(ListaProcurados, nome, status, estrela);
-  
+
   const deveMostrarAreaDeLogin = login.teveLogin || login.mostraLogin;
   const processarLogin = (user: InfoUsuario) => {
-    setLogin(prev => ({ ...prev, userInfo: user, teveLogin: true, mostraLogin: false }));
+    setLogin(prevLogin => ({ ...prevLogin, userInfo: user, teveLogin: true, mostraLogin: false }));
   };
 
   const processarLogout = () => {
-    setLogin(prev => ({ ...prev, userInfo: null, teveLogin: false, mostraLogin: false }));
+    setLogin(prevLogin => ({ ...prevLogin, userInfo: null, teveLogin: false, mostraLogin: false }));
   };
   
   const alternarVisualizacaoLogin = () => {
