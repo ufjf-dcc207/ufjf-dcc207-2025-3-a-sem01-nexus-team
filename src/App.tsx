@@ -6,6 +6,8 @@ import { filtrarPersonagem } from "./utilitarios/utils";
 import { useState } from "react";
 import Login from "./Login";
 import { Cabecalho } from "./Cabecalho";
+import FormularioNovoCriminoso from "./FormularioNovoCriminoso";
+import type { Procurado } from "./ProcessadorListas";
 
 function App() {
 
@@ -13,9 +15,28 @@ function App() {
   const [status, setStatus] = useState("");
   const [estrela, setEstrela] = useState(0);
   const [login, setLogin] = useState({teveLogin: false, userInfo: null as InfoUsuario | null, mostraLogin: false});
+  
+  const [listaAtualizada, setListaAtualizada] = useState(ListaProcurados);
+  const [mostrarFormAddCriminoso, setMostrarFormAddCriminoso] = useState(false); 
+  
   const ListaProcuradosFiltrado = filtrarPersonagem(ListaProcurados, nome, status, estrela);
 
+  const clickOn = () => {
+    setMostrarFormAddCriminoso(true);
+  };
+
+  const submeterNovoCriminoso = (novo: Procurado) => {
+    setListaAtualizada(prev => [novo, ...prev]);
+    setMostrarFormAddCriminoso(false);
+  };
+
+  const cancelarNovoCriminoso = () => {
+    setMostrarFormAddCriminoso(false);
+  };
+
   const deveMostrarAreaDeLogin = login.teveLogin || login.mostraLogin;
+  const deveMostrarFormularioAdicao = login.teveLogin && mostrarFormAddCriminoso;
+  
   const processarLogin = (user: InfoUsuario) => {
     setLogin(prevLogin => ({ ...prevLogin, userInfo: user, teveLogin: true, mostraLogin: false }));
   };
@@ -37,7 +58,18 @@ function App() {
       <Cabecalho 
         TemLogin={login.teveLogin}
         onClickLogin={alternarVisualizacaoLogin}
+        clickOn={clickOn}
       />
+      {deveMostrarFormularioAdicao?(
+        <div className="sobreposicao-formulario">
+          <FormularioNovoCriminoso 
+            submeter={submeterNovoCriminoso} 
+            cancelaSubmeter={cancelarNovoCriminoso} 
+            ultimoId={listaAtualizada.length ? Math.max(...listaAtualizada.map(p => p.id)) : 0}
+          />
+        </div>
+      ):(null)}
+
       <div className="conteudo-principal">
         {deveMostrarAreaDeLogin ? (
           <div style={{ margin: '20px auto', maxWidth: '400px', padding: '10px' }}>
@@ -101,7 +133,7 @@ function App() {
 
       </div>
       <InterfaceExibicao>
-        {ListaProcuradosFiltrado.map((personagem) => (
+            {filtrarPersonagem(listaAtualizada, nome, status, estrela).map((personagem) => (
           <div className="card" key ={personagem.id}>
             <Personagem
               key={personagem.id}
