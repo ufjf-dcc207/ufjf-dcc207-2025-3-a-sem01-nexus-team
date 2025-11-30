@@ -9,7 +9,8 @@
         "imagem imagem"
         "idade data-nascimento"
         "nivel-perigo status"
-        "stars recompensa";
+        "stars recompensa"
+        "botao-ficha botao-ficha";
 }
 
 .personagem .nome {
@@ -71,6 +72,33 @@
     color: gold;
     grid-area: recompensa;
     text-align: uppercase;
+}
+
+.personagem .botao-ficha {
+    grid-area: botao-ficha;
+    
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px 0;
+    
+    background-color: transparent;
+    border: 1px solid #D9BE6C;
+    color: #D9BE6C;
+    
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.personagem .botao-ficha:hover {
+    background-color: #D9BE6C;
+    color: black;
+    box-shadow: 0 0 10px rgba(217, 190, 108, 0.5);
 }
 
 .foragido {
