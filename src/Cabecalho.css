@@ -1,4 +1,5 @@
 .cabecalho-departamento {
+  position: relative;
   min-height: 150px; 
   height: auto; 
   padding: 20px;
@@ -6,10 +7,16 @@
   border-bottom: 4px solid #D9BE6C;
   box-shadow: 0 4px 10px #D9BE6C;
   display: flex;
+  justify-content: center; 
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap; 
-  gap: 20px;  
+}
+
+.logo-container {
+  position: absolute;
+  left: 100px;
+  margin: 0; 
+  display: flex;
+  align-items: center;
 }
 
 .logo-departamento {
@@ -17,18 +24,14 @@
   height: 100px; 
   object-fit: contain;
   filter: drop-shadow(0 0 5px #D9BE6C);
-  margin-right: 40px; 
-  margin-left: 20px;
-  flex-shrink: 0;
 }
 
 .conteiner-navegacao {
   display: flex;
   flex-direction: column; 
+  align-items: center;
   justify-content: center; 
   gap: 25px;
-  flex: 1; 
-  min-width: 300px;
 }
 
 .nome-departamento {
@@ -38,12 +41,14 @@
   letter-spacing: 2px;
   text-shadow: 0 0 6px #D9BE6C;
   margin: 0;
+  text-align: center;
 }
 
 .botoes-navegacao {
   display: flex;
   gap: 25px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
+  justify-content: center; 
 }
 
 .botao-inicio, .botao-procurados, .botao-desaparecidos, .botao-denuncia, .botao-saibaMais {
@@ -131,6 +136,12 @@
     text-align: center;
     padding: 20px 10px; 
     height: auto;
+  }
+
+  .logo-container {
+    position: static; 
+    left: auto;
+    margin-bottom: 15px;
   }
 
   .logo-departamento {
