@@ -35,13 +35,16 @@ export function Cabecalho({ TemLogin, nivelAcesso, onClickLogin, clickOn}: Cabec
                             />
                             <span>{TemLogin ? "LOGOUT" : "LOGIN"}</span>
                         </button>
-                        <button className="botao-recompensa" title="Minhas Recompensas">
+                        {TemLogin && (nivelAcesso === "caçador" || nivelAcesso === "administrador") ? (
+                            
+                            <button className="botao-recompensa" title="Minhas Recompensas">
                             <img 
                                 src={"Icones/money-bag.svg"} 
                                 alt="Recompensas" 
                                 className="svg-icone" 
-                            />
+                                />
                         </button>
+                            ):(null)}
                         {TemLogin && (nivelAcesso === "agente" || nivelAcesso === "administrador") ? (
                             <button className="botao-adiciona-criminoso" title="Adicionar Criminoso" onClick={clickOn}>
                                 <img src={"Icones/icons8-plusx.svg"} 
