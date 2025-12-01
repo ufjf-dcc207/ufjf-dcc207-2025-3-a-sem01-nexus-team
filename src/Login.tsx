@@ -1,6 +1,5 @@
 import React,{useState} from "react";
 import { Usuario, type InfoUsuario } from "./ProcessadorListas";
-
 import "./estilos/Login.css";
 
 type LoginProps = {

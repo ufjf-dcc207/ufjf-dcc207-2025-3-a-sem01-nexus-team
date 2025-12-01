@@ -1,5 +1,3 @@
-/* Tema: fundo escuro #283040 e destaque #D9BE6C */
-
 .container-formulario {
 	position: relative;
 	display: flex;
@@ -11,11 +9,12 @@
 .formulario-criminoso {
 	width: 100%;
 	max-width: 720px;
+	margin-top: 20px;
 	background: rgba(217, 190, 108, 0.06);
 	border: 1px solid #D9BE6C;
 	box-shadow: 0 0 14px rgba(217,190,108,0.25);
 	border-radius: 12px;
-	padding: 20px 30px;
+	padding: 20px 60px 20px 20px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 14px 16px;
@@ -106,4 +105,3 @@
 	background: rgba(217,190,108,0.14);
 	box-shadow: 0 0 10px rgba(217,190,108,0.4);
 }
-
