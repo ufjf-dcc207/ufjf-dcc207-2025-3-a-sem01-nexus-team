@@ -11,16 +11,17 @@ type FormularioProps = {
     ultimoId: number;
 }
 type DadosFormularioCriminoso = {
-    id?: number;
     Nome: string;
     Subnome: string;
-    Imagem: string; // armazenará a URL final da imagem
+    Imagem: string;
     Idade: number | string; 
     DataDeNascimento: string;
     Status: Status | string;
     NivelPerigo: number;
     Recompensa: number;
-    caminhoImagem: string; // campo de input antes de validar/confirmar
+    caminhoImagem: string;
+    Descricao: string;
+    Crimes: string; // texto separado por vírgulas
 };
 
 
@@ -34,7 +35,9 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
         NivelPerigo: 0,
         Imagem: "", // guardará a url validada ou caminho
         Recompensa: 0,
-        caminhoImagem: ""
+        caminhoImagem: "",
+        Descricao: "",
+        Crimes: ""
     });
     const [previewValida, setPreviewValida] = useState<boolean>(true);
 
@@ -47,8 +50,8 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
             return false;
         }
     };
-    const inputUsuario = (entrada: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        const target = entrada.target as HTMLInputElement | HTMLSelectElement;
+    const inputUsuario = (entrada: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        const target = entrada.target as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
         const { name, type } = target;
 
        
@@ -81,10 +84,9 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
 
         setDados(prev => ({
             ...prev,
-            [name]: (target as HTMLInputElement | HTMLSelectElement).value,
+            [name]: (target as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement).value,
         }));
 
-        // Se o campo alterado foi caminhoImagem, tenta validar e atualizar Imagem
         if (name === "caminhoImagem") {
             const valor = (target as HTMLInputElement).value.trim();
             const ehUrl = validaUrlImagem(valor);
@@ -100,6 +102,7 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
         evento.preventDefault();
         const idadeNormalizada = typeof dados.Idade === "number" ? dados.Idade : 0;
         const statusNormalizado: Status = statusValido(String(dados.Status));
+        const crimesArray = dados.Crimes.split(',').map(c => c.trim()).filter(c => c.length > 0);
         submeter({
             id: ultimoId + 1,
             Nome: dados.Nome,
@@ -110,6 +113,9 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
             NivelPerigo: dados.NivelPerigo,
             Imagem: dados.Imagem || "Procurados/default.png",
             Recompensa: dados.Recompensa,
+            Descricao: dados.Descricao || "Sem descrição",
+            Crimes: crimesArray,
+            UltimaLocalizacao: "",
         });
         setDados({
             Nome: "",
@@ -120,7 +126,9 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
             NivelPerigo: 0,
             Imagem: "",
             Recompensa: 0,
-            caminhoImagem: ""
+            caminhoImagem: "",
+            Descricao: "",
+            Crimes: ""
         });
         setPreviewValida(true);
     };
@@ -173,13 +181,29 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
                 <label>Recompensa (R$):</label>
                 <input type="number" name="Recompensa" value={dados.Recompensa} onChange={inputUsuario} min="0" />
 
-                <label>Caminho da Imagem (Ex: Procurados/novo.png):</label>
+                                <label>Caminho da Imagem (Ex: Procurados/novo.png):</label>
                                 <input 
                                     type="text" 
                                     name="caminhoImagem" 
                                     value={dados.caminhoImagem} 
                                     onChange={inputUsuario} 
                                     placeholder="URL completa (https://...) ou deixe vazio" 
+                                />
+                                <label>Descrição:</label>
+                                <textarea
+                                    name="Descricao"
+                                    value={dados.Descricao}
+                                    onChange={inputUsuario}
+                                    rows={3}
+                                    placeholder="Detalhes, características, observações..."
+                                />
+                                <label>Crimes (separar por vírgulas):</label>
+                                <textarea
+                                    name="Crimes"
+                                    value={dados.Crimes}
+                                    onChange={inputUsuario}
+                                    rows={2}
+                                    placeholder="Roubo, Falsificação, Contrabando..."
                                 />
                                 <div style={{marginTop: '8px'}}>
                                     {dados.Imagem ? (
