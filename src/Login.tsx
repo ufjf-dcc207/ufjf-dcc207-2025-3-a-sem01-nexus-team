@@ -21,7 +21,8 @@ const Login = ({TemLogin}:LoginProps) => {
         setCredencialLogin({...credencialLogin, [name]: value});
     }
 
-    const verificarLogin = () => {
+    const verificarLogin = (evento: React.FormEvent<HTMLFormElement>) => {
+      evento.preventDefault();
         const usuarioEncontrado = Usuario.find(
             (usuario) => usuario.email === credencialLogin.email && usuario.senha === credencialLogin.senha
         );
