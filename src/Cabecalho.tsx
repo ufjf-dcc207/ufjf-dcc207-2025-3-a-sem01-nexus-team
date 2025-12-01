@@ -2,10 +2,11 @@ import "./estilos/Cabecalho.css"
 
 interface CabecalhoProps{
     TemLogin: boolean;
+    nivelAcesso?: string;
     onClickLogin: () => void;
     clickOn?: () => void;
 }
-export function Cabecalho({ TemLogin, onClickLogin, clickOn}: CabecalhoProps){
+export function Cabecalho({ TemLogin, nivelAcesso, onClickLogin, clickOn}: CabecalhoProps){
     return(
         <>
             <div className="cabecalho-departamento">
@@ -41,7 +42,7 @@ export function Cabecalho({ TemLogin, onClickLogin, clickOn}: CabecalhoProps){
                                 className="svg-icone" 
                             />
                         </button>
-                        {TemLogin?(
+                        {TemLogin && (nivelAcesso === "agente" || nivelAcesso === "administrador") ? (
                             <button className="botao-adiciona-criminoso" title="Adicionar Criminoso" onClick={clickOn}>
                                 <img src={"Icones/icons8-plusx.svg"} 
                                 alt="Adicionar Criminoso"

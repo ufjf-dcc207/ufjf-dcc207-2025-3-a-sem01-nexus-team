@@ -14,7 +14,7 @@ function App() {
   const [nome, setNome] =  useState("");
   const [status, setStatus] = useState("");
   const [estrela, setEstrela] = useState(0);
-  const [login, setLogin] = useState({teveLogin: false, userInfo: null as InfoUsuario | null, mostraLogin: false});
+  const [login, setLogin] = useState({teveLogin: false, nivelAcesso: "", userInfo: null as InfoUsuario | null, mostraLogin: false});
   
   const [listaAtualizada, setListaAtualizada] = useState(ListaProcurados);
   const [mostrarFormAddCriminoso, setMostrarFormAddCriminoso] = useState(false); 
@@ -57,6 +57,7 @@ function App() {
     <div className="App">
       <Cabecalho 
         TemLogin={login.teveLogin}
+        nivelAcesso={login.userInfo?.nivelAcesso}
         onClickLogin={alternarVisualizacaoLogin}
         clickOn={clickOn}
       />
