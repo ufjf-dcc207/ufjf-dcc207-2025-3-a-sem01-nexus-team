@@ -2,9 +2,6 @@ import { useState } from "react";
 import type { Procurado }  from "./ProcessadorListas";
 import type { Status } from "./Personagem";
 import { statusValido } from "./utilitarios/utils";
-import {ListaProcurados} from "./ProcessadorListas";
-import "./estilos/FormularioNovoCriminoso.css";
-
 import "./estilos/FormularioNoovoCriminoso.css";
 
 
