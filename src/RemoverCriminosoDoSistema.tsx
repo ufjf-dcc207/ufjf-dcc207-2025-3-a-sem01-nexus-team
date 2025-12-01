@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./estilos/RemoverCriminosoDoSistema.css";
 import type { Procurado } from "./ProcessadorListas";
 
