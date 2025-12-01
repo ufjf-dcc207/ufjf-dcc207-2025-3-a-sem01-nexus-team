@@ -21,7 +21,8 @@ type DadosFormularioCriminoso = {
     Recompensa: number;
     caminhoImagem: string;
     Descricao: string;
-    Crimes: string; // texto separado por vírgulas
+    Crimes: string;
+    UltimaLocalizacao: string;
 };
 
 
@@ -33,7 +34,8 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
         DataDeNascimento: "",
         Status: "",
         NivelPerigo: 0,
-        Imagem: "", // guardará a url validada ou caminho
+        Imagem: "",
+        UltimaLocalizacao: "",
         Recompensa: 0,
         caminhoImagem: "",
         Descricao: "",
@@ -111,11 +113,11 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
             DataDeNascimento: dados.DataDeNascimento,
             Status: statusNormalizado,
             NivelPerigo: dados.NivelPerigo,
+            UltimaLocalizacao: (dados.UltimaLocalizacao || "").trim(),
             Imagem: dados.Imagem || "Procurados/default.png",
             Recompensa: dados.Recompensa,
             Descricao: dados.Descricao || "Sem descrição",
             Crimes: crimesArray,
-            UltimaLocalizacao: "",
         });
         setDados({
             Nome: "",
@@ -123,6 +125,7 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
             Idade: 0,
             DataDeNascimento: "",
             Status: "",
+            UltimaLocalizacao: "",
             NivelPerigo: 0,
             Imagem: "",
             Recompensa: 0,
@@ -153,14 +156,8 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
                     placeholder="0" 
                 />
                 <label>Data de Nascimento:</label>
-                <input 
-                    type="date" 
-                    name="DataDeNascimento" 
-                    value={dados.DataDeNascimento} 
-                    onChange={inputUsuario} 
-                    min="0" 
-                    placeholder="0" 
-                />
+                <label>Última Localização:</label>
+                <input type="text" name="UltimaLocalizacao" value={dados.UltimaLocalizacao} onChange={inputUsuario} />
 
                 <label>Nível de Perigo (1 a 5):</label>
                 <select name="NivelPerigo" value={dados.NivelPerigo} onChange={inputUsuario}>
@@ -177,6 +174,15 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
                     <option value="Morto">Morto</option>
                     <option value="Desconhecido">Desconhecido</option>
                 </select>
+                <input 
+                    type="text" 
+                    name="DataDeNascimento" 
+                    value={dados.DataDeNascimento} 
+                    onChange={inputUsuario} 
+                    min="0" 
+                    placeholder="0" 
+                />
+
 
                 <label>Recompensa (R$):</label>
                 <input type="number" name="Recompensa" value={dados.Recompensa} onChange={inputUsuario} min="0" />
