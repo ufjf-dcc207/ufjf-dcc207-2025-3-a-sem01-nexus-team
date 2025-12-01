@@ -56,7 +56,7 @@ export function Cabecalho({ TemLogin, nivelAcesso, onClickLogin, clickOn, onClic
                             </button>):(null)}
                         {TemLogin && (nivelAcesso === "agente"||nivelAcesso === "administrador") ? (
                             <button className="botao-remover-criminoso" title="Remover Criminoso" onClick={onClickRemover}>
-                                <img src={"Icones/image.svg"}
+                                <img src={"Icones/menos.png"}
                                 alt="Remover Criminoso"
                                 className="svg-icone"
                                 />
