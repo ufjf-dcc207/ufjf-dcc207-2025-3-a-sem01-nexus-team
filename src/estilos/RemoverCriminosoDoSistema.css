@@ -1,0 +1,94 @@
+.remover-criminoso {
+	background: #111;
+	color: #f3f3f3;
+	border: 1px solid #2a2a2a;
+	border-radius: 10px;
+	padding: 16px;
+	max-width: 860px;
+	margin: 12px auto;
+	box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+}
+
+.titulo-remocao {
+	margin: 0 0 12px 0;
+	font-size: 1.25rem;
+	letter-spacing: 0.5px;
+}
+
+.lista-remocao {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border: 1px solid #2a2a2a;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.item-remocao {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 12px;
+	border-bottom: 1px solid #2a2a2a;
+	background: #161616;
+}
+
+.item-remocao:last-child {
+	border-bottom: none;
+}
+
+.item-info {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.item-avatar {
+	width: 34px;
+	height: 34px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 1px solid #2a2a2a;
+}
+
+.botao-remover {
+	background: #c62828;
+	color: #fff;
+	border: none;
+	padding: 6px 12px;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background 0.2s ease-in-out, transform 0.05s;
+}
+
+.botao-remover:hover {
+	background: #d32f2f;
+}
+
+.botao-remover:active {
+	transform: scale(0.98);
+}
+
+.vazio-remocao {
+	padding: 10px 12px;
+	color: #b0b0b0;
+}
+
+.contador-remocao {
+	margin-top: 10px;
+	color: #bdbdbd;
+}
+
+.botao-visualizar {
+	margin-top: 12px;
+	background: #1976d2;
+	color: #fff;
+	border: none;
+	padding: 8px 14px;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.botao-visualizar:hover {
+	background: #1e88e5;
+}

@@ -69,7 +69,7 @@
   color: black;
 }
 
-.botao-recompensa, .botao-adiciona-criminoso {
+.botao-recompensa, .botao-adiciona-criminoso, .botao-remover-criminoso {
     width: 40px;
     height: 40px;
 
