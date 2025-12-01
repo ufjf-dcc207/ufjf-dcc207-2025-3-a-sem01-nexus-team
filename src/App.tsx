@@ -56,14 +56,14 @@ function App() {
   
   const processarLogin = (user: InfoUsuario) => {
     setLogin(prevLogin => ({ ...prevLogin, userInfo: user, teveLogin: true, mostraLogin: false }));
-    // Ao efetuar login, garanta que nenhuma sobreposição fique aberta
+  
     setMostrarFormAddCriminoso(false);
     setMostrarRemocaoCriminoso(false);
   };
 
   const processarLogout = () => {
     setLogin(prevLogin => ({ ...prevLogin, userInfo: null, teveLogin: false, mostraLogin: false }));
-    // Ao efetuar logout, feche sobreposições
+   
     setMostrarFormAddCriminoso(false);
     setMostrarRemocaoCriminoso(false);
   };
