@@ -8,6 +8,7 @@ import Login from "./Login";
 import { Cabecalho } from "./Cabecalho";
 import FormularioNovoCriminoso from "./FormularioNovoCriminoso";
 import type { Procurado } from "./ProcessadorListas";
+import RemoverCriminosoDoSistema from "./RemoverCriminosoDoSistema";
 
 function App() {
 
@@ -18,11 +19,22 @@ function App() {
   
   const [listaAtualizada, setListaAtualizada] = useState(ListaProcurados);
   const [mostrarFormAddCriminoso, setMostrarFormAddCriminoso] = useState(false); 
+  const [mostrarRemocaoCriminoso, setMostrarRemocaoCriminoso] = useState(false);
   
   let ListaProcuradosFiltrado = filtrarPersonagem(listaAtualizada, nome, status, estrela);
 
   const clickOn = () => {
     setMostrarFormAddCriminoso(true);
+    setMostrarRemocaoCriminoso(false);
+  };
+
+  const clickRemover = () => {
+    setMostrarRemocaoCriminoso(true);
+    setMostrarFormAddCriminoso(false);
+  };
+
+  const voltarPrincipal = () => {
+    setMostrarRemocaoCriminoso(false);
   };
 
   const submeterNovoCriminoso = (novo: Procurado) => {
@@ -34,15 +46,26 @@ function App() {
     setMostrarFormAddCriminoso(false);
   };
 
+  const removerCriminoso = (id: number) => {
+    setListaAtualizada(prev => prev.filter(p => p.id !== id));
+  };
+
   const deveMostrarAreaDeLogin = login.teveLogin || login.mostraLogin;
   const deveMostrarFormularioAdicao = login.teveLogin && mostrarFormAddCriminoso;
+  const deveMostrarRemocao = login.teveLogin && mostrarRemocaoCriminoso;
   
   const processarLogin = (user: InfoUsuario) => {
     setLogin(prevLogin => ({ ...prevLogin, userInfo: user, teveLogin: true, mostraLogin: false }));
+    // Ao efetuar login, garanta que nenhuma sobreposição fique aberta
+    setMostrarFormAddCriminoso(false);
+    setMostrarRemocaoCriminoso(false);
   };
 
   const processarLogout = () => {
     setLogin(prevLogin => ({ ...prevLogin, userInfo: null, teveLogin: false, mostraLogin: false }));
+    // Ao efetuar logout, feche sobreposições
+    setMostrarFormAddCriminoso(false);
+    setMostrarRemocaoCriminoso(false);
   };
   
   const alternarVisualizacaoLogin = () => {
@@ -60,6 +83,8 @@ function App() {
         nivelAcesso={login.userInfo?.nivelAcesso}
         onClickLogin={alternarVisualizacaoLogin}
         clickOn={clickOn}
+        onClickRemover={clickRemover}
+        onClickVisualizar={voltarPrincipal}
       />
       {deveMostrarFormularioAdicao?(
         <div className="sobreposicao-formulario">
@@ -70,6 +95,15 @@ function App() {
           />
         </div>
       ):(null)}
+      {deveMostrarRemocao ? (
+        <div className="sobreposicao-formulario">
+          <RemoverCriminosoDoSistema 
+            lista={listaAtualizada}
+            onRemover={removerCriminoso}
+            voltarPrincipal={voltarPrincipal}
+          />
+        </div>
+      ) : (null)}
 
       <div className="conteudo-principal">
         {deveMostrarAreaDeLogin ? (
