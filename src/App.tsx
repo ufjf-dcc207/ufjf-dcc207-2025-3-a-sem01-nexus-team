@@ -19,7 +19,7 @@ function App() {
   const [listaAtualizada, setListaAtualizada] = useState(ListaProcurados);
   const [mostrarFormAddCriminoso, setMostrarFormAddCriminoso] = useState(false); 
   
-  const ListaProcuradosFiltrado = filtrarPersonagem(ListaProcurados, nome, status, estrela);
+  let ListaProcuradosFiltrado = filtrarPersonagem(listaAtualizada, nome, status, estrela);
 
   const clickOn = () => {
     setMostrarFormAddCriminoso(true);
@@ -133,7 +133,7 @@ function App() {
 
       </div>
       <InterfaceExibicao>
-            {filtrarPersonagem(listaAtualizada, nome, status, estrela).map((personagem) => (
+            {ListaProcuradosFiltrado.map((personagem) => (
           <div className="card" key ={personagem.id}>
             <Personagem
               key={personagem.id}
