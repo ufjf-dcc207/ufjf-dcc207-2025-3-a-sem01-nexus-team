@@ -1,18 +1,23 @@
 [
     {
-        "nome": "admin",
+        "nome": "Wrench",
         "nivelAcesso": "administrador",
-        "email": "admin@example.com",
-        "senha": "admin123",
-        "imagemPerfil": "UsuariosPerfil/capitaoNascimento.png"
+        "email": "adm@nexus.com",
+        "senha": "adm123",
+        "imagemPerfil": "UsuariosPerfil/AdmWrench.png"
     },
-
     {
-        "nome": "admin",
-        "nivelAcesso": "administrador",
-        "email": "a@s",
-        "senha": "a",
-        "imagemPerfil": "UsuariosPerfil/capitaoNascimento.png"
+        "nome": "Jonas Aguiar",
+        "nivelAcesso": "agente",
+        "email": "aguiar@nexus.com",
+        "senha": "mutilador2025",
+        "imagemPerfil": "UsuariosPerfil/DelegadoAguiar.png"
+    },
+    {
+        "nome": "Sadie Adler",
+        "nivelAcesso": "cacador",
+        "email": "Adler@nexus.com",
+        "senha": "widow2025",
+        "imagemPerfil": "UsuariosPerfil/CaçadoraSadie.png"
     }
-
 ]
