@@ -32,8 +32,8 @@ export default function Ficha({nome, subnome, imagem, nivelPerigo, status, idade
             <div className="idade-ficha"><p>Idade: <span className={desconhecidoIdade}>{idade}</span></p></div>
             <div className="data-nascimento-ficha"><p>Nascimento: <span className={desconhecidoData}>{dataFormatada}</span></p></div>
             <div className="recompensa-ficha"><p>Recompensa: {recompensaValida}</p></div>
-            <div className="descricao-ficha"><p>{descricao}</p></div>
-            <div className="crimes-ficha"><p><strong>Crimes:</strong> {crimes.join(', ')}</p></div>
+            <div className="descricao-ficha"><h4>Histórico</h4> <p>{descricao}</p></div>
+            <div className="crimes-ficha"><h4>Crimes Conhecidos</h4> <p><strong>Crimes:</strong> {crimes.join(', ')}</p></div>
             <div className="ultima-localizacao-ficha"><p>Última Localização: {ultimaLocalizacao}</p></div>
             <button className="botao-voltar">Voltar</button>
             <button className="botao-pegar-recompensa">Pegar Recompensa</button>

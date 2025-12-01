@@ -1,0 +1,176 @@
+.ficha {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "nome nome nome nome"
+        "subnome subnome subnome subnome"
+        "imagem imagem idade data"
+        "imagem imagem status nivel"
+        "imagem imagem stars recompensa"
+        "localizacao localizacao localizacao localizacao"
+        "descricao descricao descricao descricao"
+        "crimes crimes crimes crimes"
+        "voltar voltar pegar pegar";
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    background-color: #1f1f1f;
+    border: 2px solid #D9BE6C;
+    border-radius: 10px;
+    padding: 30px;
+    color: #f1f1f1;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    box-sizing: border-box;
+}
+
+.nome-ficha {
+    grid-area: nome;
+    text-align: center;
+    border-bottom: 2px solid #D9BE6C;
+    margin-bottom: 10px;
+}
+
+.nome-ficha h2 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #D9BE6C;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subnome-ficha {
+    grid-area: subnome;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.subnome-ficha h3 {
+    margin: 0;
+    font-weight: normal;
+    font-style: italic;
+    color: #a0a0a0;
+}
+
+.imagem-ficha {
+    grid-area: imagem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+    border: 1px solid #444;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.imagem-ficha img {
+    width: 100%;
+    height: 100%;
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.idade-ficha p, .data-nascimento-ficha p, 
+.status-ficha p, .nivel-perigo-ficha p, .recompensa-ficha p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.idade-ficha { grid-area: idade; }
+.data-nascimento-ficha { grid-area: data; }
+.status-ficha { grid-area: status; }
+.nivel-perigo-ficha { grid-area: nivel; }
+.estrela-ficha { grid-area: stars; }
+
+.recompensa-ficha {
+    grid-area: recompensa;
+    font-weight: bold;
+    color: gold;
+    font-size: 1.1rem;
+}
+
+.ultima-localizacao-ficha {
+    grid-area: localizacao;
+    background-color: rgba(217, 190, 108, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px dashed #D9BE6C;
+}
+
+.descricao-ficha {
+    grid-area: descricao;
+    text-align: justify;
+    line-height: 1.6;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+.descricao-ficha h4, .crimes-ficha h4 {
+    color: #D9BE6C;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.crimes-ficha {
+    grid-area: crimes;
+    text-align: justify;
+    background-color: #2a1a1a;
+    padding: 15px;
+    border-left: 4px solid #ff4444;
+    border-radius: 4px;
+}
+
+.botao-voltar {
+    grid-area: voltar;
+    padding: 15px;
+    background: transparent;
+    border: 2px solid #D9BE6C;
+    color: #D9BE6C;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 5px;
+}
+
+.botao-voltar:hover {
+    background-color: rgba(217, 190, 108, 0.1);
+}
+
+.botao-pegar-recompensa {
+    grid-area: pegar;
+    padding: 15px;
+    background: #D9BE6C;
+    border: none;
+    color: #1a1a1a;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 5px;
+}
+
+.botao-pegar-recompensa:hover {
+    background-color: #fff;
+    box-shadow: 0 0 15px #D9BE6C;
+}
+
+.foragido { color: #ffc107; font-weight: bold; }
+.morto { color: #ff4444; font-weight: bold; }
+.capturado { color: #4caf50; font-weight: bold; }
+.desconhecido { color: #9e9e9e; font-style: italic; }
+
+@media (max-width: 700px) {
+    .ficha {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        overflow-y: auto;
+    }
+    
+    .imagem-ficha img {
+        max-height: 200px;
+    }
+}
