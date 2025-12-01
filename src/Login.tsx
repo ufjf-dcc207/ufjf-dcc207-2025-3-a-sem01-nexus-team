@@ -37,8 +37,8 @@ const Login = ({TemLogin}:LoginProps) => {
    return (
     <div className="container-acesso">
       <form className="caixa-acesso" onSubmit={verificarLogin}>
-        <h2> Acesso N. P.D.</h2>
-        <p>Insira suas credenciais estáticas.</p>
+        <h2> Acesso ao sistema como Agente ou caçador</h2>
+        <p>Insira suas credenciais</p>
 
         <input 
           type="email" 
