@@ -5,8 +5,10 @@ interface CabecalhoProps{
     nivelAcesso?: string;
     onClickLogin: () => void;
     clickOn?: () => void;
+    onClickRemover?: () => void;
+    onClickVisualizar?: () => void;
 }
-export function Cabecalho({ TemLogin, nivelAcesso, onClickLogin, clickOn}: CabecalhoProps){
+export function Cabecalho({ TemLogin, nivelAcesso, onClickLogin, clickOn, onClickRemover, onClickVisualizar}: CabecalhoProps){
     return(
         <>
             <div className="cabecalho-departamento">
@@ -23,7 +25,7 @@ export function Cabecalho({ TemLogin, nivelAcesso, onClickLogin, clickOn}: Cabec
                     </h2>
                     <div className="botoes-navegacao">
                         <button className="botao-inicio">Início</button>
-                        <button className="botao-procurados">Procurados</button>
+                        <button className="botao-procurados" onClick={onClickVisualizar}>Procurados</button>
                         <button className="botao-desaparecidos">Desaparecidos</button>
                         <button className="botao-denuncia">Denúncia</button>
                         <button className="botao-saibaMais">Saiba Mais</button>
@@ -35,7 +37,7 @@ export function Cabecalho({ TemLogin, nivelAcesso, onClickLogin, clickOn}: Cabec
                             />
                             <span>{TemLogin ? "LOGOUT" : "LOGIN"}</span>
                         </button>
-                        {TemLogin && (nivelAcesso === "caçador" || nivelAcesso === "administrador") ? (
+                        {TemLogin && (nivelAcesso === "cacador" || nivelAcesso === "administrador") ? (
                             
                             <button className="botao-recompensa" title="Minhas Recompensas">
                             <img 
@@ -50,6 +52,13 @@ export function Cabecalho({ TemLogin, nivelAcesso, onClickLogin, clickOn}: Cabec
                                 <img src={"Icones/icons8-plusx.svg"} 
                                 alt="Adicionar Criminoso"
                                 className="svg-icone"           
+                                />
+                            </button>):(null)}
+                        {TemLogin && (nivelAcesso === "agente"||nivelAcesso === "administrador") ? (
+                            <button className="botao-remover-criminoso" title="Remover Criminoso" onClick={onClickRemover}>
+                                <img src={"Icones/trash.svg"}
+                                alt="Remover Criminoso"
+                                className="svg-icone"
                                 />
                             </button>):(null)}
                     </div>
