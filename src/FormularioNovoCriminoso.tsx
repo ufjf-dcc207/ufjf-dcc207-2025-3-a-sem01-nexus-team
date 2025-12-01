@@ -3,6 +3,7 @@ import type { Procurado }  from "./ProcessadorListas";
 import type { Status } from "./Personagem";
 import { statusValido } from "./utilitarios/utils";
 import {ListaProcurados} from "./ProcessadorListas";
+import "./estilos/FormularioNoovoCriminoso.css";
 
 
 type FormularioProps = {
@@ -156,8 +157,21 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
                     placeholder="0" 
                 />
                 <label>Data de Nascimento:</label>
+                <input 
+                    type="date" 
+                    name="DataDeNascimento" 
+                    value={dados.DataDeNascimento} 
+                    onChange={inputUsuario} 
+                />
+
                 <label>Última Localização:</label>
-                <input type="text" name="UltimaLocalizacao" value={dados.UltimaLocalizacao} onChange={inputUsuario} />
+                <input 
+                  type="text" 
+                  name="UltimaLocalizacao" 
+                  value={dados.UltimaLocalizacao} 
+                  onChange={inputUsuario} 
+                  placeholder="Ex: Distrito Central, Nexus City" 
+                />
 
                 <label>Nível de Perigo (1 a 5):</label>
                 <select name="NivelPerigo" value={dados.NivelPerigo} onChange={inputUsuario}>
@@ -174,27 +188,17 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
                     <option value="Morto">Morto</option>
                     <option value="Desconhecido">Desconhecido</option>
                 </select>
-                <input 
-                    type="text" 
-                    name="DataDeNascimento" 
-                    value={dados.DataDeNascimento} 
-                    onChange={inputUsuario} 
-                    min="0" 
-                    placeholder="0" 
-                />
-
-
                 <label>Recompensa (R$):</label>
                 <input type="number" name="Recompensa" value={dados.Recompensa} onChange={inputUsuario} min="0" />
 
-                                <label>Caminho da Imagem (Ex: Procurados/novo.png):</label>
-                                <input 
-                                    type="text" 
-                                    name="caminhoImagem" 
-                                    value={dados.caminhoImagem} 
-                                    onChange={inputUsuario} 
-                                    placeholder="URL completa (https://...) ou deixe vazio" 
-                                />
+                <label>Caminho da Imagem (Ex: Procurados/novo.png):</label>
+                <input 
+                 type="text" 
+                name="caminhoImagem" 
+                value={dados.caminhoImagem} 
+                onChange={inputUsuario} 
+                placeholder="URL completa (https://...) ou deixe vazio" 
+                />
                                 <label>Descrição:</label>
                                 <textarea
                                     name="Descricao"

@@ -1,0 +1,109 @@
+/* Tema: fundo escuro #283040 e destaque #D9BE6C */
+
+.container-formulario {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 17px;
+}
+
+.formulario-criminoso {
+	width: 100%;
+	max-width: 720px;
+	background: rgba(217, 190, 108, 0.06);
+	border: 1px solid #D9BE6C;
+	box-shadow: 0 0 14px rgba(217,190,108,0.25);
+	border-radius: 12px;
+	padding: 20px 30px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 14px 16px;
+}
+
+.formulario-criminoso h3 {
+	grid-column: 1 / -1;
+	margin: 0 0 6px 0;
+	color: #D9BE6C;
+}
+
+.formulario-criminoso label {
+	color: #D9BE6C;
+	font-weight: 600;
+	font-size: 0.95rem;
+}
+
+.formulario-criminoso input[type="text"],
+.formulario-criminoso input[type="number"],
+.formulario-criminoso input[type="date"],
+.formulario-criminoso input[type="email"],
+.formulario-criminoso input[type="password"],
+.formulario-criminoso select,
+.formulario-criminoso textarea {
+	width: 100%;
+	background: #283040;
+	color: #D9BE6C;
+	border: 1px solid #D9BE6C;
+	border-radius: 8px;
+	padding: 10px 12px;
+	font-size: 0.95rem;
+	outline: none;
+	transition: box-shadow 0.25s;
+}
+
+.formulario-criminoso textarea {
+	resize: vertical;
+	min-height: 72px;
+}
+
+.formulario-criminoso input:focus,
+.formulario-criminoso select:focus,
+.formulario-criminoso textarea:focus {
+	box-shadow: 0 0 10px #D9BE6C;
+	background: #2f394b;
+}
+
+.formulario-criminoso .botoes-formulario,
+.formulario-criminoso h3,
+.formulario-criminoso textarea[name="Descricao"],
+.formulario-criminoso textarea[name="Crimes"],
+.formulario-criminoso input[name="caminhoImagem"] {
+	grid-column: 1 / -1;
+}
+
+.botoes-formulario {
+	display: flex;
+	gap: 10px;
+	justify-content: flex-end;
+	margin-top: 8px;
+}
+
+.botao-salvar,
+.botao-cancelar {
+	padding: 10px 16px;
+	border-radius: 8px;
+	border: 1px solid #D9BE6C;
+	cursor: pointer;
+	font-weight: 700;
+	transition: all 0.25s ease;
+}
+
+.botao-salvar {
+	background: #D9BE6C;
+	color: #283040;
+}
+
+.botao-salvar:hover {
+	box-shadow: 0 0 12px #D9BE6C;
+}
+
+.botao-cancelar {
+	background: transparent;
+	color: #D9BE6C;
+}
+
+.botao-cancelar:hover {
+	background: rgba(217,190,108,0.14);
+	box-shadow: 0 0 10px rgba(217,190,108,0.4);
+}
+
