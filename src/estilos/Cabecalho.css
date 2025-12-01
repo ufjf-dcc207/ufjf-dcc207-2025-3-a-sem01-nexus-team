@@ -87,7 +87,7 @@
     transition: all 0.3s ease;
 }
 
-.botao-recompensa:hover, .botao-adiciona-criminoso:hover {
+.botao-recompensa:hover, .botao-adiciona-criminoso:hover, .botao-remover-criminoso:hover {
     background-color: #D9BE6C;
     color: black;
     box-shadow: 0 0 10px #D9BE6C;
@@ -98,7 +98,7 @@
     height: 25px;
 }
 
-.botao-recompensa:hover, .botao-adiciona-criminoso:hover {
+.botao-recompensa:hover, .botao-adiciona-criminoso:hover, .botao-remover-criminoso:hover {
   transform: scale(1.1);
 }
 
