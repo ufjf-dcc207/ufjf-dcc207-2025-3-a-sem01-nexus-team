@@ -22,7 +22,7 @@ export type InfoUsuario = {
     senha: string;
     nivelAcesso: string;
     imagemPerfil: string;
-}
+};
 
 export const ListaProcurados = procurados as Procurado[];
 export const Usuario : InfoUsuario[] = usuarios as InfoUsuario[];

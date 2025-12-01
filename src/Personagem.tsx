@@ -4,8 +4,8 @@ import './estilos/Personagem.css';
 import {situacaoStatus, statusValido, idadeValida, nivelPerigoValido, trataRecompensa, 
     formataIdade, checaDataNascimento, trataData} from './utilitarios/utils';
 
-export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa, descricao, crimes}: 
-    {nome: string, subnome: string, imagem: string, nivelPerigo: number, status: Status, idade: number | string, dataNascimento: string, recompensa: number, descricao?: string, crimes?: string[]}) {
+export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa, descricao, crimes, ultimaLocalizacao}: 
+    {nome: string, subnome: string, imagem: string, nivelPerigo: number, status: Status, idade: number | string, dataNascimento: string, recompensa: number, descricao?: string, crimes?: string[], ultimaLocalizacao?: string}) {
     let desconhecidoData: string = "";
     let dataFormatada: string;
     let desconhecidoIdade: string = "";
@@ -25,7 +25,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
         <div className="personagem">
             <div className="nome"><h2>{nome}</h2></div>
             <div className='subnome'><h3>{subnome}</h3></div>
-                    <div className="imagem"><img src={imagem} alt={nome} /></div>
+            <div className="imagem"><img src={imagem} alt={nome} /></div>
             <div className="nivel-perigo"><p>Nível de Perigo: </p></div>
             <div className='estrela'><p>{'⭐'.repeat(nivelPerigo) + '☆'.repeat(5 - nivelPerigo)}</p></div>
             <div className="status"><p>Status: <span className={situacao}>{status}</span></p></div>
@@ -34,6 +34,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             <div className="recompensa"><p>Recompensa: {recompensaValida}</p></div>
             {descricao ? <div className="descricao"><p>{descricao}</p></div> : null}
             {crimes && crimes.length > 0 ? <div className="crimes"><p><strong>Crimes:</strong> {crimes.slice(0,5).join(', ')}{crimes.length>5? '...' : ''}</p></div> : null}
+            {ultimaLocalizacao ? <div className="ultima-localizacao"><p>Última Localização: {ultimaLocalizacao}</p></div> : null}
             <button className="botao-ficha">Ver Ficha</button>
         </div>
     );
