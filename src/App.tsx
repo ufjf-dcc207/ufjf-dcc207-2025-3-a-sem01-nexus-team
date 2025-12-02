@@ -9,6 +9,7 @@ import { Cabecalho } from "./Cabecalho";
 import FormularioNovoCriminoso from "./FormularioNovoCriminoso";
 import type { Procurado } from "./ProcessadorListas";
 import RemoverCriminosoDoSistema from "./RemoverCriminosoDoSistema";
+import Ficha from "./Ficha";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
   const [listaAtualizada, setListaAtualizada] = useState(ListaProcurados);
   const [mostrarFormAddCriminoso, setMostrarFormAddCriminoso] = useState(false); 
   const [mostrarRemocaoCriminoso, setMostrarRemocaoCriminoso] = useState(false);
+  const [personagemSelecionadoFicha, setPersonagemSelecionadoFicha] = useState<Procurado | null>(null);
   
   let ListaProcuradosFiltrado = filtrarPersonagem(listaAtualizada, nome, status, estrela);
 
@@ -75,6 +77,19 @@ function App() {
     }
   };
 
+  const clickVerFicha = (personagem: Procurado) => {
+    setPersonagemSelecionadoFicha(personagem);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const clickVoltar = () => {
+    setPersonagemSelecionadoFicha(null);
+  };
+
+  const clickPegarRecompensa = () => {
+    alert("Recompensa Pega!");
+  };
+
   return (
     <div className="App">
       <Cabecalho 
@@ -122,72 +137,89 @@ function App() {
           </div>
         ) : null}
 
+      {personagemSelecionadoFicha ? (
+        <InterfaceExibicao>
+          <Ficha
+            nome={personagemSelecionadoFicha!.Nome}
+            subnome={personagemSelecionadoFicha!.Subnome}
+            imagem={personagemSelecionadoFicha!.Imagem}
+            nivelPerigo={personagemSelecionadoFicha!.NivelPerigo}
+            status={personagemSelecionadoFicha!.Status}
+            idade={personagemSelecionadoFicha!.Idade}
+            dataNascimento={personagemSelecionadoFicha!.DataDeNascimento}
+            recompensa={personagemSelecionadoFicha!.Recompensa}
+            descricao={personagemSelecionadoFicha!.Descricao}
+            crimes={personagemSelecionadoFicha!.Crimes}
+            ultimaLocalizacao={personagemSelecionadoFicha!.UltimaLocalizacao}
+            onVoltar={clickVoltar}
+            onPegarRecompensa={clickPegarRecompensa}
+          />
+        </InterfaceExibicao>
+      ) : (
+            <>
+              <div className="interface-procurados">
+                <h1 className="titulo-principal">PROCURADOS</h1>
 
+                <div className="container-busca">
+                  <div className="interface-busca">
+                    <input
+                      type="text"
+                      className="campo-texto"
+                      placeholder="Buscar por nome..."
+                      value={nome}
+                      onChange={(texto) => setNome(texto.target.value)}
+                    />
 
-      
-      <div className="interface-procurados">
-        <h1 className="titulo-principal">PROCURADOS</h1>
+                    <select 
+                        className="campo-select divisa-esquerda" 
+                        value={estrela} 
+                        onChange={(estrela) => setEstrela(Number(estrela.target.value))}
+                        title="Filtrar por Nível"
+                    >
+                        <option value={0}>🌟</option>
+                        <option value={1}>⭐</option>
+                        <option value={2}>⭐⭐</option>
+                        <option value={3}>⭐⭐⭐</option>
+                        <option value={4}>⭐⭐⭐⭐</option>
+                        <option value={5}>⭐⭐⭐⭐⭐</option>
+                    </select>
 
-        <div className="container-busca">
+                    <select 
+                        className="campo-select divisa-esquerda" 
+                        value={status} 
+                        onChange={(status) => setStatus(status.target.value)}
+                        title="Filtrar por Status"
+                    >
+                        <option value="">Todos</option>
+                        <option value="Foragido">Foragido</option>
+                        <option value="Capturado">Capturado</option>
+                        <option value="Morto">Morto</option>
+                        <option value="Desconhecido">Desconhecido</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
 
-          <div className="interface-busca">
-            <input
-              type="text"
-              className="campo-texto"
-              placeholder="Buscar por nome..."
-              value={nome}
-              onChange={(texto) => setNome(texto.target.value)}
-            />
-
-            <select 
-                className="campo-select divisa-esquerda" 
-                value={estrela} 
-                onChange={(estrela) => setEstrela(Number(estrela.target.value))}
-                title="Filtrar por Nível"
-            >
-                <option value={0}>🌟</option>
-                <option value={1}>⭐</option>
-                <option value={2}>⭐⭐</option>
-                <option value={3}>⭐⭐⭐</option>
-                <option value={4}>⭐⭐⭐⭐</option>
-                <option value={5}>⭐⭐⭐⭐⭐</option>
-            </select>
-
-            <select 
-                className="campo-select divisa-esquerda" 
-                value={status} 
-                onChange={(status) => setStatus(status.target.value)}
-                title="Filtrar por Status"
-            >
-                <option value="">Todos</option>
-                <option value="Foragido">Foragido</option>
-                <option value="Capturado">Capturado</option>
-                <option value="Morto">Morto</option>
-                <option value="Desconhecido">Desconhecido</option>
-            </select>
-          </div>
-
-        </div>
-
-      </div>
-
-      <InterfaceExibicao>
-            {ListaProcuradosFiltrado.map((personagem) => (
-          <div className="card" key ={personagem.id}>
-            <Personagem
-              key={personagem.id}
-              nome={personagem.Nome}
-              subnome={personagem.Subnome}
-              imagem={personagem.Imagem}
-              nivelPerigo={personagem.NivelPerigo}
-              status={personagem.Status}
-              idade={personagem.Idade}
-              dataNascimento={personagem.DataDeNascimento}
-              recompensa={personagem.Recompensa}
-            />
-          </div>
-        ))}
-      </InterfaceExibicao>
+              <InterfaceExibicao>
+                {ListaProcuradosFiltrado.map((personagem) => (
+                  <div className="card" key={personagem.id}>
+                    <Personagem
+                      nome={personagem.Nome}
+                      subnome={personagem.Subnome}
+                      imagem={personagem.Imagem}
+                      nivelPerigo={personagem.NivelPerigo}
+                      status={personagem.Status}
+                      idade={personagem.Idade}
+                      dataNascimento={personagem.DataDeNascimento}
+                      recompensa={personagem.Recompensa}
+                      onVerFicha={() => clickVerFicha(personagem)}
+                    />
+                  </div>
+                ))}
+              </InterfaceExibicao>
+            </>
+        )
+      }
       </div>
     </div>
   );
