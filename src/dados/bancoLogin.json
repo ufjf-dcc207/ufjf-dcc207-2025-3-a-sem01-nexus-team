@@ -7,14 +7,14 @@
         "imagemPerfil": "UsuariosPerfil/AdmWrench.png"
     },
     {
-        "nome": "Jonas Aguiar",
+        "nome": "Aguiar",
         "nivelAcesso": "agente",
         "email": "aguiar@nexus.com",
         "senha": "mutilador2025",
         "imagemPerfil": "UsuariosPerfil/DelegadoAguiar.png"
     },
     {
-        "nome": "Sadie Adler",
+        "nome": "Sadie",
         "nivelAcesso": "cacador",
         "email": "adler@nexus.com",
         "senha": "widow2025",

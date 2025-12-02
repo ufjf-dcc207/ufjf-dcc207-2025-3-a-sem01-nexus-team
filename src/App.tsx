@@ -56,14 +56,12 @@ function App() {
   
   const processarLogin = (user: InfoUsuario) => {
     setLogin(prevLogin => ({ ...prevLogin, userInfo: user, teveLogin: true, mostraLogin: false }));
-  
     setMostrarFormAddCriminoso(false);
     setMostrarRemocaoCriminoso(false);
   };
 
   const processarLogout = () => {
     setLogin(prevLogin => ({ ...prevLogin, userInfo: null, teveLogin: false, mostraLogin: false }));
-   
     setMostrarFormAddCriminoso(false);
     setMostrarRemocaoCriminoso(false);
   };
@@ -101,50 +99,50 @@ function App() {
         onClickVisualizar={voltarPrincipal}
       />
       
-      {deveMostrarFormularioAdicao?(
-        <div className="sobreposicao-formulario">
-          <FormularioNovoCriminoso 
-            submeter={submeterNovoCriminoso} 
-            cancelaSubmeter={cancelarNovoCriminoso} 
-            ultimoId={listaAtualizada.length ? Math.max(...listaAtualizada.map(p => p.id)) : 0}
-          />
-        </div>
-      ):(null)}
-      {deveMostrarRemocao ? (
-        <div className="sobreposicao-formulario">
-          <RemoverCriminosoDoSistema 
-            lista={listaAtualizada}
-            onRemover={removerCriminoso}
-            voltarPrincipal={voltarPrincipal}
-          />
-        </div>
-      ) : (null)}
-
       {login.mostraLogin && !login.teveLogin && (
           <Login TemLogin={processarLogin} />
       )}
 
-      {personagemSelecionadoFicha ? (
-        <InterfaceExibicao>
-          <Ficha
-            nome={personagemSelecionadoFicha!.Nome}
-            subnome={personagemSelecionadoFicha!.Subnome}
-            imagem={personagemSelecionadoFicha!.Imagem}
-            nivelPerigo={personagemSelecionadoFicha!.NivelPerigo}
-            status={personagemSelecionadoFicha!.Status}
-            idade={personagemSelecionadoFicha!.Idade}
-            dataNascimento={personagemSelecionadoFicha!.DataDeNascimento}
-            recompensa={personagemSelecionadoFicha!.Recompensa}
-            peso={personagemSelecionadoFicha!.Peso}
-            altura={personagemSelecionadoFicha!.Altura}
-            descricao={personagemSelecionadoFicha!.Descricao}
-            crimes={personagemSelecionadoFicha!.Crimes}
-            ultimaLocalizacao={personagemSelecionadoFicha!.UltimaLocalizacao}
-            onVoltar={clickVoltar}
-            onPegarRecompensa={clickPegarRecompensa}
-          />
-        </InterfaceExibicao>
-      ) : (
+      {deveMostrarFormularioAdicao ? (
+            <InterfaceExibicao>
+                <FormularioNovoCriminoso 
+                    submeter={submeterNovoCriminoso} 
+                    cancelaSubmeter={cancelarNovoCriminoso} 
+                    ultimoId={listaAtualizada.length ? Math.max(...listaAtualizada.map(p => p.id)) : 0}
+                />
+            </InterfaceExibicao>
+
+        ) : deveMostrarRemocao ? (
+            <InterfaceExibicao>
+                <RemoverCriminosoDoSistema 
+                    lista={listaAtualizada}
+                    onRemover={removerCriminoso}
+                    voltarPrincipal={voltarPrincipal}
+                />
+            </InterfaceExibicao>
+
+        ) : personagemSelecionadoFicha ? (
+            <InterfaceExibicao>
+                <Ficha
+                    nome={personagemSelecionadoFicha!.Nome}
+                    subnome={personagemSelecionadoFicha!.Subnome}
+                    imagem={personagemSelecionadoFicha!.Imagem}
+                    nivelPerigo={personagemSelecionadoFicha!.NivelPerigo}
+                    status={personagemSelecionadoFicha!.Status}
+                    idade={personagemSelecionadoFicha!.Idade}
+                    dataNascimento={personagemSelecionadoFicha!.DataDeNascimento}
+                    recompensa={personagemSelecionadoFicha!.Recompensa}
+                    peso={personagemSelecionadoFicha!.Peso}
+                    altura={personagemSelecionadoFicha!.Altura}
+                    descricao={personagemSelecionadoFicha!.Descricao}
+                    crimes={personagemSelecionadoFicha!.Crimes}
+                    ultimaLocalizacao={personagemSelecionadoFicha!.UltimaLocalizacao}
+                    onVoltar={clickVoltar}
+                    onPegarRecompensa={clickPegarRecompensa}
+                />
+            </InterfaceExibicao>
+
+        ) : (
             <>
               <div className="interface-procurados">
                 <h1 className="titulo-principal">PROCURADOS</h1>
@@ -158,12 +156,10 @@ function App() {
                       value={nome}
                       onChange={(texto) => setNome(texto.target.value)}
                     />
-
-                    <select 
+                     <select 
                         className="campo-select divisa-esquerda" 
                         value={estrela} 
                         onChange={(estrela) => setEstrela(Number(estrela.target.value))}
-                        title="Filtrar por Nível"
                     >
                         <option value={0}>🌟</option>
                         <option value={1}>⭐</option>
@@ -177,7 +173,6 @@ function App() {
                         className="campo-select divisa-esquerda" 
                         value={status} 
                         onChange={(status) => setStatus(status.target.value)}
-                        title="Filtrar por Status"
                     >
                         <option value="">Todos</option>
                         <option value="Foragido">Foragido</option>
@@ -207,8 +202,7 @@ function App() {
                 ))}
               </InterfaceExibicao>
             </>
-        )
-      }
+        )}
       </div>
   );
 }
