@@ -51,7 +51,6 @@ function App() {
     setListaAtualizada(prev => prev.filter(p => p.id !== id));
   };
 
-  const deveMostrarAreaDeLogin = login.teveLogin || login.mostraLogin;
   const deveMostrarFormularioAdicao = login.teveLogin && mostrarFormAddCriminoso;
   const deveMostrarRemocao = login.teveLogin && mostrarRemocaoCriminoso;
   
@@ -121,23 +120,9 @@ function App() {
         </div>
       ) : (null)}
 
-      <div className="conteudo-principal">
-        {deveMostrarAreaDeLogin ? (
-          <div className="caixa-usuario">
-              {login.teveLogin && login.userInfo ? (
-                  <div className="caixa-perfil">
-                    <img 
-                      src={login.userInfo.imagemPerfil} 
-                      alt="Imagem de Perfil" 
-                      className="imagem-perfil"
-                    />
-                      <p><strong>{login.userInfo.nome}</strong> ({login.userInfo.nivelAcesso})</p>
-                  </div>
-              ) : (
-                  <Login TemLogin={processarLogin} />
-              )}
-          </div>
-        ) : null}
+      {login.mostraLogin && !login.teveLogin && (
+          <Login TemLogin={processarLogin} />
+      )}
 
       {personagemSelecionadoFicha ? (
         <InterfaceExibicao>
@@ -225,7 +210,6 @@ function App() {
         )
       }
       </div>
-    </div>
   );
 }
 
