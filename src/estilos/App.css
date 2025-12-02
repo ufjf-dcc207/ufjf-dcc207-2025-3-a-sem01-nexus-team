@@ -15,7 +15,17 @@ p {
   padding: auto;
 }
 
+.caixa-usuario {
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 10px;
+}
 
+.caixa-perfil img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
 
 .interface-procurados {
   display: flex;

@@ -21,9 +21,10 @@
         "imagemPerfil": "UsuariosPerfil/CaçadoraSadie.png"
     },
     {
-        "nome": "a",
+        "nome": "Soldado",
         "nivelAcesso": "administrador",
         "email": "a@s",
-        "senha": "a"
+        "senha": "a",
+        "imagemPerfil": "UsuariosPerfil/Soldado.png"
     }
 ]

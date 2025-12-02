@@ -46,9 +46,9 @@
 
 .botoes-navegacao {
   display: flex;
-  gap: 25px;
+  align-items: center;
+  gap: 15px;
   flex-wrap: wrap;
-  justify-content: center; 
 }
 
 .botao-inicio, .botao-procurados, .botao-desaparecidos, .botao-denuncia, .botao-saibaMais {
@@ -85,6 +85,7 @@
     cursor: pointer;
     padding: 0;
     transition: all 0.3s ease;
+    align-self: center;
 }
 
 .botao-recompensa:hover, .botao-adiciona-criminoso:hover, .botao-remover-criminoso:hover {
@@ -140,6 +141,59 @@
 .cabecalho-filtro-wrapper .filtro-bar {
   box-shadow: 0 0 6px rgba(217,190,108,0.35);
 }
+
+.cracha-usuario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  height: 42px; 
+  padding: 0 15px 0 5px;
+  
+  background-color: rgba(217, 190, 108, 0.15); 
+  border: 1px solid #D9BE6C;
+  border-radius: 8px; 
+  
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cracha-usuario:hover {
+  background-color: rgba(217, 190, 108, 0.3);
+  box-shadow: 0 0 10px rgba(217, 190, 108, 0.3);
+}
+
+.cracha-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #D9BE6C;
+}
+
+.cracha-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+  text-align: left;
+}
+
+.cracha-nome {
+  color: #D9BE6C;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.cracha-nivel {
+  color: #aaa;
+  font-size: 0.7rem;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+
 
 @media (max-width: 900px) {
   .cabecalho-departamento {

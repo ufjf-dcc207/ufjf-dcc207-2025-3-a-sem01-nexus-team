@@ -95,11 +95,13 @@ function App() {
       <Cabecalho 
         TemLogin={login.teveLogin}
         nivelAcesso={login.userInfo?.nivelAcesso}
+        usuario={login.userInfo}
         onClickLogin={alternarVisualizacaoLogin}
         clickOn={clickOn}
         onClickRemover={clickRemover}
         onClickVisualizar={voltarPrincipal}
       />
+      
       {deveMostrarFormularioAdicao?(
         <div className="sobreposicao-formulario">
           <FormularioNovoCriminoso 
@@ -121,15 +123,15 @@ function App() {
 
       <div className="conteudo-principal">
         {deveMostrarAreaDeLogin ? (
-          <div style={{ margin: '20px auto', maxWidth: '400px', padding: '10px' }}>
+          <div className="caixa-usuario">
               {login.teveLogin && login.userInfo ? (
                   <div className="caixa-perfil">
                     <img 
                       src={login.userInfo.imagemPerfil} 
                       alt="Imagem de Perfil" 
-                      style={{ width: '80px', height: '80px', borderRadius: '50%' }} 
+                      className="imagem-perfil"
                     />
-                      <p style={{ margin: 0 }}> <strong>{login.userInfo.nome}</strong> ({login.userInfo.nivelAcesso})</p>
+                      <p><strong>{login.userInfo.nome}</strong> ({login.userInfo.nivelAcesso})</p>
                   </div>
               ) : (
                   <Login TemLogin={processarLogin} />
