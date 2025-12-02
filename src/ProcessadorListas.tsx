@@ -11,6 +11,8 @@ export type Procurado = {
     Status: Status;
     NivelPerigo: number;
     Recompensa: number;
+    Peso: string;
+    Altura: string;
     Descricao: string;
     Crimes: string[];
     UltimaLocalizacao: string;

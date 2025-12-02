@@ -13,13 +13,15 @@ interface PersonagemProps {
     idade: number | string;
     dataNascimento: string;
     recompensa: number;
+    peso?: string;
+    altura?: string;
     descricao?: string;
     crimes?: string[];
     ultimaLocalizacao?: string;
     onVerFicha: () => void;
 }
 
-export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa, descricao, crimes, ultimaLocalizacao, onVerFicha}: PersonagemProps) {
+export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa, peso, altura, descricao, crimes, ultimaLocalizacao, onVerFicha}: PersonagemProps) {
     let desconhecidoData: string = "";
     let dataFormatada: string;
     let desconhecidoIdade: string = "";
@@ -46,6 +48,8 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             <div className="idade"><p>Idade: <span className={desconhecidoIdade}>{idade}</span></p></div>
             <div className="data-nascimento"><p>Nascimento: <span className={desconhecidoData}>{dataFormatada}</span></p></div>
             <div className="recompensa"><p>Recompensa: {recompensaValida}</p></div>
+            {peso ? <div className="peso"><p>Peso: {peso}</p></div> : null}
+            {altura ? <div className="altura"><p>Altura: {altura}</p></div> : null}
             {descricao ? <div className="descricao"><p>{descricao}</p></div> : null}
             {crimes && crimes.length > 0 ? <div className="crimes"><p><strong>Crimes:</strong> {crimes.slice(0,5).join(', ')}{crimes.length>5? '...' : ''}</p></div> : null}
             {ultimaLocalizacao ? <div className="ultima-localizacao"><p>Última Localização: {ultimaLocalizacao}</p></div> : null}

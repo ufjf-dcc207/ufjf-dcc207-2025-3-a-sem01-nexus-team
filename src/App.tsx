@@ -150,6 +150,8 @@ function App() {
             idade={personagemSelecionadoFicha!.Idade}
             dataNascimento={personagemSelecionadoFicha!.DataDeNascimento}
             recompensa={personagemSelecionadoFicha!.Recompensa}
+            peso={personagemSelecionadoFicha!.Peso}
+            altura={personagemSelecionadoFicha!.Altura}
             descricao={personagemSelecionadoFicha!.Descricao}
             crimes={personagemSelecionadoFicha!.Crimes}
             ultimaLocalizacao={personagemSelecionadoFicha!.UltimaLocalizacao}

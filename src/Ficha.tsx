@@ -13,6 +13,8 @@ interface FichaProps {
     idade: number | string;
     dataNascimento: string;
     recompensa: number;
+    peso: string;
+    altura: string;
     descricao: string;
     crimes: string[];
     ultimaLocalizacao: string;
@@ -20,7 +22,7 @@ interface FichaProps {
     onPegarRecompensa: () => void;
 }
 
-export default function Ficha({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa, descricao, crimes, ultimaLocalizacao, onVoltar, onPegarRecompensa}: FichaProps) {
+export default function Ficha({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa, peso, altura, descricao, crimes, ultimaLocalizacao, onVoltar, onPegarRecompensa}: FichaProps) {
     let desconhecidoData: string = "";
     let dataFormatada: string;
     let desconhecidoIdade: string = "";
@@ -47,6 +49,8 @@ export default function Ficha({nome, subnome, imagem, nivelPerigo, status, idade
             <div className="idade-ficha"><p>Idade: <span className={desconhecidoIdade}>{idade}</span></p></div>
             <div className="data-nascimento-ficha"><p>Nascimento: <span className={desconhecidoData}>{dataFormatada}</span></p></div>
             <div className="recompensa-ficha"><p>Recompensa: {recompensaValida}</p></div>
+            <div className="peso-ficha"><p>Peso: {peso}</p></div>
+            <div className="altura-ficha"><p>Altura: {altura}</p></div>
             <div className="descricao-ficha"><h4>Histórico</h4> <p>{descricao}</p></div>
             <div className="crimes-ficha"><h4>Crimes Conhecidos</h4> <p><strong>Crimes:</strong> {crimes.join(', ')}</p></div>
             <div className="ultima-localizacao-ficha"><p>Última Localização: {ultimaLocalizacao}</p></div>

@@ -4,6 +4,7 @@
     grid-template-areas:
         "nome nome nome nome"
         "subnome subnome subnome subnome"
+        "imagem imagem peso altura"
         "imagem imagem idade data"
         "imagem imagem nivel status"
         "imagem imagem stars recompensa"
@@ -46,6 +47,7 @@
 
 .subnome-ficha h3 {
     margin: 0;
+    margin-bottom: 8px;
     font-weight: normal;
     font-style: italic;
     color: #a0a0a0;
@@ -70,8 +72,10 @@
 }
 
 .idade-ficha p, .data-nascimento-ficha p, 
-.status-ficha p, .nivel-perigo-ficha p, .recompensa-ficha p {
-    margin: 2px 0; 
+.status-ficha p, .nivel-perigo-ficha p, 
+.peso-ficha p, .altura-ficha p,
+.recompensa-ficha p {
+    margin: 0.1px 0; 
     line-height: 1.2; 
     font-size: 1rem;
 }
@@ -81,6 +85,8 @@
 .status-ficha { grid-area: status; }
 .nivel-perigo-ficha { grid-area: nivel; }
 .estrela-ficha { grid-area: stars; }
+.peso-ficha { grid-area: peso; }
+.altura-ficha { grid-area: altura; }
 
 .recompensa-ficha {
     grid-area: recompensa;
