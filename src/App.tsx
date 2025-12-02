@@ -15,8 +15,7 @@ function App() {
   const [nome, setNome] =  useState("");
   const [status, setStatus] = useState("");
   const [estrela, setEstrela] = useState(0);
-  const [login, setLogin] = useState({teveLogin: false, nivelAcesso: "", userInfo: null as InfoUsuario | null, mostraLogin: false});
-  
+  const [login, setLogin] = useState({teveLogin: false, nivelAcesso: "", userInfo: null as InfoUsuario | null, mostraLogin: false}); 
   const [listaAtualizada, setListaAtualizada] = useState(ListaProcurados);
   const [mostrarFormAddCriminoso, setMostrarFormAddCriminoso] = useState(false); 
   const [mostrarRemocaoCriminoso, setMostrarRemocaoCriminoso] = useState(false);
@@ -122,6 +121,9 @@ function App() {
               )}
           </div>
         ) : null}
+
+
+
       
       <div className="interface-procurados">
         <h1 className="titulo-principal">PROCURADOS</h1>
@@ -164,9 +166,11 @@ function App() {
                 <option value="Desconhecido">Desconhecido</option>
             </select>
           </div>
+
         </div>
 
       </div>
+
       <InterfaceExibicao>
             {ListaProcuradosFiltrado.map((personagem) => (
           <div className="card" key ={personagem.id}>

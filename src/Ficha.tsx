@@ -4,8 +4,23 @@ import type{ Status } from "./Personagem";
 import {situacaoStatus, statusValido, idadeValida, nivelPerigoValido, trataRecompensa, 
     formataIdade, checaDataNascimento, trataData} from './utilitarios/utils';
 
-export default function Ficha({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa, descricao, crimes, ultimaLocalizacao}: 
-    {nome: string, subnome: string, imagem: string, nivelPerigo: number, status: Status, idade: number | string, dataNascimento: string, recompensa: number, descricao: string, crimes: string[], ultimaLocalizacao: string}) {
+interface FichaProps {
+    nome: string;
+    subnome: string;
+    imagem: string;
+    nivelPerigo: number;
+    status: Status;
+    idade: number | string;
+    dataNascimento: string;
+    recompensa: number;
+    descricao: string;
+    crimes: string[];
+    ultimaLocalizacao: string;
+    onVoltar: () => void;
+    onPegarRecompensa: () => void;
+}
+
+export default function Ficha({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa, descricao, crimes, ultimaLocalizacao, onVoltar, onPegarRecompensa}: FichaProps) {
     let desconhecidoData: string = "";
     let dataFormatada: string;
     let desconhecidoIdade: string = "";
@@ -35,9 +50,8 @@ export default function Ficha({nome, subnome, imagem, nivelPerigo, status, idade
             <div className="descricao-ficha"><h4>Histórico</h4> <p>{descricao}</p></div>
             <div className="crimes-ficha"><h4>Crimes Conhecidos</h4> <p><strong>Crimes:</strong> {crimes.join(', ')}</p></div>
             <div className="ultima-localizacao-ficha"><p>Última Localização: {ultimaLocalizacao}</p></div>
-            <button className="botao-voltar">Voltar</button>
-            <button className="botao-pegar-recompensa">Pegar Recompensa</button>
+            <button className="botao-voltar" onClick={onVoltar}>Voltar</button>
+            <button className="botao-pegar-recompensa" onClick={onPegarRecompensa}>Pegar Recompensa</button>
         </div>
     );
 }
-    

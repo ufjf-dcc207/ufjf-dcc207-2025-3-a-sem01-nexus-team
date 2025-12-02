@@ -198,38 +198,38 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
                 onChange={inputUsuario} 
                 placeholder="URL completa (https://...) ou deixe vazio" 
                 />
-                                <label>Descrição:</label>
-                                <textarea
-                                    name="Descricao"
-                                    value={dados.Descricao}
-                                    onChange={inputUsuario}
-                                    rows={3}
-                                    placeholder="Detalhes, características, observações..."
+                    <label>Descrição:</label>
+                    <textarea
+                        name="Descricao"
+                        value={dados.Descricao}
+                        onChange={inputUsuario}
+                        rows={3}
+                        placeholder="Detalhes, características, observações..."
+                    />
+                    <label>Crimes (separar por vírgulas):</label>
+                    <textarea
+                        name="Crimes"
+                        value={dados.Crimes}
+                        onChange={inputUsuario}
+                        rows={2}
+                        placeholder="Roubo, Falsificação, Contrabando..."
+                    />
+                    <div style={{marginTop: '8px'}}>
+                        {dados.Imagem ? (
+                            previewValida ? (
+                                <img 
+                                    src={dados.Imagem} 
+                                    alt="Preview" 
+                                    style={{maxWidth:'140px', maxHeight:'140px', border:'1px solid #D9BE6C', borderRadius:'6px'}}
+                                    onError={() => setPreviewValida(false)}
                                 />
-                                <label>Crimes (separar por vírgulas):</label>
-                                <textarea
-                                    name="Crimes"
-                                    value={dados.Crimes}
-                                    onChange={inputUsuario}
-                                    rows={2}
-                                    placeholder="Roubo, Falsificação, Contrabando..."
-                                />
-                                <div style={{marginTop: '8px'}}>
-                                    {dados.Imagem ? (
-                                        previewValida ? (
-                                            <img 
-                                                src={dados.Imagem} 
-                                                alt="Preview" 
-                                                style={{maxWidth:'140px', maxHeight:'140px', border:'1px solid #D9BE6C', borderRadius:'6px'}}
-                                                onError={() => setPreviewValida(false)}
-                                            />
-                                        ) : (
-                                            <span style={{color:'#ff8080', fontSize:'0.85rem'}}>URL inválida ou imagem indisponível.</span>
-                                        )
-                                    ) : (
-                                        <span style={{fontSize:'0.8rem', color:'#D9BE6C'}}>Sem imagem definida. Será usado padrão.</span>
-                                    )}
-                                </div>
+                            ) : (
+                                <span style={{color:'#ff8080', fontSize:'0.85rem'}}>URL inválida ou imagem indisponível.</span>
+                            )
+                        ) : (
+                            <span style={{fontSize:'0.8rem', color:'#D9BE6C'}}>Sem imagem definida. Será usado padrão.</span>
+                        )}
+                    </div>
                 
                 <div className="botoes-formulario">
                     <button type="submit" className="botao-salvar">Salvar Criminoso</button>

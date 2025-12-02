@@ -1,11 +1,25 @@
 export type Status = "Foragido" | "Morto" | "Capturado" | "Desconhecido";
-
 import './estilos/Personagem.css';
+
 import {situacaoStatus, statusValido, idadeValida, nivelPerigoValido, trataRecompensa, 
     formataIdade, checaDataNascimento, trataData} from './utilitarios/utils';
 
-export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa, descricao, crimes, ultimaLocalizacao}: 
-    {nome: string, subnome: string, imagem: string, nivelPerigo: number, status: Status, idade: number | string, dataNascimento: string, recompensa: number, descricao?: string, crimes?: string[], ultimaLocalizacao?: string}) {
+interface PersonagemProps {
+    nome: string;
+    subnome: string;
+    imagem: string;
+    nivelPerigo: number;
+    status: Status;
+    idade: number | string;
+    dataNascimento: string;
+    recompensa: number;
+    descricao?: string;
+    crimes?: string[];
+    ultimaLocalizacao?: string;
+    onVerFicha: () => void;
+}
+
+export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa, descricao, crimes, ultimaLocalizacao, onVerFicha}: PersonagemProps) {
     let desconhecidoData: string = "";
     let dataFormatada: string;
     let desconhecidoIdade: string = "";
@@ -35,7 +49,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             {descricao ? <div className="descricao"><p>{descricao}</p></div> : null}
             {crimes && crimes.length > 0 ? <div className="crimes"><p><strong>Crimes:</strong> {crimes.slice(0,5).join(', ')}{crimes.length>5? '...' : ''}</p></div> : null}
             {ultimaLocalizacao ? <div className="ultima-localizacao"><p>Última Localização: {ultimaLocalizacao}</p></div> : null}
-            <button className="botao-ficha">Ver Ficha</button>
+            <button className="botao-ficha" onClick={onVerFicha}>Ver Ficha</button>
         </div>
     );
 }
