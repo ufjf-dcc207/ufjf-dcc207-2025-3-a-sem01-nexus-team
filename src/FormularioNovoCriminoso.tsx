@@ -19,6 +19,8 @@ type DadosFormularioCriminoso = {
     Status: Status | string;
     NivelPerigo: number;
     Recompensa: number;
+    Peso: string;
+    Altura: string;
     caminhoImagem: string;
     Descricao: string;
     Crimes: string;
@@ -35,6 +37,8 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
         Status: "",
         NivelPerigo: 0,
         Imagem: "",
+        Peso: "",
+        Altura: "",
         UltimaLocalizacao: "",
         Recompensa: 0,
         caminhoImagem: "",
@@ -113,6 +117,8 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
             DataDeNascimento: dados.DataDeNascimento,
             Status: statusNormalizado,
             NivelPerigo: dados.NivelPerigo,
+            Peso: dados.Peso || "Desconhecido",
+            Altura: dados.Altura || "Desconhecido",
             UltimaLocalizacao: (dados.UltimaLocalizacao || "").trim(),
             Imagem: dados.Imagem || "Procurados/default.png",
             Recompensa: dados.Recompensa,
@@ -129,6 +135,8 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
             NivelPerigo: 0,
             Imagem: "",
             Recompensa: 0,
+            Peso: "",
+            Altura: "",
             caminhoImagem: "",
             Descricao: "",
             Crimes: ""
@@ -141,10 +149,40 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
                 <h3>Adicionar Novo Criminoso</h3>
 
                 <label>Nome Completo (Obrigatório):</label>
-                <input type="text" name="Nome" value={dados.Nome} onChange={inputUsuario} required />
+                <input 
+                    type="text" 
+                    name="Nome" 
+                    value={dados.Nome} 
+                    onChange={inputUsuario} required 
+                    placeholder="Ex: Cesar Oliveira Cohen"
+                />
                 
                 <label>Subnome / Codinome:</label>
-                <input type="text" name="Subnome" value={dados.Subnome} onChange={inputUsuario} />
+                <input 
+                    type="text"
+                    name="Subnome" 
+                    value={dados.Subnome} 
+                    onChange={inputUsuario}
+                    placeholder="Ex: Kaiser"
+                />
+
+                <label>Peso:</label>
+                <input 
+                    type="text" 
+                    name="Peso" 
+                    value={dados.Peso} 
+                    onChange={inputUsuario} 
+                    placeholder="Ex: 70kg" 
+                />
+
+                <label>Altura:</label>
+                <input 
+                    type="text" 
+                    name="Altura" 
+                    value={dados.Altura} 
+                    onChange={inputUsuario} 
+                    placeholder="Ex: 1.75m" 
+                />
 
                 <label>Idade:</label>
                 <input 
