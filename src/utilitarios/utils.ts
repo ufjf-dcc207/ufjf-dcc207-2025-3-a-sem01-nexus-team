@@ -99,3 +99,7 @@ export function trataData(dataNascimento: string): string {
     }
     return "(data inválida)";
 }
+
+export function formataPalavra(palavra: string): string {
+    return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
+}

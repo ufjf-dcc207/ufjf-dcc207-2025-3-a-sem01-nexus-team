@@ -3,7 +3,7 @@ import './estilos/Personagem.css';
 import {useState} from 'react';
 
 import {situacaoStatus, statusValido, idadeValida, nivelPerigoValido, trataRecompensa, 
-    formataIdade, checaDataNascimento, trataData} from './utilitarios/utils';
+    formataIdade, checaDataNascimento, trataData, formataPalavra} from './utilitarios/utils';
 
 type PersonagemProps = {
     nome: string;
@@ -102,17 +102,12 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             <div className="imagem"><img src={imagem} alt={nome} /></div>
             <div className="nivel-perigo"><p>Nível de Perigo: </p></div>
             <div className='estrela'>
-                {TemLogin && (tipoAcesso === 'administrador' || tipoAcesso === 'agente') ? <button className='botao-troca'> <img src="Icones/seta-esq.png" alt="remover" onClick={onRemoverEstrela} /></button>: null}
+                {TemLogin && (tipoAcesso === 'administrador' || tipoAcesso === 'agente') ? <button className='botao-remove'> <img src="Icones/SetaEsq.png" alt="remover" onClick={onRemoverEstrela} /></button>: null}
                 <p>{atributos.estrela}</p>
-                {TemLogin&&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ?<button className='botao-troca'> <img src="Icones/seta-dir.svg" alt="adicionar" onClick={onAdicionarEstrela} /></button> : null}
+                {TemLogin&&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ?<button className='botao-add'> <img src="Icones/SetaDir.png" alt="adicionar" onClick={onAdicionarEstrela} /></button> : null}
             </div>
-            <div className="status">
-                <p>Status: 
-                    <span className={atributos.status}>{atributos.status}</span>
-                </p>
-                {TemLogin &&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ? <button className='botao-troca' onClick={onMudarStatus} >Mudar Status</button>: null}
-                
-            
+            <div className="status"> <p>Status: <span className={atributos.status}>{formataPalavra(atributos.status)}</span></p>
+                {TemLogin &&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ? <button className='botao-troca' onClick={onMudarStatus} >Mudar Status</button>: null}      
             </div>
             <div className="idade"><p>Idade: <span className={desconhecidoIdade}>{idade}</span></p></div>
             <div className="data-nascimento"><p>Nascimento: <span className={desconhecidoData}>{dataFormatada}</span></p></div>
