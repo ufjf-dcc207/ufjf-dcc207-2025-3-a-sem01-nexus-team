@@ -99,11 +99,10 @@ function App() {
         onClickVisualizar={voltarPrincipal}
       />
       
-      {login.mostraLogin && !login.teveLogin && (
+      {login.mostraLogin && !login.teveLogin? (
           <Login TemLogin={processarLogin} />
-      )}
-
-      {deveMostrarFormularioAdicao ? (
+      )
+      :deveMostrarFormularioAdicao ? (
             <InterfaceExibicao>
                 <FormularioNovoCriminoso 
                     submeter={submeterNovoCriminoso} 
