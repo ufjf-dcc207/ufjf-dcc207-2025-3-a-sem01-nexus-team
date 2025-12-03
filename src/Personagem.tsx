@@ -74,7 +74,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
     };
 
     const onRemoverEstrela = () => {
-        if (nivelAtual > 0) {
+        if (nivelAtual > 1) {
             const novoNivel = nivelAtual - 1;
             setNivelAtual(novoNivel);
             const novoValor = recompensaNumero * 0.87;
