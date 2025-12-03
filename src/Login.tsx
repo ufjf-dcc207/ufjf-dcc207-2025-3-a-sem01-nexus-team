@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import { Usuario, type InfoUsuario } from "./ProcessadorListas";
 import "./estilos/Login.css";
+import { buscarUsuario } from "./utilitarios/utils";
 
 type LoginProps = {
     TemLogin: (usuario: InfoUsuario) => void;
@@ -22,9 +23,7 @@ export  function Login  ({TemLogin}:LoginProps) {
 
     const verificarLogin = (evento: React.FormEvent<HTMLFormElement>) => {
       evento.preventDefault();
-        const usuarioEncontrado = Usuario.find(
-            (usuario) => usuario.email === credencialLogin.email && usuario.senha === credencialLogin.senha
-        );
+        const usuarioEncontrado = buscarUsuario(Usuario, credencialLogin);
         if (usuarioEncontrado) {
             TemLogin(usuarioEncontrado);
         } else {

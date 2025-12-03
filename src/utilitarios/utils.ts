@@ -128,6 +128,14 @@ export function trataData(dataNascimento: string): string {
     return "(data inválida)";
 }
 
+export function buscaUser(usuario : {email: string; senha: string;}, credencialLogin: {email: string; senha: string;}): boolean {
+    return usuario.email === credencialLogin.email && usuario.senha === credencialLogin.senha
+}
+
+export function buscarUsuario<T extends {email: string; senha: string}>(listaUsuarios: T[], credenciais: {email: string; senha: string}): T | undefined {
+    return listaUsuarios.find((usuario) => buscaUser(usuario, credenciais));
+}
+
 export function formataPalavra(palavra: string): string {
     return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
 }
