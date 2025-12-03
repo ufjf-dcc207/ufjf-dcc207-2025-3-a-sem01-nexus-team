@@ -1,5 +1,6 @@
 export type Status = "Foragido" | "Morto" | "Capturado" | "Desconhecido";
 import './estilos/Personagem.css';
+import {useState} from 'react';
 
 import {situacaoStatus, statusValido, idadeValida, nivelPerigoValido, trataRecompensa, 
     formataIdade, checaDataNascimento, trataData} from './utilitarios/utils';
@@ -19,9 +20,11 @@ interface PersonagemProps {
     crimes?: string[];
     ultimaLocalizacao?: string;
     onVerFicha: () => void;
+    TemLogin: boolean;
+    tipoAcesso: string;
 }
 
-export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa, peso, altura, descricao, crimes, ultimaLocalizacao, onVerFicha}: PersonagemProps) {
+export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa, peso, altura, descricao, crimes, ultimaLocalizacao, onVerFicha, TemLogin, tipoAcesso}: PersonagemProps) {
     let desconhecidoData: string = "";
     let dataFormatada: string;
     let desconhecidoIdade: string = "";
@@ -35,7 +38,62 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
     dataFormatada = trataData(dataNascimento);   
     idade = idadeValida(idade);
     desconhecidoIdade = formataIdade(idade);
-    recompensaValida = trataRecompensa(recompensa, status);
+    recompensaValida = trataRecompensa(recompensa, situacao);
+    const[atributos, setAtributos] =  useState({
+        estrela: '⭐'.repeat(nivelPerigo) + '☆'.repeat(5 - nivelPerigo),
+        status: situacao,
+        recompensa: recompensaValida
+    });
+
+    const [nivelAtual, setNivelAtual] = useState(nivelPerigo);
+    const [recompensaBase] = useState(recompensa);
+
+    const onMudarStatus = () => {
+        let novoStatus: Status;
+        if (atributos.status === 'foragido') {
+            novoStatus = 'Capturado';
+        } else if (atributos.status === 'capturado') {
+            novoStatus = 'Morto';
+        } else if (atributos.status === 'morto') {
+            novoStatus = 'Desconhecido';
+        } else {
+            novoStatus = 'Foragido';
+        }
+        setAtributos({...atributos, status: situacaoStatus(novoStatus)})
+    };
+
+    const recalcularRecompensa = (nivel: number) => {
+        const delta = nivel - nivelPerigo; 
+        const fator = 1 + 0.10 * delta; 
+        const valor = Math.max(0, recompensaBase * fator);
+        return trataRecompensa(valor, atributos.status);
+    };
+
+    const onAdicionarEstrela = () => {
+        if (nivelAtual < 5) {
+            const novoNivel = nivelAtual + 1;
+            const novaRecompensa = recalcularRecompensa(novoNivel);
+            setNivelAtual(novoNivel);
+            setAtributos({
+                ...atributos,
+                estrela: '⭐'.repeat(novoNivel) + '☆'.repeat(5 - novoNivel),
+                recompensa: novaRecompensa
+            });
+        }
+    };
+
+    const onRemoverEstrela = () => {
+        if (nivelAtual > 0) {
+            const novoNivel = nivelAtual - 1;
+            const novaRecompensa = recalcularRecompensa(novoNivel);
+            setNivelAtual(novoNivel);
+            setAtributos({
+                ...atributos,
+                estrela: '⭐'.repeat(novoNivel) + '☆'.repeat(5 - novoNivel),
+                recompensa: novaRecompensa
+            });
+        }
+    };
 
     return(
         <div className="personagem">
@@ -43,11 +101,26 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             <div className='subnome'><h3>{subnome}</h3></div>
             <div className="imagem"><img src={imagem} alt={nome} /></div>
             <div className="nivel-perigo"><p>Nível de Perigo: </p></div>
-            <div className='estrela'><p>{'⭐'.repeat(nivelPerigo) + '☆'.repeat(5 - nivelPerigo)}</p></div>
-            <div className="status"><p>Status: <span className={situacao}>{status}</span></p></div>
+            <div className='estrela'>
+                <p>{atributos.estrela}</p>
+                {TemLogin && (tipoAcesso === 'administrador' || tipoAcesso === 'agente') ? <button className='botao-troca'> <img src="Icones/" alt="remover" onClick={onRemoverEstrela} /></button>: null}
+                {TemLogin&&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ?<button className='botao-troca'> <img src="Icones/" alt="adicionar" onClick={onAdicionarEstrela} /></button> : null}
+            </div>
+            <div className="status">
+                <p>Status: 
+                    <span className={atributos.status}>{atributos.status}</span>
+                </p>
+                {TemLogin &&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ? <button className='botao-troca'> <img src="Icones/" alt="adicionar" onClick={onMudarStatus} /></button>: null}
+                
+            
+            </div>
             <div className="idade"><p>Idade: <span className={desconhecidoIdade}>{idade}</span></p></div>
             <div className="data-nascimento"><p>Nascimento: <span className={desconhecidoData}>{dataFormatada}</span></p></div>
-            <div className="recompensa"><p>Recompensa: {recompensaValida}</p></div>
+            <div className="recompensa">
+                <p>Recompensa: {
+                    atributos.status === 'capturado' || atributos.status === 'morto' ? 'Indisponível' : atributos.recompensa
+                }</p>
+            </div>
             {peso ? <div className="peso"><p>Peso: {peso}</p></div> : null}
             {altura ? <div className="altura"><p>Altura: {altura}</p></div> : null}
             {descricao ? <div className="descricao"><p>{descricao}</p></div> : null}
