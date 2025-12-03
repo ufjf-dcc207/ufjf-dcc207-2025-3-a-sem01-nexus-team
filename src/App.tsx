@@ -13,16 +13,18 @@ import Ficha from "./Ficha";
 
 function App() {
 
-  const [nome, setNome] =  useState("");
-  const [status, setStatus] = useState("");
-  const [estrela, setEstrela] = useState(0);
+  const[atributosPersonagem, setAtributosPersonagem] = useState({
+    nome: "",
+    status: "",
+    estrela: 0
+  });
   const [login, setLogin] = useState({teveLogin: false, nivelAcesso: "", userInfo: null as InfoUsuario | null, mostraLogin: false}); 
   const [listaAtualizada, setListaAtualizada] = useState(ListaProcurados);
   const [mostrarFormAddCriminoso, setMostrarFormAddCriminoso] = useState(false); 
   const [mostrarRemocaoCriminoso, setMostrarRemocaoCriminoso] = useState(false);
   const [personagemSelecionadoFicha, setPersonagemSelecionadoFicha] = useState<Procurado | null>(null);
   
-  let ListaProcuradosFiltrado = filtrarPersonagem(listaAtualizada, nome, status, estrela);
+  let ListaProcuradosFiltrado = filtrarPersonagem(listaAtualizada, atributosPersonagem.nome, atributosPersonagem.status, atributosPersonagem.estrela);
 
   const clickOn = () => {
     setMostrarFormAddCriminoso(true);
@@ -152,13 +154,13 @@ function App() {
                       type="text"
                       className="campo-texto"
                       placeholder="Buscar por nome..."
-                      value={nome}
-                      onChange={(texto) => setNome(texto.target.value)}
+                      value={atributosPersonagem.nome}
+                      onChange={(texto) => setAtributosPersonagem({...atributosPersonagem, nome: texto.target.value})}
                     />
                      <select 
                         className="campo-select divisa-esquerda" 
-                        value={estrela} 
-                        onChange={(estrela) => setEstrela(Number(estrela.target.value))}
+                        value={atributosPersonagem.estrela} 
+                        onChange={(estrela) => setAtributosPersonagem({...atributosPersonagem, estrela: Number(estrela.target.value)})}
                     >
                         <option value={0}>🌟</option>
                         <option value={1}>⭐</option>
@@ -170,8 +172,8 @@ function App() {
 
                     <select 
                         className="campo-select divisa-esquerda" 
-                        value={status} 
-                        onChange={(status) => setStatus(status.target.value)}
+                        value={atributosPersonagem.status} 
+                        onChange={(status) => setAtributosPersonagem({...atributosPersonagem, status: status.target.value})}
                     >
                         <option value="">Todos</option>
                         <option value="Foragido">Foragido</option>
