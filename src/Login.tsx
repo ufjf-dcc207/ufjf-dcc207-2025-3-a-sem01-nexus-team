@@ -11,7 +11,7 @@ type DadosLogin = {
     senha: string;
 }
 
-const Login = ({TemLogin}:LoginProps) => {
+export  function Login  ({TemLogin}:LoginProps) {
     const [credencialLogin, setCredencialLogin] = useState<DadosLogin>({email:"", senha:""});
     const [erro, setErro] = useState<string>("");
     
