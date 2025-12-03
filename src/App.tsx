@@ -196,6 +196,7 @@ function App() {
                       dataNascimento={personagem.DataDeNascimento}
                       recompensa={personagem.Recompensa}
                       onVerFicha={() => clickVerFicha(personagem)}
+                      TemLogin={login.teveLogin}
                     />
                   </div>
                 ))}

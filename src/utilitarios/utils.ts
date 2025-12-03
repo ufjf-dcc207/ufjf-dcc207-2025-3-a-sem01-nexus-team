@@ -71,7 +71,7 @@ export const nivelPerigoValido = (nivelPerigo: number): number =>{
     }
 }
 
-export function trataRecompensa(recompensa: number, status: Status): string {
+export function trataRecompensa(recompensa: number, status: string): string {
     if (status === "Morto" || status === "Capturado") {
         return "Indisponível";
     } else if (recompensa <= 0) {
