@@ -39,12 +39,12 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
     idade = idadeValida(idade);
     desconhecidoIdade = formataIdade(idade);
     recompensaValida = trataRecompensa(recompensa, situacao);
+
     const[atributos, setAtributos] =  useState({
         estrela: '⭐'.repeat(nivelPerigo) + '☆'.repeat(5 - nivelPerigo),
         status: situacao,
         recompensa: recompensaValida
     });
-
     const [nivelAtual, setNivelAtual] = useState(nivelPerigo);
     const [recompensaBase] = useState(recompensa);
 

@@ -4,8 +4,6 @@ import './estilos/index.css'
 import App from './App.tsx'
 import Rodape from './Rodape.tsx'
 
-
-
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
