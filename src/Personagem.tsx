@@ -5,7 +5,8 @@ import {useState} from 'react';
 import {situacaoStatus, statusValido, idadeValida, nivelPerigoValido, trataRecompensa, 
     formataIdade, checaDataNascimento, trataData, formataPalavra, mudarEstiloImgPorStatus,
     novoStatusAtual,
-    calculaRecompensaAtual} from './utilitarios/utils';
+    calculaRecompensaAtual,
+    retornaRenderEstrelas} from './utilitarios/utils';
 
 type PersonagemProps = {
     nome: string;
@@ -43,7 +44,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
     recompensaValida = trataRecompensa(recompensa, situacao);
 
     const[atributos, setAtributos] =  useState({
-        estrela: '⭐'.repeat(nivelPerigo) + '☆'.repeat(5 - nivelPerigo),
+        estrela: retornaRenderEstrelas(nivelPerigo),
         status: situacao,
         recompensa: recompensaValida
     });

@@ -36,6 +36,16 @@ export function situacaoStatus(status: Status): string {
     }
 }
 
+export function validaUrlImagem(valor: string): boolean {
+        if (!valor) return false;
+        try {
+            const u = new URL(valor);
+            return ["http:", "https:"].includes(u.protocol);
+        } catch {
+            return false;
+        }
+    };
+
 export const statusValido = (status: string): Status =>
             ["Foragido", "Morto", "Capturado", "Desconhecido"].includes(status as Status)? (status as Status): "Desconhecido";
 
@@ -51,6 +61,14 @@ export const idadeValida = (idade: number | string): number | string => {
     } 
     else {
         return "Desconhecida";
+    }
+}
+
+export function trataIdade(idade: number): number {
+    if (typeof idade === 'number') {
+        return idade;
+    } else {
+        return 0;
     }
 }
 
@@ -86,6 +104,16 @@ export function checaDataNascimento(dataNascimento: string): string {
         return "desconhecido";
     }
     return "";
+}
+
+export function retornaRenderEstrelas(nivelPerigo: number): string {
+    return '⭐'.repeat(nivelPerigo) + '☆'.repeat(5 - nivelPerigo);
+}
+
+export function garantiaRemocaoCriminoso(id: number, onRemover: (id: number) => void): void {
+    if (window.confirm(`Tem certeza que deseja remover o criminoso com ID ${id}?`)) {
+        onRemover(id);
+    }
 }
 
 export function trataData(dataNascimento: string): string {

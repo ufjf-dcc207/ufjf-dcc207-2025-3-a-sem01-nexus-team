@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { Procurado }  from "./ProcessadorListas";
 import type { Status } from "./Personagem";
-import { statusValido } from "./utilitarios/utils";
+import {validaUrlImagem, statusValido, trataIdade } from "./utilitarios/utils";
 import "./estilos/FormularioNovoCriminoso.css";
 
 
@@ -47,19 +47,9 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
     });
     const [previewValida, setPreviewValida] = useState<boolean>(true);
 
-    const validaUrlImagem = (valor: string): boolean => {
-        if (!valor) return false;
-        try {
-            const u = new URL(valor);
-            return ["http:", "https:"].includes(u.protocol);
-        } catch {
-            return false;
-        }
-    };
     const inputUsuario = (entrada: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const target = entrada.target as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
         const { name, type } = target;
-
        
         if(type === "date"){
             setDados(prev => ({
@@ -106,7 +96,7 @@ export default function FormularioNovoCriminoso({ submeter, cancelaSubmeter, ult
 
     const submeterFormulario = (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault();
-        const idadeNormalizada = typeof dados.Idade === "number" ? dados.Idade : 0;
+        const idadeNormalizada = trataIdade(Number(dados.Idade));
         const statusNormalizado: Status = statusValido(String(dados.Status));
         const crimesArray = dados.Crimes.split(',').map(c => c.trim()).filter(c => c.length > 0);
         submeter({
