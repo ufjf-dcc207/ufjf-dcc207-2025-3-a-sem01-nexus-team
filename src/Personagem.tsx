@@ -5,7 +5,7 @@ import {useState} from 'react';
 import {situacaoStatus, statusValido, idadeValida, nivelPerigoValido, trataRecompensa, 
     formataIdade, checaDataNascimento, trataData} from './utilitarios/utils';
 
-interface PersonagemProps {
+type PersonagemProps = {
     nome: string;
     subnome: string;
     imagem: string;
