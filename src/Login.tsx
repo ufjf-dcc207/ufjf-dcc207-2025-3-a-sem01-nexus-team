@@ -60,6 +60,8 @@ const Login = ({TemLogin}:LoginProps) => {
         {erro && <p className="mensagem-erro">{erro}</p>}
         
         <button type="submit">Entrar</button>
+        <button type="button" onClick ={() =>{setCredencialLogin({email: "", senha: ""})}}>Limpar Login</button>
+        <button type="button" onClick={() => window.location.reload()}>Cancelar</button>
 
         <p className="mensagem-aviso">
             Ex: exemplo@nexus.com / senha123

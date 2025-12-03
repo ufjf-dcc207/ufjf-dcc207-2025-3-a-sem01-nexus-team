@@ -31,7 +31,7 @@ export function Cabecalho({ TemLogin, nivelAcesso, usuario, onClickLogin, clickO
                         <button className="botao-desaparecidos">Desaparecidos</button>
                         <button className="botao-denuncia">Denúncia</button>
                         <button className="botao-saibaMais">Saiba Mais</button>
-                        {TemLogin ? (
+                        {TemLogin  ? (
                             <div className="cracha-usuario" onClick={onClickLogin} title="Clique para Sair">
                                 <img 
                                     src={usuario?.imagemPerfil || "Icones/profile.svg"} 
