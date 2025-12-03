@@ -62,7 +62,7 @@ const Login = ({TemLogin}:LoginProps) => {
         <button type="submit">Entrar</button>
 
         <p className="mensagem-aviso">
-            Ex: gabriel@ufjf.com / senha123
+            Ex: exemplo@nexus.com / senha123
         </p>
       </form>
     </div>
