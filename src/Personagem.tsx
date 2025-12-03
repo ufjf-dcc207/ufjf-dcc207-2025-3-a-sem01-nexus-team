@@ -62,6 +62,20 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
         setAtributos({...atributos, status: situacaoStatus(novoStatus)})
     };
 
+    const onVoltarStatus = () => {
+        let novoStatus: Status;
+        if (atributos.status === 'desconhecido') {
+            novoStatus = 'Morto';
+        } else if (atributos.status === 'morto') {
+            novoStatus = 'Capturado';
+        } else if (atributos.status === 'capturado') {
+            novoStatus = 'Foragido';
+        } else {
+            novoStatus = 'Desconhecido';
+        }
+        setAtributos({...atributos, status: situacaoStatus(novoStatus)})
+    };
+
     const recalcularRecompensa = (nivel: number) => {
         const delta = nivel - nivelPerigo; 
         const fator = 1 + 0.10 * delta; 
@@ -106,8 +120,10 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
                 <p>{atributos.estrela}</p>
                 {TemLogin&&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ?<button className='botao-add'> <img src="Icones/SetaDir.png" alt="adicionar" onClick={onAdicionarEstrela} /></button> : null}
             </div>
-            <div className="status"> <p>Status: <span className={atributos.status}>{formataPalavra(atributos.status)}</span></p>
-                {TemLogin &&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ? <button className='botao-troca' onClick={onMudarStatus} >Mudar Status</button>: null}      
+            <div className="status"> 
+                {TemLogin &&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ? <button className='botao-voltar' ><img src="Icones/SetaEsq.png" alt="voltar" onClick={onVoltarStatus} /></button>: null}
+                <p>Status: <span className={atributos.status}>{formataPalavra(atributos.status)}</span></p>
+                {TemLogin &&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ? <button className='botao-avancar'><img src="Icones/SetaDir.png" alt="avancar" onClick={onMudarStatus} /></button>: null}      
             </div>
             <div className="idade"><p>Idade: <span className={desconhecidoIdade}>{idade}</span></p></div>
             <div className="data-nascimento"><p>Nascimento: <span className={desconhecidoData}>{dataFormatada}</span></p></div>

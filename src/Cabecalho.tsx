@@ -10,6 +10,8 @@ interface CabecalhoProps{
     onClickRemover?: () => void;
     onClickVisualizar?: () => void;
 }
+
+
 export function Cabecalho({ TemLogin, nivelAcesso, usuario, onClickLogin, clickOn, onClickRemover, onClickVisualizar}: CabecalhoProps){
     return(
         <>
