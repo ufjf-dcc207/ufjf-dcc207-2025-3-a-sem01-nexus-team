@@ -95,11 +95,24 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
         }
     };
 
+    const mudarEstiloImgPorStatus = (status: Status|string) => {
+        if (status === 'morto') {
+            return 'imagem-morto';
+        } else if (status === 'capturado') {
+            return 'imagem-capturado';
+        } else if (status === 'foragido') {
+            return 'imagem-foragido';
+        } else {
+            return 'imagem-desconhecido';
+        }
+    };
+
     return(
-        <div className="personagem">
+        <div className={`personagem ${atributos.status === 'morto' ? 'morto' : ''} ${atributos.status === 'capturado' ? 'capturado' : ''}`}>
             <div className="nome"><h2>{nome}</h2></div>
             <div className='subnome'><h3>{subnome}</h3></div>
-            <div className="imagem"><img src={imagem} alt={nome} /></div>
+            <div className="imagem"><img className={mudarEstiloImgPorStatus(atributos.status)} src={imagem} alt={nome} />
+            </div>
             <div className="nivel-perigo"><p>Nível de Perigo: </p></div>
             <div className='estrela'>
                 {TemLogin && (tipoAcesso === 'administrador' || tipoAcesso === 'agente') ? <button className='botao-remove'> <img src="Icones/SetaEsq.png" alt="remover" onClick={onRemoverEstrela} /></button>: null}
