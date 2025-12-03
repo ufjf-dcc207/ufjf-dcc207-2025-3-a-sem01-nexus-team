@@ -46,7 +46,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
     });
 
     const [nivelAtual, setNivelAtual] = useState(nivelPerigo);
-    const [recompensaNumero, setRecompensaNumero] = useState(recompensa);
+    const [recompensaBase] = useState(recompensa);
 
     const onMudarStatus = () => {
         let novoStatus: Status;
@@ -62,25 +62,36 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
         setAtributos({...atributos, status: situacaoStatus(novoStatus)})
     };
 
+    const recalcularRecompensa = (nivel: number) => {
+        const delta = nivel - nivelPerigo; 
+        const fator = 1 + 0.10 * delta; 
+        const valor = Math.max(0, recompensaBase * fator);
+        return trataRecompensa(valor, atributos.status);
+    };
+
     const onAdicionarEstrela = () => {
         if (nivelAtual < 5) {
             const novoNivel = nivelAtual + 1;
+            const novaRecompensa = recalcularRecompensa(novoNivel);
             setNivelAtual(novoNivel);
-            const novoValor = recompensaNumero * 1.13;
-            setRecompensaNumero(novoValor);
-            const novaRecompensa = trataRecompensa(novoValor, atributos.status);
-            setAtributos({...atributos, estrela: '⭐'.repeat(novoNivel) + '☆'.repeat(5 - novoNivel), recompensa: novaRecompensa});
+            setAtributos({
+                ...atributos,
+                estrela: '⭐'.repeat(novoNivel) + '☆'.repeat(5 - novoNivel),
+                recompensa: novaRecompensa
+            });
         }
     };
 
     const onRemoverEstrela = () => {
-        if (nivelAtual > 1) {
+        if (nivelAtual > 0) {
             const novoNivel = nivelAtual - 1;
+            const novaRecompensa = recalcularRecompensa(novoNivel);
             setNivelAtual(novoNivel);
-            const novoValor = recompensaNumero * 0.87;
-            setRecompensaNumero(novoValor);
-            const novaRecompensa = trataRecompensa(novoValor, atributos.status);
-            setAtributos({...atributos, estrela: '⭐'.repeat(novoNivel) + '☆'.repeat(5 - novoNivel), recompensa: novaRecompensa});
+            setAtributos({
+                ...atributos,
+                estrela: '⭐'.repeat(novoNivel) + '☆'.repeat(5 - novoNivel),
+                recompensa: novaRecompensa
+            });
         }
     };
 
