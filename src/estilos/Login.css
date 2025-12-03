@@ -54,7 +54,7 @@
 .botao-entrar{
     background-color: #D9BE6C;
     color: black;
-    border: none;
+    border: 1px solid #D9BE6C;
     border-radius: 4px;
     transition: background-color 0.3s, opacity 0.3s;
 }
