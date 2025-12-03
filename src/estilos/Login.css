@@ -35,15 +35,27 @@
 }
 
 .caixa-acesso button {
-    width: 100%;
+    width: 48.9%;
     padding: 12px;
-    background-color: #D9BE6C; 
-    color: black;
-    border: none;
-    border-radius: 4px;
+    margin: 2px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
+}
+
+.botao-cancelar-login {
+    background-color: rgba(217, 190, 108, 0.15);
+    color: #D9BE6C;
+    border: 1px solid #D9BE6C;
+    border-radius: 4px;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.botao-entrar{
+    background-color: #D9BE6C;
+    color: black;
+    border: none;
+    border-radius: 4px;
     transition: background-color 0.3s, opacity 0.3s;
 }
 
