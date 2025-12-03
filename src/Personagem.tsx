@@ -49,7 +49,6 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
         recompensa: recompensaValida
     });
     const [nivelAtual, setNivelAtual] = useState(nivelPerigo);
-    const [recompensaBase] = useState(recompensa);
 
     const onMudarStatus = () => {
         let novoStatus: Status;
@@ -72,7 +71,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
     };
 
     const recalcularRecompensa = (nivel: number) => {
-        return trataRecompensa(calculaRecompensaAtual(nivel, nivelPerigo, recompensaBase), atributos.status);
+        return trataRecompensa(calculaRecompensaAtual(nivel), atributos.status);
     };
 
     const onAdicionarEstrela = () => {
@@ -89,7 +88,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
     };
 
     const onRemoverEstrela = () => {
-        if (nivelAtual > 0) {
+        if (nivelAtual > 1) {
             const novoNivel = nivelAtual - 1;
             const novaRecompensa = recalcularRecompensa(novoNivel);
             setNivelAtual(novoNivel);

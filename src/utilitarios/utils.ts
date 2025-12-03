@@ -164,8 +164,8 @@ export function novoStatusAtual(status: Status|string): Status {
     }
 };
 
-export function calculaRecompensaAtual(nivel: number, nivelPerigo: number, recompensaBase: number): number {
-    const delta = nivel - nivelPerigo; 
-    const fator = 1 + 0.10 * delta;
-    return Math.max(0,recompensaBase * fator);
+export function calculaRecompensaAtual(nivel: number): number {
+    const razao = 225000;
+    const offset = 125000;
+    return (nivel * razao) - offset;
 }
