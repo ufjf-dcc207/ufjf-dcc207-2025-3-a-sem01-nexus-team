@@ -3,6 +3,7 @@
     border-radius: 0.5em;
     box-shadow: 0.1em 0.1em 0.5em;
     display: grid;
+    font-weight: bold;
     grid-template-areas:
         "nome nome"
         "subnome subnome"
@@ -37,6 +38,8 @@
   align-items: center; 
   margin: 0.5em 0;
   position: relative;
+  width: fit-content;
+  margin-inline: auto;
 }
 
 .personagem .imagem img {
@@ -46,11 +49,9 @@
   aspect-ratio: 3 / 4;
 }
 
-
 .personagem.morto .imagem img {
   filter: grayscale(100%) brightness(0.6);
 }
-
 
 .personagem.morto .imagem::after {
   content: '💀';

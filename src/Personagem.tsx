@@ -101,7 +101,6 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
         }
     };
 
-
     return(
         <div className={`personagem ${atributos.status === 'morto' ? 'morto' : ''} ${atributos.status === 'capturado' ? 'capturado' : ''}`}>
             <div className="nome"><h2>{nome}</h2></div>
