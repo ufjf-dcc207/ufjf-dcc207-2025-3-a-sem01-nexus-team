@@ -15,6 +15,11 @@ p {
   padding: auto;
 }
 
+.card{
+  width: 100%;
+  margin: 10px auto;
+}
+
 .caixa-usuario {
   margin: 20px auto;
   max-width: 400px;
@@ -166,5 +171,10 @@ p {
   .interface-busca {
     width: 100%;
     max-width: 500px;
+    min-width: 100px;
+  }
+
+  .campo-texto {
+    min-width: 100px;
   }
 }

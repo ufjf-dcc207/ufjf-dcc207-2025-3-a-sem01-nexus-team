@@ -182,7 +182,6 @@ function App() {
                   </div>
                 </div>
               </div>
-
               <InterfaceExibicao>
                 {ListaProcuradosFiltrado.map((personagem) => (
                   <div className="card" key={personagem.id}>
