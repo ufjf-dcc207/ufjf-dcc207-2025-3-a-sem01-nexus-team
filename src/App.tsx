@@ -48,7 +48,7 @@ function App() {
   };
 
   const removerCriminoso = (id: number) => {
-    setListaAtualizada(prev => prev.filter(p => p.id !== id));
+    setListaAtualizada(prevLista => prevLista.filter(p => p.id !== id));
   };
 
   const deveMostrarFormularioAdicao = login.teveLogin && mostrarFormAddCriminoso;
