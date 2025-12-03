@@ -64,7 +64,6 @@
   pointer-events: none;
 }
 
-/* Efeito para capturado: grayscale e grade de prisão */
 .personagem.capturado .imagem img {
   filter: grayscale(100%) brightness(0.6);
 }

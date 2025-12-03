@@ -3,7 +3,9 @@ import './estilos/Personagem.css';
 import {useState} from 'react';
 
 import {situacaoStatus, statusValido, idadeValida, nivelPerigoValido, trataRecompensa, 
-    formataIdade, checaDataNascimento, trataData, formataPalavra} from './utilitarios/utils';
+    formataIdade, checaDataNascimento, trataData, formataPalavra, mudarEstiloImgPorStatus,
+    novoStatusAtual,
+    calculaRecompensaAtual} from './utilitarios/utils';
 
 type PersonagemProps = {
     nome: string;
@@ -50,23 +52,12 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
 
     const onMudarStatus = () => {
         let novoStatus: Status;
-        if (atributos.status === 'foragido') {
-            novoStatus = 'Capturado';
-        } else if (atributos.status === 'capturado') {
-            novoStatus = 'Morto';
-        } else if (atributos.status === 'morto') {
-            novoStatus = 'Desconhecido';
-        } else {
-            novoStatus = 'Foragido';
-        }
+        novoStatus = novoStatusAtual(atributos.status);
         setAtributos({...atributos, status: situacaoStatus(novoStatus)})
     };
 
     const recalcularRecompensa = (nivel: number) => {
-        const delta = nivel - nivelPerigo; 
-        const fator = 1 + 0.10 * delta; 
-        const valor = Math.max(0, recompensaBase * fator);
-        return trataRecompensa(valor, atributos.status);
+        return trataRecompensa(calculaRecompensaAtual(nivel, nivelPerigo, recompensaBase), atributos.status);
     };
 
     const onAdicionarEstrela = () => {
@@ -95,17 +86,6 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
         }
     };
 
-    const mudarEstiloImgPorStatus = (status: Status|string) => {
-        if (status === 'morto') {
-            return 'imagem-morto';
-        } else if (status === 'capturado') {
-            return 'imagem-capturado';
-        } else if (status === 'foragido') {
-            return 'imagem-foragido';
-        } else {
-            return 'imagem-desconhecido';
-        }
-    };
 
     return(
         <div className={`personagem ${atributos.status === 'morto' ? 'morto' : ''} ${atributos.status === 'capturado' ? 'capturado' : ''}`}>

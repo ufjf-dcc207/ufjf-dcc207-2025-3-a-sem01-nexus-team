@@ -103,3 +103,33 @@ export function trataData(dataNascimento: string): string {
 export function formataPalavra(palavra: string): string {
     return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
 }
+
+export function mudarEstiloImgPorStatus(status: Status|string) {
+        if (status === 'morto') {
+            return 'imagem-morto';
+        } else if (status === 'capturado') {
+            return 'imagem-capturado';
+        } else if (status === 'foragido') {
+            return 'imagem-foragido';
+        } else {
+            return 'imagem-desconhecido';
+        }
+};
+
+export function novoStatusAtual(status: Status|string): Status {
+    if (status === 'foragido') {
+        return 'Capturado';
+    } else if (status === 'capturado') {
+        return 'Morto';
+    } else if (status === 'morto') {
+        return 'Desconhecido';
+    } else {
+        return 'Foragido';
+    }
+};
+
+export function calculaRecompensaAtual(nivel: number, nivelPerigo: number, recompensaBase: number): number {
+    const delta = nivel - nivelPerigo; 
+    const fator = 1 + 0.10 * delta;
+    return Math.max(0,recompensaBase * fator);
+}
