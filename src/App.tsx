@@ -197,6 +197,7 @@ function App() {
                       recompensa={personagem.Recompensa}
                       onVerFicha={() => clickVerFicha(personagem)}
                       TemLogin={login.teveLogin}
+                      tipoAcesso={login.userInfo?.nivelAcesso || ""}
                     />
                   </div>
                 ))}

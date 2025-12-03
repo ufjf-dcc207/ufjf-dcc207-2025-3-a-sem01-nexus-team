@@ -21,9 +21,10 @@ interface PersonagemProps {
     ultimaLocalizacao?: string;
     onVerFicha: () => void;
     TemLogin: boolean;
+    tipoAcesso: string;
 }
 
-export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa, peso, altura, descricao, crimes, ultimaLocalizacao, onVerFicha, TemLogin}: PersonagemProps) {
+export default function Personagem({nome, subnome, imagem, nivelPerigo, status, idade, dataNascimento, recompensa, peso, altura, descricao, crimes, ultimaLocalizacao, onVerFicha, TemLogin, tipoAcesso}: PersonagemProps) {
     let desconhecidoData: string = "";
     let dataFormatada: string;
     let desconhecidoIdade: string = "";
@@ -91,14 +92,14 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             <div className="nivel-perigo"><p>Nível de Perigo: </p></div>
             <div className='estrela'>
                 <p>{atributos.estrela}</p>
-                {TemLogin&& <button className='botao-troca'> <img src="Icones/" alt="remover" onClick={onRemoverEstrela} /></button>}
-                {TemLogin && <button className='botao-troca'> <img src="Icones/" alt="adicionar" onClick={onAdicionarEstrela} /></button>}
+                {TemLogin && (tipoAcesso === 'administrador' || tipoAcesso === 'agente') ? <button className='botao-troca'> <img src="Icones/" alt="remover" onClick={onRemoverEstrela} /></button>: null}
+                {TemLogin&&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ?<button className='botao-troca'> <img src="Icones/" alt="adicionar" onClick={onAdicionarEstrela} /></button> : null}
             </div>
             <div className="status">
                 <p>Status: 
                     <span className={atributos.status}>{atributos.status}</span>
                 </p>
-                {TemLogin && <button className='botao-troca'> <img src="Icones/" alt="adicionar" onClick={onMudarStatus} /></button>}
+                {TemLogin &&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ? <button className='botao-troca'> <img src="Icones/" alt="adicionar" onClick={onMudarStatus} /></button>: null}
                 
             
             </div>

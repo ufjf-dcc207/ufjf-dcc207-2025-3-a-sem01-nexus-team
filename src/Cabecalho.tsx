@@ -50,7 +50,7 @@ export function Cabecalho({ TemLogin, nivelAcesso, usuario, onClickLogin, clickO
                             </button>
                         )}
 
-                        {TemLogin && (nivelAcesso === "cacador" || nivelAcesso === "administrador") ? (
+                        {TemLogin && (nivelAcesso === "cacador" || nivelAcesso === "caçador" || nivelAcesso === "administrador") ? (
                             
                             <button className="botao-recompensa" title="Minhas Recompensas">
                             <img 
