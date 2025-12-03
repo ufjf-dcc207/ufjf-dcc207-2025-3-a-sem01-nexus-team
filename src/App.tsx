@@ -39,7 +39,7 @@ function App() {
   };
 
   const submeterNovoCriminoso = (novo: Procurado) => {
-    setListaAtualizada(prev => [novo, ...prev]);
+    setListaAtualizada(prevLista => [novo, ...prevLista]);
     setMostrarFormAddCriminoso(false);
   };
 
