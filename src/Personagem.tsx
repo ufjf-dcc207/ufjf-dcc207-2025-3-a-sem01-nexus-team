@@ -102,15 +102,15 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
             <div className="imagem"><img src={imagem} alt={nome} /></div>
             <div className="nivel-perigo"><p>Nível de Perigo: </p></div>
             <div className='estrela'>
+                {TemLogin && (tipoAcesso === 'administrador' || tipoAcesso === 'agente') ? <button className='botao-troca'> <img src="Icones/seta-esq.png" alt="remover" onClick={onRemoverEstrela} /></button>: null}
                 <p>{atributos.estrela}</p>
-                {TemLogin && (tipoAcesso === 'administrador' || tipoAcesso === 'agente') ? <button className='botao-troca'> <img src="Icones/" alt="remover" onClick={onRemoverEstrela} /></button>: null}
-                {TemLogin&&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ?<button className='botao-troca'> <img src="Icones/" alt="adicionar" onClick={onAdicionarEstrela} /></button> : null}
+                {TemLogin&&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ?<button className='botao-troca'> <img src="Icones/seta-dir.svg" alt="adicionar" onClick={onAdicionarEstrela} /></button> : null}
             </div>
             <div className="status">
                 <p>Status: 
                     <span className={atributos.status}>{atributos.status}</span>
                 </p>
-                {TemLogin &&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ? <button className='botao-troca'> <img src="Icones/" alt="adicionar" onClick={onMudarStatus} /></button>: null}
+                {TemLogin &&(tipoAcesso === 'administrador'|| tipoAcesso === 'agente') ? <button className='botao-troca' onClick={onMudarStatus} >Mudar Status</button>: null}
                 
             
             </div>
