@@ -3,7 +3,10 @@ import './estilos/Personagem.css';
 import {useState} from 'react';
 
 import {situacaoStatus, statusValido, idadeValida, nivelPerigoValido, trataRecompensa, 
-    formataIdade, checaDataNascimento, trataData, formataPalavra} from './utilitarios/utils';
+    formataIdade, checaDataNascimento, trataData, formataPalavra, mudarEstiloImgPorStatus,
+    novoStatusAtual,
+    calculaRecompensaAtual,
+    retornaRenderEstrelas} from './utilitarios/utils';
 
 type PersonagemProps = {
     nome: string;
@@ -41,7 +44,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
     recompensaValida = trataRecompensa(recompensa, situacao);
 
     const[atributos, setAtributos] =  useState({
-        estrela: '⭐'.repeat(nivelPerigo) + '☆'.repeat(5 - nivelPerigo),
+        estrela: retornaRenderEstrelas(nivelPerigo),
         status: situacao,
         recompensa: recompensaValida
     });
@@ -50,15 +53,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
 
     const onMudarStatus = () => {
         let novoStatus: Status;
-        if (atributos.status === 'foragido') {
-            novoStatus = 'Capturado';
-        } else if (atributos.status === 'capturado') {
-            novoStatus = 'Morto';
-        } else if (atributos.status === 'morto') {
-            novoStatus = 'Desconhecido';
-        } else {
-            novoStatus = 'Foragido';
-        }
+        novoStatus = novoStatusAtual(atributos.status);
         setAtributos({...atributos, status: situacaoStatus(novoStatus)})
     };
 
@@ -77,10 +72,7 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
     };
 
     const recalcularRecompensa = (nivel: number) => {
-        const delta = nivel - nivelPerigo; 
-        const fator = 1 + 0.10 * delta; 
-        const valor = Math.max(0, recompensaBase * fator);
-        return trataRecompensa(valor, atributos.status);
+        return trataRecompensa(calculaRecompensaAtual(nivel, nivelPerigo, recompensaBase), atributos.status);
     };
 
     const onAdicionarEstrela = () => {
@@ -109,11 +101,13 @@ export default function Personagem({nome, subnome, imagem, nivelPerigo, status, 
         }
     };
 
+
     return(
-        <div className="personagem">
+        <div className={`personagem ${atributos.status === 'morto' ? 'morto' : ''} ${atributos.status === 'capturado' ? 'capturado' : ''}`}>
             <div className="nome"><h2>{nome}</h2></div>
             <div className='subnome'><h3>{subnome}</h3></div>
-            <div className="imagem"><img src={imagem} alt={nome} /></div>
+            <div className="imagem"><img className={mudarEstiloImgPorStatus(atributos.status)} src={imagem} alt={nome} />
+            </div>
             <div className="nivel-perigo"><p>Nível de Perigo: </p></div>
             <div className='estrela'>
                 {TemLogin && (tipoAcesso === 'administrador' || tipoAcesso === 'agente') ? <button className='botao-remove'> <img src="Icones/SetaEsq.png" alt="remover" onClick={onRemoverEstrela} /></button>: null}

@@ -36,6 +36,16 @@ export function situacaoStatus(status: Status): string {
     }
 }
 
+export function validaUrlImagem(valor: string): boolean {
+        if (!valor) return false;
+        try {
+            const u = new URL(valor);
+            return ["http:", "https:"].includes(u.protocol);
+        } catch {
+            return false;
+        }
+    };
+
 export const statusValido = (status: string): Status =>
             ["Foragido", "Morto", "Capturado", "Desconhecido"].includes(status as Status)? (status as Status): "Desconhecido";
 
@@ -51,6 +61,14 @@ export const idadeValida = (idade: number | string): number | string => {
     } 
     else {
         return "Desconhecida";
+    }
+}
+
+export function trataIdade(idade: number): number {
+    if (typeof idade === 'number') {
+        return idade;
+    } else {
+        return 0;
     }
 }
 
@@ -88,6 +106,16 @@ export function checaDataNascimento(dataNascimento: string): string {
     return "";
 }
 
+export function retornaRenderEstrelas(nivelPerigo: number): string {
+    return '⭐'.repeat(nivelPerigo) + '☆'.repeat(5 - nivelPerigo);
+}
+
+export function garantiaRemocaoCriminoso(id: number, onRemover: (id: number) => void): void {
+    if (window.confirm(`Tem certeza que deseja remover o criminoso com ID ${id}?`)) {
+        onRemover(id);
+    }
+}
+
 export function trataData(dataNascimento: string): string {
     if(dataNascimento === "Desconhecido") {
         return "Desconhecido";
@@ -102,4 +130,34 @@ export function trataData(dataNascimento: string): string {
 
 export function formataPalavra(palavra: string): string {
     return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
+}
+
+export function mudarEstiloImgPorStatus(status: Status|string) {
+        if (status === 'morto') {
+            return 'imagem-morto';
+        } else if (status === 'capturado') {
+            return 'imagem-capturado';
+        } else if (status === 'foragido') {
+            return 'imagem-foragido';
+        } else {
+            return 'imagem-desconhecido';
+        }
+};
+
+export function novoStatusAtual(status: Status|string): Status {
+    if (status === 'foragido') {
+        return 'Capturado';
+    } else if (status === 'capturado') {
+        return 'Morto';
+    } else if (status === 'morto') {
+        return 'Desconhecido';
+    } else {
+        return 'Foragido';
+    }
+};
+
+export function calculaRecompensaAtual(nivel: number, nivelPerigo: number, recompensaBase: number): number {
+    const delta = nivel - nivelPerigo; 
+    const fator = 1 + 0.10 * delta;
+    return Math.max(0,recompensaBase * fator);
 }

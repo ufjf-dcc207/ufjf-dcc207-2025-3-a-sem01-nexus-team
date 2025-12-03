@@ -1,6 +1,7 @@
 
 import "./estilos/RemoverCriminosoDoSistema.css";
 import type { Procurado } from "./ProcessadorListas";
+import { garantiaRemocaoCriminoso } from "./utilitarios/utils";
 
 interface RemoverCriminosoDoSistemaProps {
     lista: Procurado[];
@@ -9,12 +10,6 @@ interface RemoverCriminosoDoSistemaProps {
 }
 
 export default function RemoverCriminosoDoSistema({ lista, onRemover, voltarPrincipal }: RemoverCriminosoDoSistemaProps){
-    const remover = (id: number) => {
-        if (window.confirm("Confirma remover este criminoso? Esta ação não pode ser desfeita.")) {
-            onRemover(id);
-        }
-    };
-
     return (
         <div className="remover-criminoso">
             <h2 className="titulo-remocao">Remover Criminoso do Sistema</h2>
@@ -27,7 +22,7 @@ export default function RemoverCriminosoDoSistema({ lista, onRemover, voltarPrin
                         </span>
                         <button
                             type="button"
-                            onClick={() => remover(personagem.id)}
+                            onClick={() => garantiaRemocaoCriminoso(personagem.id, onRemover)}
                             className="botao-remover"
                             title="Remover"
                         >Remover</button>

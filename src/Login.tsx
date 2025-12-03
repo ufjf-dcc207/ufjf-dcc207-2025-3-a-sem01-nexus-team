@@ -11,7 +11,7 @@ type DadosLogin = {
     senha: string;
 }
 
-const Login = ({TemLogin}:LoginProps) => {
+export  function Login  ({TemLogin}:LoginProps) {
     const [credencialLogin, setCredencialLogin] = useState<DadosLogin>({email:"", senha:""});
     const [erro, setErro] = useState<string>("");
     
@@ -36,7 +36,7 @@ const Login = ({TemLogin}:LoginProps) => {
    return (
     <div className="container-acesso">
       <form className="caixa-acesso" onSubmit={verificarLogin}>
-        <h2> Acesso ao sistema como Agente ou caçador</h2>
+        <h2> Acesso ao sistema como Agente, Caçador ou Administrador</h2>
         <p>Insira suas credenciais</p>
 
         <input 
